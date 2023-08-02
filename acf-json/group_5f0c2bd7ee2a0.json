@@ -3,32 +3,85 @@
     "title": "Options générales",
     "fields": [
         {
-            "key": "field_608ac16ae3a8c",
-            "label": "Page des actualités",
-            "name": "page_actualites",
+            "key": "field_649af5eda6a53",
+            "label": "Adresse postale",
+            "name": "cb_adresse",
             "aria-label": "",
-            "type": "post_object",
-            "instructions": "Réglage utilisé pour le fil d'ariane et pour le bouton \"voir toutes les actualités\"",
-            "required": 1,
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
+            "default_value": "",
+            "maxlength": "",
+            "rows": 2,
+            "placeholder": "",
+            "new_lines": "br"
         },
         {
-            "key": "field_64a3efc4bfb45",
-            "label": "En-tête de page : image décor",
-            "name": "cb_deco_hero_top",
+            "key": "field_64ca8ac4d12c0",
+            "label": "Adresse email",
+            "name": "cb_email",
+            "aria-label": "",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64ca8ae4d12c1",
+            "label": "Numéro de téléphone",
+            "name": "cb_telephone",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64ca85e77e6de",
+            "label": "Lien vers LinkedIn",
+            "name": "cb_linkedin",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_64ca8606b5f4a",
+            "label": "En-tête : logo dans volet de navigation mobile",
+            "name": "cb_volet_logo",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -48,65 +101,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "png, svg",
-            "preview_size": "banniere"
-        },
-        {
-            "key": "field_649f0c0f42d8a",
-            "label": "Surtitres",
-            "name": "cb_surtitres",
-            "aria-label": "",
-            "type": "group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "sub_fields": [
-                {
-                    "key": "field_649f0c2d42d8b",
-                    "label": "Sur-titre pour les pages de type publication",
-                    "name": "blog",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Articles de blog ou pages archives de catégories de blog",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Publications",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                },
-                {
-                    "key": "field_649f0c8242d8c",
-                    "label": "Sur-titre pour les pages de type Etudes de cas",
-                    "name": "cas",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "Étude de cas individuelle ou pages archives de catégories d'études de cas",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Références > Etude de cas",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": ""
-                }
-            ]
+            "preview_size": "thumbnail"
         },
         {
             "key": "field_60a0e771c0bde",
@@ -134,49 +129,9 @@
             "preview_size": "thumbnail"
         },
         {
-            "key": "field_649af5eda6a53",
-            "label": "Pied de page : coordonnées",
-            "name": "cb_footer_coordonnees",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
-            "key": "field_649af625a6a54",
-            "label": "Pied de page : titre de la colonne 2",
-            "name": "cb_footer_titre_2",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_649af651a6a55",
+            "key": "field_64ca8cbf7fcef",
             "label": "Pied de page : titre de la colonne 3",
-            "name": "cb_footer_titre_3",
+            "name": "cb_footer_col_titre",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -194,9 +149,9 @@
             "append": ""
         },
         {
-            "key": "field_649af654a6a56",
-            "label": "Pied de page : titre de la colonne 4",
-            "name": "cb_footer_titre_4",
+            "key": "field_64ca863514913",
+            "label": "Pied de page : texte copyright",
+            "name": "cb_footer_copyright",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -208,46 +163,6 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_64a82c4914c04",
-            "label": "Bloc de partage des articles : titre du bloc",
-            "name": "cb_titre_partage",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Partager cet article :",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_64a8513e4cc98",
-            "label": "Section avec des articles dans la même catégorie : titre du bloc",
-            "name": "cb_titre_related",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Dans la même catégorie :",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -272,5 +187,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688752504
+    "modified": 1690995958
 }
