@@ -17,6 +17,10 @@
 		position: relative;
 	}
 
+	@include bp(sm) {
+		padding-right: var(--padding-x-header);
+	}
+
 }
 
 .title-area {
@@ -43,7 +47,7 @@
 
 //Header sticky toutes tailles d'écran
 .site-header.js-sticky {
-	//box-shadow: 0 3px 3px rgba(18,75,90,0.2);
+	border-bottom:solid 1px var(--beige);
 	position:fixed;
 	left: 0;
 	top: 0;

@@ -1323,7 +1323,6 @@ p.fil-ariane .sep {
 
 button.menu-toggle {
   display: block;
-  height: 3rem;
   padding: 0;
   position: relative;
   z-index: 20;
@@ -1331,6 +1330,16 @@ button.menu-toggle {
 }
 button.menu-toggle:focus {
   outline: none;
+}
+@media (min-width: 500px) {
+  button.menu-toggle {
+    width: 2.5rem;
+  }
+}
+@media (min-width: 768px) {
+  button.menu-toggle {
+    width: 3rem;
+  }
 }
 
 .volet-navigation.toggled {
@@ -1457,7 +1466,7 @@ button.ouvrir-sous-menu .picto-angle {
   max-width: 10px;
 }
 button.ouvrir-sous-menu svg path {
-  fill: var(--blanc);
+  fill: var(--noir);
 }
 button.ouvrir-sous-menu:focus {
   outline: none;
@@ -1470,7 +1479,7 @@ button.ouvrir-sous-menu:focus {
 .nav-main .menu {
   align-items: stretch;
   justify-content: flex-end;
-  padding-top: 2.6rem;
+  padding-top: 2.2rem;
 }
 .nav-main .menu li {
   padding: 0;
@@ -1483,37 +1492,39 @@ button.ouvrir-sous-menu:focus {
   display: block;
   text-decoration: none;
 }
+.nav-main .menu > li {
+  padding-left: 1rem;
+}
 @media (min-width: 1440px) {
   .nav-main .menu > li {
-    padding-left: 3rem;
+    padding-left: 5rem;
   }
 }
 .nav-main .menu > li > a {
   align-items: center;
   display: flex;
-  font-size: 1.6rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 200;
   height: 100%;
-  line-height: 2.4rem;
+  line-height: 3rem;
   padding: 0 1rem 2rem;
   position: relative;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
 }
-@media (min-width: 1440px) {
-  .nav-main .menu > li > a {
-    font-size: 1.8rem;
-  }
+.nav-main .menu > li:last-of-type > a {
+  padding-right: 0;
 }
 .nav-main .menu > li:hover > a, .nav-main .menu > li > a:focus, .nav-main .menu > li:focus-within > a {
-  color: var(--violet-d2);
+  color: var(--bleu-d3);
 }
 .nav-main .menu > li > a:active, .nav-main .menu > li.current-menu-item > a, .nav-main .menu > li.current-menu-ancestor > a {
-  color: var(--violet-d2);
+  font-weight: 500;
+  color: var(--bleu-d3);
+  text-decoration: underline;
 }
 .nav-main .menu > li:hover button.ouvrir-sous-menu svg path, .nav-main .menu > li:focus-within button.ouvrir-sous-menu svg path, .nav-main .menu > li.current-menu-item button.ouvrir-sous-menu svg path, .nav-main .menu > li.current-menu-ancestor button.ouvrir-sous-menu svg path {
-  fill: var(--violet-d2);
+  fill: var(--bleu-d3);
 }
 .nav-main .menu .menu-item-has-children {
   align-items: center;
@@ -1551,7 +1562,7 @@ button.ouvrir-sous-menu:focus {
   overflow-y: auto;
 }
 .nav-main .menu .sub-menu {
-  background-color: var(--violet-d2);
+  background-color: var(--bleu-b8);
   border: solid 2px var(--blanc);
   list-style: none;
   margin: 0;
@@ -1575,7 +1586,7 @@ button.ouvrir-sous-menu:focus {
 }
 @media (min-width: 1440px) {
   .nav-main .menu .sub-menu a {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 .nav-main .menu .sub-menu a::before {
@@ -1742,6 +1753,11 @@ button.ouvrir-sous-menu:focus {
 .site-header .site-branding, .site-header .menu-toggle {
   position: relative;
 }
+@media (min-width: 500px) {
+  .site-header {
+    padding-right: var(--padding-x-header);
+  }
+}
 
 .title-area {
   max-width: var(--taille-logo);
@@ -1763,6 +1779,7 @@ button.ouvrir-sous-menu:focus {
 }
 
 .site-header.js-sticky {
+  border-bottom: solid 1px var(--beige);
   position: fixed;
   left: 0;
   top: 0;

@@ -86,7 +86,6 @@ p.fil-ariane {
 
 button.menu-toggle {
 	display: block;
-	height:3rem;
 	padding:0;
 	position: relative;
 	z-index:20; //visible et cliquable même quand le volet est ouvert
@@ -94,6 +93,14 @@ button.menu-toggle {
 	
 	&:focus {
 		outline: none;
+	}
+
+	@include bp(sm) {
+		width:2.5rem;
+	}
+
+	@include bp(md) {
+		width:3rem;
 	}
 }
 
@@ -236,7 +243,7 @@ button.ouvrir-sous-menu {
 		max-width: 10px;
 	}
 	svg path {
-		fill:var(--blanc);
+		fill:var(--noir);
 	}
 	&:focus {
 		outline: none;
@@ -253,7 +260,7 @@ button.ouvrir-sous-menu {
 	.menu {
 		align-items: stretch;
 		justify-content: flex-end;
-		padding-top:2.6rem;
+		padding-top:2.2rem;
 		li {
 			padding:0;
 
@@ -271,39 +278,41 @@ button.ouvrir-sous-menu {
 		//styles spécifiques aux liens de premier niveau
 
 		& > li {
+			padding-left: 1rem;
 			@include bp(xl) {
-				padding-left: 3rem;
+				padding-left: 5rem;
 			}
 			& > a {
 				align-items: center;
 				display: flex;
-				font-size: 1.6rem;
-				font-weight: 700;
+				font-size: 2rem;
+				font-weight: 200;
 				height: 100%;
-				line-height: 2.4rem;
+				line-height: 3rem;
 				padding:0 1rem 2rem;
 				position:relative;
 				text-align: center;
 				text-decoration: none;
-				text-transform: uppercase;
-				@include bp(xl) {
-					font-size: 1.8rem;
-				}
+			}
+			&:last-of-type > a {
+				padding-right: 0;
 			}
 			
 			&:hover > a, & > a:focus, &:focus-within > a {
-				color:var(--violet-d2);
+				color:var(--bleu-d3);
 			}
 			
 
 			& > a:active, &.current-menu-item > a, &.current-menu-ancestor > a {
-				color:var(--violet-d2);
+				font-weight: 500;
+				color:var(--bleu-d3);
+				text-decoration: underline;
 			}
 
 			&:hover, &:focus-within, &.current-menu-item, &.current-menu-ancestor {
 				button.ouvrir-sous-menu {
 					svg path {
-						fill:var(--violet-d2);
+						fill:var(--bleu-d3);
 					}
 				}
 			}
@@ -355,7 +364,7 @@ button.ouvrir-sous-menu {
 
 		//Style sous-menu
 		.sub-menu {
-			background-color: var(--violet-d2);
+			background-color: var(--bleu-b8);
 			border:solid 2px var(--blanc);
 			list-style:none;
 			margin:0;
@@ -376,7 +385,7 @@ button.ouvrir-sous-menu {
 				position:relative;
 				transition: all var(--transition);
 				@include bp(xl) {
-					font-size: 2rem;
+					font-size: 1.8rem;
 				}
 				&::before {
 					content:'>';
