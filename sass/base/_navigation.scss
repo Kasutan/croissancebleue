@@ -86,9 +86,11 @@ p.fil-ariane {
 
 button.menu-toggle {
 	display: block;
-	height:1.4rem;
+	height:3rem;
 	padding:0;
-	width:3rem;
+	position: relative;
+	z-index:20; //visible et cliquable même quand le volet est ouvert
+	width:2rem;
 	
 	&:focus {
 		outline: none;
@@ -99,13 +101,13 @@ button.menu-toggle {
 	display: flex;
 	flex-direction: column;
 	right:0;
-	max-height:calc(100vh - 80px); //magic number : hauteur du header sticky
+	max-height:100vh;
 	max-width:400px;
 	overflow-x:hidden;
 	overflow-y:auto;
-	padding: 2.4rem 2rem 6.5rem;
+	padding: 2.4rem 2rem;
 	position:absolute;
-	top:100%; //chevaucher un peu le logo
+	top:0; //chevaucher un peu le logo
 	width:100%;
 	z-index: 10;
 }
@@ -133,97 +135,90 @@ button.menu-toggle {
 	min-width:unset;
 	padding:0 1rem;
 	position:relative;
-	top:1rem;
 	&:hover, &:focus, &:active {
 		background:transparent;
+	}
+	&[aria-expanded="true"] {
+		transform:rotate(90deg);
+		svg line {
+			stroke:var(--blanc);
+
+		}
 	}
 }
 
 /* Style liens de menu VOLET NAVIGATION MOBILE */
 .volet-navigation {
-	background:transparent linear-gradient(180deg, #8E00D2 0%, #04329A 100%) 0% 0% no-repeat padding-box;
+	background-color:var(--bleu-b8);
 
-	/*Logique affichage sous-menu*/
-	.sub-menu {
-		display: none;
-		//animation JS pour ouvrir/refermer
-	}
-	.picto-angle {
-		background-color: transparent;
-		display: inline-block;
-		transition:transform var(--transition);
+	/*Logo dans le volet*/
+	.logo {
+		margin:2rem auto 4rem;
+		width:7rem;
 	}
 
-	button.js-ouvert .picto-angle {
-		transform-origin: center;
-		transform:rotateX(180deg);
+	/*Lien linkedin*/
+	.linkedin {
+		display: block;
+		margin: 4.2rem auto 1.1rem;
+		width:4.5rem;
 	}
 
+	/*Numéro de téléphone*/
+	.tel {
+		color:var(--blanc);
+		display: block;
+		font-size: 2.4rem;
+		font-weight: 700;
+		line-height: 2.4rem;
+		margin-top: 1rem;
+		text-align: center;
+		text-decoration: none;
+	}
 	
 	/*Styles communs menu et sous-menu*/
 	.menu-mobile, .sub-menu {
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		text-align: center;
 
 		a {
-			font-weight: bold;
+			color:var(--blanc);
+			font-size: 2rem;
+			font-weight: 400;
+			line-height: 2.4rem;
 			text-decoration: none;
 		}
 	}
 	
 
 	/*Styles éléments de niveau 1*/
-	.menu-mobile > li {
-		align-items: center;
-		border-bottom:solid 1px var(--blanc);
+	.menu-menu-principal-container {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		padding:1.55rem 0;
-
-		&:last-of-type {
-			border:none;
+		justify-content: center;
+	}
+	.menu-mobile {
+		border-bottom: solid 2px rgba(255,255,255,0.2);
+		& > li {
+			padding:0 0 3rem;
 		}
-		> a {
-			color:var(--blanc);
-			flex:auto 0 0;
-			font-weight: 600;
-			padding:0;
-			padding-right: 1.6rem;
-			text-transform: uppercase;
-		}
-
-		&.current-menu-item , &.current-menu-ancestor {
-			& > a {
-				color:var(--bleu-8fc);
-			}
-
-			button.ouvrir-sous-menu svg path {
-				fill:var(--bleu-8fc);
-			}
-		}
-
 	}
 	
+	
 	.sub-menu {
-		background-color: transparent;
-		flex-basis:100%;
-		flex-shrink:0;
+		
 		padding-top: 0.8rem;
 		padding-left:0;
 		li {
 			margin-bottom: 0.8rem;
 
 			a {
-				color : var(--blanc);
-				font-weight: 400;
+				font-size: 1.8rem;
+
 			}
 
-			&.current-menu-item a {
-				color:var(--bleu-8fc);
-				font-weight: 600;
-			}
+		
 		}
 	}
 }

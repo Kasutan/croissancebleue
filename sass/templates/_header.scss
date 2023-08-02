@@ -2,14 +2,14 @@
 ## Site header
 --------------------------------------------------------------*/
 .site-header {
-	--taille-logo:12.5rem;
+	--taille-logo:17rem;
 	
 	align-items: center;
 	background-color: var(--blanc);
-	border-bottom: 1px solid var(--bleu-8fc);
 	display: flex;
 	justify-content: space-between;
-	padding: 8px var(--padding-x-header);
+	padding: 11px var(--padding-x-header);
+	padding-right: 1.9rem;
 	position: relative;
 	z-index:10;
 
@@ -26,6 +26,8 @@
 
 
 .site-title {
+	align-items: center;
+	display: flex;
 	margin:0;
 }
 
@@ -38,14 +40,6 @@
 	margin:0;
 }
 
-.header-navigation {
-	justify-self: end;
-	grid-column: 3;
-}
-
-.acces-client {
-	display: none;
-}
 
 //Header sticky toutes tailles d'écran
 .site-header.js-sticky {
@@ -77,10 +71,14 @@
 
 	
 }
+@include bp(md) {
+	.site-header {
 
+	--taille-logo:24rem;}
+}
 @include bp(lg) {
 	.site-header {
-		--taille-logo:15rem;	
+		--taille-logo:28rem;	
 		padding:30px var(--padding-x-header) 21px;
 	}
 	.header-navigation {
@@ -89,7 +87,9 @@
 }
 @include bp(xl) {
 	.site-header {
-		--taille-logo:20rem;	
+		--taille-logo:34rem;	
+		padding:52px var(--padding-x-header) 37px;
+
 	}
 }
 

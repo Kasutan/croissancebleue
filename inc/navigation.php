@@ -56,43 +56,49 @@ function ea_site_header() {
 					wp_nav_menu( array(
 						'theme_location' => 'primary',
 						'menu_id'        => 'primary-menu',
-						'walker' => new etcode_sublevel_walker,
 						'container_class' => 'nav-primary'
 					) );
 				}
 
 			}
-			do_action('wpml_add_language_selector');
 		echo '</nav>';
 	echo '</div>';
 }
 
 
 function kasutan_mobile_nav() {
+	$fav=false;
+	if(function_exists('get_field')) {
+		$fav=esc_attr(get_field('cb_volet_logo','option'));
+	}
 	?>
-	<button class="menu-toggle hamburger hamburger--squeeze" type="button" id="menu-toggle" aria-controls="volet-navigation"  aria-label="Menu">
-	<span class="hamburger-box">
-		<span class="hamburger-inner"></span>
-	</span>
+	<button class="menu-toggle" type="button" id="menu-toggle" aria-controls="volet-navigation"  aria-label="Menu">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.68 22.68"><defs><style>.menu-cls-1{fill:none;stroke:#171715;stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px;}</style></defs><g><line class="menu-cls-1" x1="3.71" y1="5.63" x2="15.25" y2="5.63"/><line class="menu-cls-1" x1="8.42" y1="11.17" x2="19.97" y2="11.17"/><line class="menu-cls-1" x1="3.71" y1="16.71" x2="15.25" y2="16.71"/></g></svg>
 	</button>
 
 	<div class="volet-navigation"  id="volet-navigation">
 		<?php
-		if( class_exists('etcode_sublevel_walker') ) {
-			wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_id'        => 'menu-mobile',
-				'walker' => new etcode_sublevel_walker,
-				'menu_class'=>'menu-mobile',
-			) );
-		} else {
-			wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_id'        => 'menu-mobile',
-				'menu_class'=>'menu-mobile',
-			) );
+
+		//Favicon blanc
+		if($fav) {
+			printf('<div class="logo">%s</div>',wp_get_attachment_image($fav));
 		}
-		do_action('wpml_add_language_selector');
+
+		wp_nav_menu( array(
+			'theme_location' => 'primary',
+			'menu_id'        => 'menu-mobile',
+			'menu_class'=>'menu-mobile',
+		) );
+
+		if(function_exists('kasutan_linkedin')) {
+			kasutan_linkedin() ;
+		}
+
+		if(function_exists('kasutan_telephone')) {
+			kasutan_telephone() ;
+		}
+
+
 	echo '</div>'; //Fin volet navigation
 }
 
