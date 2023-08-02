@@ -1,0 +1,134 @@
+
+
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+
+
+body {
+	margin:0; //ios 12 et 13
+	overflow-x:hidden;
+}
+:root {
+	--margin-y-1: 3rem;
+	--margin-y-2: 6rem;
+	--padding-x:3.7rem;
+	--padding-x-header:var(--padding-x);
+	--padding-x-single:var(--padding-x);
+	--padding-x-pleine-largeur:0;
+	--largeur-max:1920px;
+
+	//--header-height:80px;
+	//--max-width-xl:1900px;
+
+	/*Valeurs en dur pour les navigateurs qui ne supportent pas clamp*/
+	--hauteur-banniere :588px; 
+	
+	@supports(height:clamp(588px,48vw,930px)) {
+		--hauteur-banniere :clamp(588px,48vw,930px);
+	}
+
+	@include bp(md) {
+		--padding-x : 10vw;
+	}
+
+
+	@include bp(lg) {
+		--padding-x-single:calc(50vw - 910px / 2);
+	}
+	
+	@include bp(xl) {
+		--padding-x : 14.6vw;
+		--padding-x-header:7.3vw;
+
+	}
+
+	@include bp(xxl) {
+		--padding-x-pleine-largeur : calc(50vw - var(--largeur-max)/2);
+		--padding-x: calc(50vw - 1364px / 2);
+		--padding-x-header:calc(50vw - 1640px / 2);
+	}
+}
+
+//Réglages de largeur communs à tous les templates
+.site-container {
+	@include largeur-max;
+}
+.site-main {
+	.fil-ariane, .entry-title {
+		padding-left: var(--padding-x);
+		padding-right: var(--padding-x);
+	}
+}
+
+
+body .entry-content {
+	background-color: var(--blanc);
+	min-height:150vh;
+	margin:0 auto;
+	max-width: calc(100% - 2* var(--padding-x));
+	padding: 2rem;
+	padding-bottom: 0;
+	position:relative;
+}
+
+body.home .entry-content {
+	padding-top: 0;
+}
+
+
+.alignfull , .bleed-container {
+	@include bleed;
+}
+
+.container {
+	padding:0 var(--padding-x);
+	position: relative;
+}
+
+
+.site {
+	overflow-x: hidden;
+	position: relative;
+}
+
+
+.show-for-md,
+.show-for-lg {
+	display: none;
+}
+
+@include bp(md) {
+
+
+	.show-for-md {
+		display: initial;
+	}
+
+	.hide-for-md {
+		display: none;
+	}
+}
+
+@include bp(lg) {
+
+
+	.show-for-lg {
+		display: initial;
+	}
+
+	.hide-for-lg {
+		display: none;
+	}
+}
+
+
+
+/* Echelle z-index 
+Elements qui ont juste besoin d'être au-dessus de leur voisin : 1
+Overlay : 5
+Sticky header : 10
+Menu mobile : 10
+Sous-menu desktop : 10;
+
+*/

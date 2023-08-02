@@ -1,0 +1,140 @@
+.decor-top {
+
+	position: relative;
+	&::after {
+		--decor-w:11.2rem;
+		--decor-h:1rem;
+		background-image:url('icons/top-bloc-color_XS.svg');
+		background-repeat: no-repeat;
+		background-size: contain;
+		content:'';
+		display: block;
+		height:var(--decor-h);
+		left:calc(50% - 0.5 * var(--decor-w));
+		position: absolute;
+		top:-4px;
+		width:var(--decor-w);
+
+		@include bp(lg) {
+			--decor-w:31.2rem;
+			background-image:url('icons/top-bloc-color_XL.svg');
+		}
+	}
+
+	&.decor-grey, &.decor-bleu {
+		&::after {
+			background-image:url('icons/top-bloc-grey_XS.svg');
+			top:-5px;
+			@include bp(lg) {
+				background-image:url('icons/top-bloc-grey_XL.svg');
+			}
+		} 
+	}
+}
+.decor-hero-top {
+	img {
+		object-position: top center;
+		width:100%;
+	}
+}
+
+.decor-footer {
+	.rect {
+		height:1rem
+	}
+	.rect-1 {
+		background-color:var(--violet-ba);
+	}
+	.rect-2 {
+		background-color:var(--violet-d2);
+	}
+	.rect-3 {
+		background-color:var(--rose-ec);
+	}
+}
+
+.decor-traits {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	position:relative;
+	.rect {
+		height:2px;
+		width:8rem;
+	}
+	.rect-3 {
+		background-color:var(--violet-ba);
+	}
+	.rect-2 {
+		background-color:var(--violet-d2);
+	}
+	.rect-1 {
+		background-color:var(--rose-ec);
+	}
+}
+
+.decor-hero-bottom {
+	--decor-bottom:url('icons/deco-hero-bottom_380.svg');
+
+	@include decor;
+
+	background-image: var(--decor-bottom);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+	bottom: -2px;
+	left:-5px;
+	width:calc(100% + 10px);
+	top:unset;
+
+	@include bp(sm) {
+		--hauteur-decor:35rem;
+		--decor-bottom:url('icons/deco-hero-bottom_480.svg');
+	}
+	@include bp(md) {
+		--hauteur-decor:40rem;
+		--decor-bottom:url('icons/deco-hero-bottom_768.svg');
+	}
+	@include bp(lg) {
+		--hauteur-decor:48rem;
+		--decor-bottom:url('icons/deco-hero-bottom_1024.svg');
+	}
+	@include bp(xl) {
+		--hauteur-decor:53rem;
+		--decor-bottom:url('icons/deco-hero-bottom_1600.svg');
+	}
+	@include bp(xxl) {
+		--hauteur-decor:53rem;
+		--decor-bottom:url('icons/deco-hero-bottom_1900.svg');
+	}
+
+
+}
+
+//classe appliquée à un titre pour placer un petit trait bleu foncé dessous
+.decor-trait-simple {
+	margin-bottom: 1.4rem;
+	position: relative;
+	text-align: center;
+
+	&::after {
+		background-color: var(--bleu-texte);
+		content:'';
+		display:block;
+		height:4px;
+		left:calc(50% - 2.5rem);
+		margin-top: 1.2rem;
+		position:relative;
+		width:5rem;
+	}
+
+	@include bp(lg) {
+		margin-bottom: 2.95rem;
+		min-height: 10rem;
+		&::after {
+			left:calc(50% - 4rem);
+			margin-top: 2.2rem;
+			width:8rem;
+		}
+	}
+}

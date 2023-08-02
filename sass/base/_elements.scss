@@ -1,0 +1,396 @@
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+hr, .wp-block-separator {
+	background-color: var(--bleu-8fc);
+	border: 0;
+	display: block;
+	height: 1px;
+	margin-bottom: 2rem;
+	@include bp(lg){
+		margin-bottom: 3.45rem;
+	}
+}
+
+.entry-content ul:not([class]) {
+	list-style: square;
+	padding-left: 2.7rem;
+	li {
+		line-height: 3rem;
+		margin-bottom:0;
+	}
+
+	margin-bottom: 2rem;
+	@include bp(lg){
+		margin-bottom: 2.6rem;
+	}
+}
+
+.entry-content p + ul:not([class]) {
+	margin-top: -1rem;
+}
+
+/*
+ul:not([class]),
+ol:not([class]) {
+	margin: 0 0 1.5em 0;
+	padding-left:1em;
+}
+
+ul:not([class])  {
+	list-style: none;
+	padding-left:1em;
+	> li::before {
+		content: '•'; 
+		color: var(--bleu);
+		display: inline-block; 
+		width: 1em;
+		margin-left: -1em		
+	}
+}
+
+ol {
+	list-style: decimal;
+}
+
+li>ul,
+li>ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}*/
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+
+	&.emoji {
+		width: 2ch;
+		display: inline-block;
+		position: relative;
+		top: 3px;
+	}
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+	figcaption {
+		text-align: center;
+	}
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	background-color: var(--blanc);
+	color: var(--noir);
+	border: solid 1px var(--bleu-bordure);
+	outline-color:var(--bleu-texte);
+	min-height:5rem;
+	padding: 1.5rem !important;
+	
+	&:focus {
+		color:var(--bleu-texte);
+		font-weight: 700;
+	}
+
+	@include bp(lg) {
+		font-size: 2rem !important;
+		line-height: 2.6rem !important;
+
+	}
+}
+
+
+textarea {
+	display: block;
+	width: 100%;
+}
+
+
+.forminator-custom-form {
+	/*Layout*/
+
+	.forminator-row {
+		box-sizing: border-box;
+		flex-direction: column;
+		margin: 0 !important;
+	}
+	.forminator-col {
+		padding:0 !important;
+	}
+	.forminator-response-message {
+		text-align: center;
+	}
+	
+
+	label {
+		color:var(--noir) !important;
+		display: block;
+		font-size: 1.5rem !important;
+		line-height: 1.8rem !important;
+		font-weight: 700;
+		margin-bottom: 7px !important;
+		padding-left: 1.5rem;
+		.forminator-required {
+			display: none;
+		}
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"] {
+		width:100%;
+	}
+
+	.forminator-field, hr {
+		margin-bottom: 3rem !important;
+	}
+
+	.forminator-field {
+		&.forminator-has_error {
+			input {
+				border-color:var(--rose-erreur);
+			}
+
+			label, .forminator-error-message {
+				color:var(--rose-erreur);
+			}
+
+			.forminator-error-message {
+				margin-top: 4px;
+				padding-left: 1.5rem;
+			}
+		}
+	}
+
+
+
+
+	/*Styles des champs téléphone*/
+
+	.forminator-phone {
+		width:100%;
+	}
+
+
+	
+
+	/*Styles du champ file upload*/
+	.forminator-col.upload {
+		background-color: #fff;
+		border:solid 1px var(--bleu-bordure);
+		margin-bottom: 3rem !important;
+		position: relative;
+		.forminator-field {
+			margin-bottom: 0 !important;
+			padding:2.4rem 2.2rem !important;
+			text-align: center;
+
+		}
+		&::before {
+			background-color: var(--bleu-bordure);
+			background-image: url('icons/picto-cv.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 52px 52px;
+			content:'';
+			display: block;
+			height:6.8rem;
+			width: 100%;
+		}
+
+		label {
+			font-weight: 400 !important;
+			margin-bottom: 1rem !important;
+			padding:0 !important;
+		}
+		
+		.forminator-file-upload {
+			flex-direction: column;
+			span {
+				color:var(--noir) !important;
+				display: block;
+				font-size: 1.5rem !important;
+				line-height: 1.8rem !important;
+			}
+		}
+
+		.forminator-button-upload {
+			border:solid 1px var(--bleu-texte) !important;
+			border-radius: 1px;
+			box-shadow: none !important;
+			font-size: 1.8rem !important;
+			line-height: 2.2rem !important;
+			transition:all var(--transition) !important;
+		}
+	}
+	
+	.forminator-button-submit {
+		border:solid 1px var(--bleu-texte) !important;
+		border-radius: 1px;
+		box-shadow: none !important;
+		font-size: 1.8rem !important;
+		line-height: 2.2rem !important;
+		transition:all var(--transition) !important;
+		width: 100%;
+	}
+
+
+	@include bp(lg) {
+		margin:0 auto !important;
+		max-width:117rem;
+		label {
+			font-size: 2rem !important;
+			line-height: 2.6rem !important;
+		}
+		.forminator-error-message {
+			font-size: 1.6rem !important;
+			line-height: 2.6rem !important;
+		}
+		.forminator-row {
+			flex-direction: row;
+			flex-wrap: nowrap !important;
+		}
+		.forminator-col {
+			&.nom {
+				flex-basis:calc(50% + 1rem);
+				margin-right: 2rem;
+			}
+			&.prenom {
+				flex-basis:calc(50% - 1rem);
+			}
+			&.tel {
+				flex-basis:calc(30% + 1rem) !important;
+				margin-right: 2rem;
+			}
+			&.email {
+				flex-basis:calc(70% - 1rem) !important;
+			}
+		}
+		.forminator-col.upload {
+			display: flex;
+			&::before {
+				display: inline-block;
+				height: 100%;
+				width: 12.1rem;
+			}
+			.forminator-field {
+				text-align: left;
+			}
+			label {
+				color:#666666 !important;
+				font-size: 2rem !important;
+				line-height: 2.6rem !important;
+			}
+			.forminator-file-upload {
+				flex-direction: row;
+				span {
+					color:var(--bleu-texte) !important;
+					display: inline-block;
+					font-size: 2rem !important;
+					line-height: 2.6rem !important;
+					margin-left: 4.4rem !important;
+				}
+			}
+		}
+
+		.forminator-row-last {
+			margin-top: 4rem !important;
+			.forminator-field {
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		.forminator-button-submit, .forminator-button-upload {
+			font-size: 2rem !important;
+			line-height: 2.4rem !important;
+		}
+	}
+	
+}
+
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+

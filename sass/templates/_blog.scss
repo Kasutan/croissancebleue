@@ -1,0 +1,23 @@
+.blog {
+
+	//Affichage simplifié en mobile
+	.top-post, .nav-cat, .extrait {
+		display:none; 
+	}
+
+	@include bp(lg) {
+		//cacher le 1er article de loop (c'est le même que top-article) -> non ! caché en JS, sinon en CSS on cache le premier de chaque page
+		
+		.nav-cat, .extrait {
+			display:block; 
+		}
+
+		.top-post {
+			display: grid;
+		}
+
+		//TODO : masonry
+	}
+
+
+}

@@ -1,0 +1,285 @@
+/************************* vignette de base : réalisation *******************/
+
+.vignette {
+	margin:0 auto 2.8rem;
+	max-width:42rem;
+	transition:transform var(--transition);
+	a {
+		text-decoration: none;
+	}
+	.image-wrap {
+		aspect-ratio : 3.45;
+		display: block;
+		overflow: hidden;
+		width: 100%;
+	}
+	.image {
+		display: flex;
+		img {
+			height:100%;
+			object-fit: cover;
+			transition:transform var(--transition);
+			width:100%;
+		}
+	}
+	.texte {
+		background-color: var(--blanc);
+		border:solid 1px var(--bleu-bordure);
+		border-top-width: 0;
+		display: block;
+		padding:1.8rem 2rem 2rem;
+		transition:background-color var(--transition);
+	}
+	.titre-item {
+		margin-bottom: 8px;
+	
+	}
+	.term, .nom {
+		display: block;
+	}
+	.term {
+		font-size: 1.8rem;
+		line-height: 2.2rem;
+	}
+	.nom {
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+	}
+
+	.extrait {
+		color:var(--noir);
+		margin-bottom: 1.6rem;
+	}
+
+	.wp-block-button {
+		background-color: #fff;
+	}
+
+	&:hover, &:focus-within {
+		transform:translateY(-15px);
+		.texte {
+			background-color: var(--bleu-1fc);
+		}
+		.nom, .term {
+			color:var(--rose-ec);
+		}
+	} 
+
+	@include bp(lg) {
+		display: flex;
+		flex-direction: column;
+		height:100%;
+		margin:0 0 4rem;
+		max-width: unset;
+
+		.image-wrap {
+			aspect-ratio: 42 / 23;
+		}
+		.texte {
+			display: flex;
+			flex-direction: column;
+			flex-grow:1;
+			height:auto;
+		}
+		.term {
+			font-size: 2.6rem;
+			line-height: 3rem;
+			margin-bottom: 1rem;
+		}
+		.nom {
+			font-size: 1.8rem;
+			line-height: 3rem;
+			margin-bottom: 1.5rem;
+		}
+		.extrait {
+			margin-bottom: 3rem;
+		}
+		.wp-block-buttons {
+			margin-top: auto;
+		}
+	}
+}
+
+/************************* styles spéciaux pour les vignettes post *******************/
+
+.vignette.post {
+	margin-bottom: 4.8rem;
+	.image {
+		aspect-ratio:2.35;
+		margin-bottom: 1.8rem;
+	}
+	.titre-item {
+		font-weight: 600;
+	}
+
+	&.sticky:not(:first-of-type) {
+		.ruban {
+			display: none;
+		}
+	}
+
+	@include bp(lg) {
+		.titre-item {
+			order:1;
+		}
+		.meta {
+			order:2;
+		}
+		.image {
+			order:3;
+		}
+		.extrait {
+			order:4;
+		}
+		.image-wrap {
+			aspect-ratio: 1.4;
+		}
+	}
+	@include bp(xl) {
+		margin-bottom: 6.8rem;
+	}
+}
+
+/************************* styles spéciaux pour l'article top post *******************/
+/************************* visible uniquement en desktop cf. blog.scss *******************/
+
+.top-post {
+	column-gap: 3rem;
+	grid-template-columns: 1fr 1fr;
+	margin-bottom: 4.4rem;
+	a {
+		text-decoration: none;
+	}
+	.image {
+		aspect-ratio: auto;
+		img {
+			height:100%;
+			object-fit: cover;
+		}
+	}
+
+	.col-texte {
+		padding-top: 4.4rem;
+		padding-bottom: 15rem;
+	}
+
+	h2 {
+		margin-bottom: 2.1rem;
+	}
+
+	@include bp(xl) {
+		column-gap: 6rem;
+		margin-bottom: 8.8rem;
+	}
+
+}
+
+
+/******************** styles communs pour les vignettes post et l'article top-post***************/
+
+.vignette, .top-post {
+	.image-wrap {
+		height:100%;
+		overflow: hidden;
+		width: 100%;
+		img {
+			transition: transform var(--transition);
+		}
+	}
+	&:hover, &:focus-within {
+		.image {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.vignette.post, .top-post {
+	/************************* effets au survol *******************/
+
+	
+	.titre-item a {
+		color:var(--bleu-9f);
+		&:hover, &:focus {
+			color:var(--violet-d2);
+		}
+	}
+	a.extrait {
+		color:var(--noir); 
+		&:hover, &:focus {
+			color:var(--bleu-9a);
+		}
+	}
+
+	/************************* metas*******************/
+
+	.meta {
+		a {
+			color:var(--violet-d2);
+			&:hover, &:focus {
+				color:var(--bleu-9a);
+			}
+		}
+		font-size: 1.8rem;
+		line-height: 2.5rem;
+		.date {
+			color:var(--violet-d2);
+			display:inline-block;
+			margin-right: 0.5ch;
+		}
+		.cats {
+			a {
+				display: inline-block;
+			}
+			.vir, a:not(:first-of-type) {
+				display:none; //une seule catégorie visible en mobile
+
+			
+			}
+			@include bp(lg) {
+				.vir, a:not(:first-of-type) {
+					display: inline-block;
+				}
+				.vir {
+					margin-right: 0.5ch;
+				}
+			}
+		}
+
+	}
+
+	/************************* ruban *******************/
+
+	.image {
+		position: relative;
+	}
+
+	.ruban {
+		background-color: var(--violet-d2);
+		color:var(--blanc);
+		display:inline-block;
+		font-size: 1.7rem;
+		font-weight: 600;
+		left:-11px;
+		line-height: 1.5rem;
+		padding:5px 12px 3px 9px;
+		position: absolute;
+		text-transform: uppercase;
+		top:13px;
+		&::after {
+			background-color: var(--violet-ba);
+			border-top:solid 4px var(--violet-ba);
+			border-right:solid 4px var(--violet-ba);
+			border-left:solid 4px var(--blanc);
+			border-bottom:solid 4px var(--blanc);
+			content:' ';
+			display: block;
+			height:10px;
+			left:0;
+			position:absolute;
+			top:100%;
+			width:10px;
+		}
+	}
+}

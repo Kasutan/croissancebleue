@@ -1,0 +1,430 @@
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+:root {
+	--transition:0.3s ease-in-out;
+}
+a,
+a:visited {
+	color: var(--violet-lien);
+	text-decoration: underline;
+	transition: all var(--transition);
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: var(--bleu-9a);
+	text-decoration: underline;
+}
+
+
+
+a:hover,
+a:focus,
+a:active {
+	outline: 0;
+}
+a:focus-visible {
+	outline: medium dotted;
+}
+
+
+/*--------------------------------------------------------------
+## Ancres
+--------------------------------------------------------------*/
+.avec-ancre {
+	position: relative;
+	.ancre {
+		left:0;
+		position:absolute;
+		top:calc(-1px * var(--header-bottom));
+	}
+}
+
+/*--------------------------------------------------------------
+## Fil d'ariane
+--------------------------------------------------------------*/
+p.fil-ariane {
+	align-items: center;
+	display:flex;
+	color:var(--rouge);
+	flex-wrap: wrap;
+	font-weight: 700;
+	@include fs(12);
+	margin-top: 14px;
+	text-transform: uppercase;
+	a {
+		color:var(--rouge);
+		font-weight: 700;
+		text-decoration: none;
+		&:hover, &:focus {
+			text-decoration: underline;
+		}
+	}
+
+	.sep {
+		display: inline-block;
+		margin:0 0.5ch;
+	}
+}
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+
+/*Logique pour afficher/masquer éléments du menu mobile et sous-menus*/ 
+
+.topbar, .nav-main, .volet-navigation {
+	display: none; // tous les menus sont cachés en mobile
+	.menu {
+		display: flex;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+}
+
+button.menu-toggle {
+	display: block;
+	height:1.4rem;
+	padding:0;
+	width:3rem;
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+.volet-navigation.toggled { 
+	display: flex;
+	flex-direction: column;
+	right:0;
+	max-height:calc(100vh - 80px); //magic number : hauteur du header sticky
+	max-width:400px;
+	overflow-x:hidden;
+	overflow-y:auto;
+	padding: 2.4rem 2rem 6.5rem;
+	position:absolute;
+	top:100%; //chevaucher un peu le logo
+	width:100%;
+	z-index: 10;
+}
+@include bp(md) {
+	.topbar { 
+		display:flex;
+	}
+}
+@include bp(lg) { 
+	button.menu-toggle {
+		display: none;
+	}
+	.nav-main {
+		display:flex;
+	}
+}
+
+
+/* Style pictos menu mobile */
+
+.menu-toggle {
+	background:transparent;
+	border:0;
+	margin:0;
+	min-width:unset;
+	padding:0 1rem;
+	position:relative;
+	top:1rem;
+	&:hover, &:focus, &:active {
+		background:transparent;
+	}
+}
+
+/* Style liens de menu VOLET NAVIGATION MOBILE */
+.volet-navigation {
+	background:transparent linear-gradient(180deg, #8E00D2 0%, #04329A 100%) 0% 0% no-repeat padding-box;
+
+	/*Logique affichage sous-menu*/
+	.sub-menu {
+		display: none;
+		//animation JS pour ouvrir/refermer
+	}
+	.picto-angle {
+		background-color: transparent;
+		display: inline-block;
+		transition:transform var(--transition);
+	}
+
+	button.js-ouvert .picto-angle {
+		transform-origin: center;
+		transform:rotateX(180deg);
+	}
+
+	
+	/*Styles communs menu et sous-menu*/
+	.menu-mobile, .sub-menu {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		a {
+			font-weight: bold;
+			text-decoration: none;
+		}
+	}
+	
+
+	/*Styles éléments de niveau 1*/
+	.menu-mobile > li {
+		align-items: center;
+		border-bottom:solid 1px var(--blanc);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding:1.55rem 0;
+
+		&:last-of-type {
+			border:none;
+		}
+		> a {
+			color:var(--blanc);
+			flex:auto 0 0;
+			font-weight: 600;
+			padding:0;
+			padding-right: 1.6rem;
+			text-transform: uppercase;
+		}
+
+		&.current-menu-item , &.current-menu-ancestor {
+			& > a {
+				color:var(--bleu-8fc);
+			}
+
+			button.ouvrir-sous-menu svg path {
+				fill:var(--bleu-8fc);
+			}
+		}
+
+	}
+	
+	.sub-menu {
+		background-color: transparent;
+		flex-basis:100%;
+		flex-shrink:0;
+		padding-top: 0.8rem;
+		padding-left:0;
+		li {
+			margin-bottom: 0.8rem;
+
+			a {
+				color : var(--blanc);
+				font-weight: 400;
+			}
+
+			&.current-menu-item a {
+				color:var(--bleu-8fc);
+				font-weight: 600;
+			}
+		}
+	}
+}
+/*Styles communs mobile et desktop*/ 
+button.ouvrir-sous-menu {
+	background-color: transparent;
+	border:none;
+	margin-bottom: 0;
+	min-height:unset;
+	min-width:unset;
+	padding:0 8.5px 0 0;
+	position: relative;
+	top:2px;
+	.picto-angle {
+		max-width: 10px;
+	}
+	svg path {
+		fill:var(--blanc);
+	}
+	&:focus {
+		outline: none;
+	}
+}
+
+/*Style liens de menus MENU PRINCIPAL */ 
+.nav-main { 
+
+	& , .nav-primary, .menu {
+		width:100%;
+	}
+
+	.menu {
+		align-items: stretch;
+		justify-content: flex-end;
+		padding-top:2.6rem;
+		li {
+			padding:0;
+
+			&.disable > a {
+				cursor:default;
+			}
+		}
+
+		a {
+			color:var(--noir);
+			display: block;
+			text-decoration: none;
+		}
+
+		//styles spécifiques aux liens de premier niveau
+
+		& > li {
+			@include bp(xl) {
+				padding-left: 3rem;
+			}
+			& > a {
+				align-items: center;
+				display: flex;
+				font-size: 1.6rem;
+				font-weight: 700;
+				height: 100%;
+				line-height: 2.4rem;
+				padding:0 1rem 2rem;
+				position:relative;
+				text-align: center;
+				text-decoration: none;
+				text-transform: uppercase;
+				@include bp(xl) {
+					font-size: 1.8rem;
+				}
+			}
+			
+			&:hover > a, & > a:focus, &:focus-within > a {
+				color:var(--violet-d2);
+			}
+			
+
+			& > a:active, &.current-menu-item > a, &.current-menu-ancestor > a {
+				color:var(--violet-d2);
+			}
+
+			&:hover, &:focus-within, &.current-menu-item, &.current-menu-ancestor {
+				button.ouvrir-sous-menu {
+					svg path {
+						fill:var(--violet-d2);
+					}
+				}
+			}
+
+		}
+
+		.menu-item-has-children {
+			align-items: center;
+			display: flex;
+		}
+
+		button.ouvrir-sous-menu {
+			flex-shrink: 0;
+			position: relative;
+			top:-0.8rem;
+			svg path {
+				fill:var(--noir);
+			}
+		}
+
+
+		//Logique affichage sous-menu
+		.sub-menu { 
+			float: left;
+			margin-top:0px;
+			position: absolute;
+			top: 90%;
+			top: 100%;
+			left: -999em;
+			z-index: 10;
+		}
+
+		> li { //affichage du sous-menu
+			position: relative;
+			&:hover, &.focus, &:focus-within { //classe .focus ajoutée en JS
+				.sub-menu {
+					animation: animSousMenu 0.45s cubic-bezier(0.7,0,0.3,1) both;
+					display:flex;
+					flex-direction: column;
+					left:0;
+					opacity:1;
+					max-width: 50rem;
+					min-width: 30rem;
+					max-height: 80vh;
+					overflow-y: auto;
+				}
+			}
+		}
+
+		//Style sous-menu
+		.sub-menu {
+			background-color: var(--violet-d2);
+			border:solid 2px var(--blanc);
+			list-style:none;
+			margin:0;
+			padding:1.5rem 2rem;
+			li {
+				padding:0;
+			}
+			a {
+				--couleur-bordure : rgba(255,255,255,0.2);
+				align-items: center;
+				border-bottom:solid 1px var(--couleur-bordure);
+				color:var(--blanc);
+				display: flex;
+				font-size: 1.6rem;
+				font-weight: 400;
+				line-height:4rem;
+				padding : 0;
+				position:relative;
+				transition: all var(--transition);
+				@include bp(xl) {
+					font-size: 2rem;
+				}
+				&::before {
+					content:'>';
+					left:-1rem;
+					opacity:0;
+					position: absolute;
+					top:2px;
+					transition: all var(--transition);
+				}
+			}
+			li:last-of-type a {
+				--couleur-bordure:transparent;
+			}
+			li.current-menu-item a, a:hover, a:focus {
+				--couleur-bordure : rgba(255,255,255,1);
+				padding-left: 2rem;
+				&::before {
+					left:0;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	
+
+}
+
+
+
+
+
+/*Animations*/
+@keyframes animTrait {
+	from { 
+		width: 0; 
+	}
+}
+
+@keyframes animSousMenu {
+	from { 
+		opacity:0.4;
+		top: calc(90% + 10px); 
+	}
+}
+
