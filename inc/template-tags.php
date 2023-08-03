@@ -140,43 +140,61 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 }
 
 /***
- * Page bannière pour la page d'accueil (simplifiée mais avec des images et un overlay)
+ * Page bannière pour la page d'accueil (avec un texte de part et d'autre du titre)
  */
 function kasutan_front_page_banniere() {
 	if(!function_exists('get_field')) {
 		return;
 	}
-	//champs personnalisés liés à la page, affichés dans le BO seulement si c'est la page d'accueil	
+	//champs personnalisés liés à la page, affichés dans le BO seulement si applicables	
 	$page_id=get_the_ID();
-	$texte=wp_kses_post( get_field('banniere_texte',$page_id) );
+	$titre_seo=wp_kses_post( get_field('banniere_titre_seo',$page_id) );
+	$texte_1=wp_kses_post( get_field('banniere_texte_1',$page_id) );
+	$texte_2=wp_kses_post( get_field('banniere_texte_2',$page_id) );
+	$texte_3=wp_kses_post( get_field('banniere_texte_3',$page_id) );
 	$image_desktop=esc_attr( get_field('banniere_image_desktop',$page_id) );
 	$image_mobile=esc_attr( get_field('banniere_image_mobile',$page_id) );
-	
-	
+	$image_clip=esc_attr( get_field('banniere_image_clip',$page_id) );
+
+	if(!$image_clip && $image_desktop) {
+		$image_clip=$image_desktop;
+	}
+	if(!$image_mobile && $image_desktop) {
+		$image_mobile=$image_desktop;
+	}
+
+	if(!$texte_2 || !$image_desktop) {
+		kasutan_page_titre();
+		return;
+	}
+
+	$clip_url=wp_get_attachment_image_url($image_clip, 'medium');
 
 
-	printf('<section class="page-banniere pour-accueil">');
-		
-		echo '<div class="fond-banniere">';
-		//div qui overflow (avec images et décor diagonale)
-
-			echo '<div class="image-accueil image-mobile">';
-				echo wp_get_attachment_image( $image_mobile, 'large',false,array('decoding'=>'async','loading'=>'eager'));
-			echo '</div>';
-
-			
-			echo '<div class="image-accueil image-desktop">';
-				echo wp_get_attachment_image( $image_desktop, 'banniere',false,array('decoding'=>'async','loading'=>'eager'));
-			echo '</div>';
-
-
-			echo '<div class="decor-hero-bottom"></div>';	
-			
+	printf('<div class="page-banniere pour-accueil">');
+		echo '<div class="image mobile">';
+			echo wp_get_attachment_image( $image_mobile, 'large',false,array('decoding'=>'async','loading'=>'eager'));
 		echo '</div>';
 
-		printf('<h1 class="titre">%s</h1>',$texte);
+	
+		echo '<div class="image desktop">';
+			echo wp_get_attachment_image( $image_desktop, 'banniere',false,array('decoding'=>'async','loading'=>'eager'));
+		echo '</div>';
+	
 
-	echo '</section>';	
+		printf('<h1 class="screen-reader-text">%s</h1>',$titre_seo);
+		echo '<div class="textes" aria-hidden="true">';
+			if($texte_1) {
+				printf('<div class="texte texte_1">%s</div>',$texte_1);
+			}
+			printf('<div class="titre-wrap"><div class="h1 titre desktop" style="background-image:url(%s)">%s</div></div>',$clip_url,$texte_2);
+			printf('<div class="h1 titre mobile">%s</div>',$texte_2);
+			if($texte_3) {
+				printf('<div class="texte texte_3">%s</div>',$texte_3);
+			}
+			
+		echo '</div>';
+	echo '</div>';
 } 
 
 /**

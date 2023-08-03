@@ -254,6 +254,88 @@
 			padding-right: 0;
 		}
 	}
+
+	&.pour-accueil {
+		grid-template-rows: 16.7rem auto 1fr;
+		.texte_1 {
+			color:var(--noir-15);
+			font-size: 2.7rem;
+			font-weight: 600;
+			line-height: 1;
+			margin-bottom: -1rem;
+			text-transform: uppercase;
+		}
+		.texte_1, .titre, .texte_3 {
+			padding-right: var(--padding-x);
+			text-align: right;
+		}
+		.titre {
+			font-size: 12rem;
+			line-height: 1;
+			margin-bottom: -1rem;
+		}
+		.texte_3 {
+			font-weight: 300;
+			left:0.5rem;
+			position: relative;
+		}
+
+		@include bp(lg) {
+			--fsz:35rem;
+			align-items: center;
+			.textes {
+				padding:0;
+				padding-right: var(--padding-x);
+			}
+			.image {
+				width:calc(100% - 40rem - var(--padding-x));
+			}
+			.texte_1, .titre, .texte_3 {
+				padding-right: 0;
+			}
+		
+			.texte_1 {
+				font-size: 6.4rem;
+				line-height: 1.1;
+				position: relative;
+				top:1.5rem;
+				z-index: 2;
+			}
+			.titre-wrap {
+				padding:0;
+				padding-left:3rem;
+			}
+			.titre {
+				background-color: pink;
+				font-size: var(--fsz);
+				line-height: 1;
+				position: relative;
+				left:1rem;
+				
+			}
+			.texte_3 {
+				font-size: 3rem;
+				line-height: 5rem;
+				position: relative;
+				top:-1.5rem;
+				z-index: 2;
+			}
+			.texte {
+				background-color: transparent;
+				padding-left: 2rem;
+				width:unset;
+			}
+		}
+		@include bp(xl) {
+			.image {
+				width:calc(100% - 45rem);
+			}
+			.textes {
+				padding:0;
+			}
+		}
+	}
+	
 }
 
 
