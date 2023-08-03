@@ -4,11 +4,11 @@
     "fields": [
         {
             "key": "field_609e9721dfe86",
-            "label": "Texte de la bannière",
+            "label": "Texte d'intro de la bannière",
             "name": "banniere_texte",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "Les mots entre balises span seront soulignés",
+            "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -26,6 +26,31 @@
             "key": "field_609e9721dfebe",
             "label": "Image bannière (desktop)",
             "name": "banniere_image_desktop",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_64cb7b663a766",
+            "label": "Image derrière le titre (desktop)",
+            "name": "banniere_image_clip",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -76,9 +101,19 @@
     "location": [
         [
             {
-                "param": "page_type",
+                "param": "post_type",
                 "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
                 "value": "front_page"
+            },
+            {
+                "param": "post_template",
+                "operator": "!=",
+                "value": "template-simple.php"
             }
         ]
     ],
@@ -91,5 +126,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688760277
+    "modified": 1691057384
 }

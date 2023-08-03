@@ -53,120 +53,88 @@ function kasutan_telephone() {
 
 
 /**
-* Affiche le titre des pages ordinaires
+* Affiche le titre des contenus qui n'ont pas de bannière
 *
 */
 function kasutan_page_titre() {
-	$masquer=false;
-	$classe="entry-title";
-	$titre=get_the_title();
-	if(function_exists('get_field') && esc_attr(get_field('cb_masquer_titre'))==='oui') {
-		$masquer=true;
-	}
-	if(is_front_page(  )) {
-		$masquer=true;
-	}
-	if($masquer) {
-		$classe.=" screen-reader-text";
-	}
-	printf('<h1 class="%s">%s</h1>',$classe,$titre);
-}
-
-/**
-* Image banniere pour les pages ordinaires
-*
-*/
-//TODO inclure le nom de la page parente s'il y en a une en sur-titre -> Voir fil ariane
-function kasutan_page_banniere($page_id=false,$use_defaut=false) {
-	if(is_front_page(  )) {
-		kasutan_front_page_banniere();
-		return;
-	}
-
-	$surtitres=array();
-	$hero=false;
-	if(function_exists('get_field')) {
-		$surtitres=get_field('cb_surtitres','options');
-		$hero=esc_attr(get_field('cb_deco_hero_top','options'));
-	}
-
-	if(!isset($surtitres['blog']) || empty($surtitres['blog'])) {
-		$surtitres['blog']=__('Publications','croissancebleue');
-	}
-
-	if(!isset($surtitres['cas']) || empty($surtitres['cas'])) {
-		$surtitres['cas']=__('Références > Etude de cas','croissancebleue');
-	}
-
-
-	$titre=$surtitre="";
-	$publication=false;
+	$titre=false;
 	if(is_single() ) {
 		$post_type=get_post_type();
 		$titre=get_the_title();
-		if($post_type==='post') {
-				$surtitre=$surtitres['blog'];
-				$publication=true;
-		} else if($post_type==='reference') {
-				$surtitre=$surtitres['cas'];
-				if(function_exists('kasutan_reference_get_term')) {
-					$term=kasutan_reference_get_term(get_the_ID());
-					if($term) {
-						$titre=sprintf('%s <span class="screen-reader-text"> : %s</span>', $term->name,$titre);
-					}
-				}
-		} 
 	} if (is_search()) {
 		$titre=__('Recherche :','croissancebleue').' '.get_search_query();
 	} elseif (is_404()) {
 		$titre= __('Page introuvable :','croissancebleue');
 	} else if (is_page()) {
 		$titre=get_the_title();
-		$current=get_post(get_the_ID());
-		$parent=$current->post_parent; 
-		if($parent) {
-			$surtitre=strip_tags(get_the_title($parent));
-		}
-
-		//Note : l'archive des références est une page enfant ordinaire, les archives de custom tax aussi
 	} else if(is_category()) {
-		$surtitre=$surtitres['blog'];
 		$titre=strip_tags(single_cat_title( '', false ));
-		$publication=true;
-
 	} else if( is_tag() ) {
-		$surtitre=$surtitres['blog'];
 		$titre=strip_tags(single_tag_title( '', false ));
-		$publication=true;
-
 	} elseif (is_home()) {
-		$titre=$surtitres['blog'];
-		$publication=true;
+		$home_id=get_option('page_for_posts');
+		$titre=get_the_title($page_id);
 	}
 
-	$class='';
-	if(!empty($surtitre)) {
-		$class='avec_surtitre'; //TODO : supprimer si non utilisé
-	}
-	if($publication) {
-		$class.=' publication';
+	if($titre) printf('<h1 class="titre">%s</h1>',$titre);
+
+}
+
+/**
+* Image banniere pour les pages (sauf template simple)
+*
+*/
+function kasutan_page_banniere($page_id=false,$use_defaut=false) {
+	if(is_front_page(  )) {
+		kasutan_front_page_banniere();
+		return;
 	}
 
+	if(!function_exists('get_field')) {
+		return;
+	}
+	//champs personnalisés liés à la page, affichés dans le BO seulement si applicables	
+	$page_id=get_the_ID();
+	$texte=wp_kses_post( get_field('banniere_texte',$page_id) );
+	$image_desktop=esc_attr( get_field('banniere_image_desktop',$page_id) );
+	$image_mobile=esc_attr( get_field('banniere_image_mobile',$page_id) );
+	$image_clip=esc_attr( get_field('banniere_image_clip',$page_id) );
 
-	printf('<div class="page-banniere %s">',$class);
+	if(!$image_clip && $image_desktop) {
+		$image_clip=$image_desktop;
+	}
+	if(!$image_mobile && $image_desktop) {
+		$image_mobile=$image_desktop;
+	}
+
+	if(!$texte || !$image_desktop) {
+		kasutan_page_titre();
+		return;
+	}
+
+	$titre=get_the_title();
+	$clip_url=wp_get_attachment_image_url($image_clip, 'medium');
+
+
+	printf('<div class="page-banniere">');
+		echo '<div class="image mobile">';
+			echo wp_get_attachment_image( $image_mobile, 'large',false,array('decoding'=>'async','loading'=>'eager'));
+		echo '</div>';
+
 	
-	echo '<div class="fond-banniere">';
-	//div qui overflow (avec décors ou dégradé)
-		if(!$publication) {
-			if($hero) {
-				printf('<div class="decor-hero-top" aria-hidden="true">%s</div>',wp_get_attachment_image($hero, 'banniere')); //TODO ajuster taille
-			}
-			echo '<div class="decor-hero-bottom"></div>';	
-		}
-	echo '</div>';
+		echo '<div class="image desktop">';
+			echo wp_get_attachment_image( $image_desktop, 'banniere',false,array('decoding'=>'async','loading'=>'eager'));
+		echo '</div>';
+	
 
-	if($surtitre) printf('<span class="surtitre">%s</span>',$surtitre);
-	printf('<h1 class="titre">%s</h1>',$titre);
+		echo '<div class="textes">';
+			printf('<div class="titre-wrap"><h1 class="titre desktop" style="background-image:url(%s)">%s</h1></div>',$clip_url,$titre);
+			printf('<h1 class="titre mobile">%s</h1>',$titre);
+			if($texte) {
+				printf('<div class="texte">%s</div>',$texte);
+			}
+			
+		echo '</div>';
 	echo '</div>';
 	
 }
