@@ -5,139 +5,152 @@
 
 .site-footer {
 	.main-footer {
-		background-color: var(--bleu-9a);
+		background-color: var(--bleu-b8);
 		color: var(--blanc);
-		padding: 4rem 3rem 6rem;
-		position: relative;
+		padding:1.2rem var(--padding-x) 2.5rem;
 	}
 
 	.logo-footer {
-		display: inline-block;
-		margin-bottom: 4rem;
-		max-width:14.6rem;
+		display: block;
+		margin:0 auto;
+		max-width:25rem;
 		img {
 			max-width: 100%;
 		}
 	}
 
 
-	.coord {
-		font-size: 1.8rem;
-		line-height: 2.5rem;
-		a {
-			color: var(--rose-ff);
-			text-decoration: none;
-
-			&:hover,
-			&:focus {
-				text-decoration: underline;
-			}
-
-		}
-	} 
-
-	//Centrer la seule colonne visible
-	.colonnes-footer {
-		display: flex;
-		justify-content: center;
+	.adresse {
+		font-size: 1.4rem;
+		font-weight: 500;
+		line-height: 2rem;
+		text-align: center;
 	}
 
-	.col-2, .col-3, .col-4 {
+	.col {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		a {
+			color:var(--blanc);
+			text-decoration: none;
+			&:hover, &:focus {
+				color:var(--bleu-fonce)
+			}
+		}
+	}
+
+	.col-1 {
+		.tel {
+			font-size: 1.4rem;
+			font-weight: 700;
+			line-height: 2.4rem;
+		}
+		.email{
+			font-size: 1.4rem;
+			line-height: 2.4rem;
+		}
+		.linkedin {
+			margin-top: 2rem;
+		}
+	}
+
+
+	.col-2 {
 		display: none;
 	}
 
+	.col-3 {
+		.tel, .email, .titre-col {
+			display: none;
+		}
+
+		.menu {
+			display: flex;
+			font-size: 1.4rem;
+			line-height: 2.4rem;
+			margin-top: 2.2rem;
+
+			li {
+				&::after {
+					content:'|';
+					display: inline-block;
+					margin:0 1ch;
+				}
+				&:last-of-type::after {
+					display: none;
+				}
+			}
+		}
+	}
 
 	@include bp(lg) {
 		.main-footer {
 			padding-top:9rem;
-			padding-bottom: 10rem;
+			padding-bottom: 9rem;
 			--gap:2rem;
+			p, a, .adresse {
+				display: block;
+				font-size: 2rem;
+				line-height: 2.4rem;
+				margin-bottom: 2.8rem;
+				text-align: left;
+			}
 		}
 		
 
 		.colonnes-footer {
+			column-gap: var(--gap);
 			display: grid;
-			grid-template-columns: repeat(4,auto);
+			grid-template-columns: repeat(3,auto);
 		}
 
+		
+
+		.logo-footer {
+			margin-left: 0;
+			margin-bottom: 4.3rem;
+		}
 		.col-1 {
-			padding-right: 1rem;
+			align-items: flex-start;
+			.tel, .email {
+				display: none;
+			}
+			.linkedin {
+				margin-top: auto;
+			}
 		}
-		.col-2, .col-3, .col-4 {
-			border-left:1px solid var(--gris-fa);
+		.col-2, .col-3 {
 			display: block;
-			padding:3.5rem var(--gap) 1rem ;
-		}
-		.col-4 {
-			padding-right: 0;
+			padding-top:1rem;
 		}
 
-		.titre-widget {
-			font-weight: 700;
-			margin-bottom: 5rem;
+		.col-3 {
+			.titre-col, .tel, .email {
+				display: block;
+			}
+		}
+
+		.sub-menu {
+			display: none;
+		}
+
+		.col-2 li:first-of-type, .titre-col {
+			font-weight: 500;
+		}
+
+		.col-3 .menu {
+			display: block;
+			li::after {
+				display: none;
+			}
 		}
 		
-		.nav-footer, .liste-posts {
-			li {
-				margin-bottom: 1rem;
-			}
-			a {
-				color: var(--blanc);
-				display: inline-block;
-				text-decoration: none;
-
-				&:hover,
-				&:focus {
-					color:var(--rose-ff);
-				}
-			}
-			
-
-		}
-
-		.liste-posts a {
-			line-height: 1;
-		}
-
 	}
-	@media screen and (min-width:1080px) {
-		//magic number pour que les titres des colonnes et l'adresse soient sur une seule ligne avec 4 colonnes de même largeur
-		.colonnes-footer {
-			grid-template-columns: repeat(4,1fr);
-		}
-	}
+	
 	@include bp(xl) {
-		--gap:3.5rem;
-		.main-footer {
-			padding-left:var(--padding-x);
-			padding-right: var(--padding-x);
-		}
-		.logo-footer {
-			margin-bottom: 5rem;
-			max-width:16.6rem;
-		}
-		.coord {
-			font-size: 2rem;
-			line-height: 2.5rem;
-			p {
-				margin-bottom: 2.5rem;
-			}
-		}
-		.titre-widget, .nav-footer, .liste-posts {
-			font-size: 2.2rem;
-			line-height: 4rem;
-		}
-		.titre-widget {
-			margin-bottom: 4.6rem;
-		}
-
-		.nav-footer li {
-			margin-bottom: 0;
-		}
-
-		.liste-posts li {
-			margin-bottom: 2rem;
-		}
+		
 		
 	}
 
@@ -145,95 +158,66 @@
 
 
 	.bottom-footer {
-		padding:1.6rem var(--padding-x);
+		background-color: var(--noir);
+		padding:1.8rem var(--padding-x) 1rem;
 		text-align: center;
 
-		span,
+		p,
 		a {
-			color: var(--noir);
-			display: inline-block;
-			margin-bottom: 0.5rem;
+			color: var(--blanc);
+			font-size: 1.2rem;
+			line-height: 1.8rem;
+		}
+		p {
+			margin-bottom: 1rem;
+			text-align: center;
 		}
 
 		a {
 			text-decoration: none;
 			&:hover, &:focus {
-				color:var(--violet-lien);
+				color:var(--bleu-b8);
 			}
 		}
-		
-		@include bp(lg){
-			
-			padding:1.3rem var(--padding-x) 1.5rem;
 
-			.inline-footer .menu {
-				align-items:center;
-				display: flex;
-				justify-content: center;
-
-				li {
-					&::before {
-					content:'-';
-					display: inline-block;
-					padding:0 0.5ch;
-					}
-					&:first-of-type::before {
-						display: none;
-					}
-				}
-			}
-
-		}
-
-		@include bp(xl){
+		.inline-footer .menu {
 			align-items:center;
 			display: flex;
 			justify-content: center;
 
-			.inline-footer .menu li:first-of-type::before {
-				display: inline-block;
-			}
-		}
-		
-	}
-/*
-	.backtotop {
-		--taille:40px;
-		align-items: center;
-		background-color: var(--vert);
-		border:none;
-		border-radius: 50%;
-		display: flex;
-		height:var(--taille);
-		padding:8px;
-		width:var(--taille);
-		top : var(--taille);
-		position: absolute;
-		right:10px;
-		top : calc(-10px - var(--taille));
-		transition: all var(--transition);
-		z-index:1;
-
-		svg {
-			position: relative;
-			top:-2px;
-			transform-origin: center;
-			transform: rotateZ(180deg);
-			path {
-				fill : var(--blanc);
-			}
-		}
-
-		&:hover, &:focus {
-			background-color:var(--orange);
-			border:none;
-			//transform : translateY(-0.5rem);
-			svg {
-				path {
-					fill : var(--blanc);
+			li {
+				align-items: center;
+				display: flex;
+				&::before {
+					color:var(--blanc);
+					content:'-';
+					display: inline-block;
+					padding:0 0.5ch;
+				}
+				&:first-of-type::before {
+					display: none;
 				}
 			}
 		}
-	}*/
+		
+		@include bp(lg){
+			padding:2.4rem var(--padding-x) 1.5rem;
+
+			p, a {
+				font-size: 2rem;
+				line-height: 2.4rem;
+			}
+
+			p {
+				font-weight: 500;
+				margin-bottom: 4px;
+				br {
+					display: none;
+				}
+			}
+			
+		}
+		
+	}
 
 }

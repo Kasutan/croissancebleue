@@ -153,7 +153,7 @@
             "label": "Pied de page : texte copyright",
             "name": "cb_footer_copyright",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -164,9 +164,9 @@
             },
             "default_value": "",
             "maxlength": "",
+            "rows": 2,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": "br"
         }
     ],
     "location": [
@@ -187,5 +187,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690995958
+    "modified": 1691052414
 }
