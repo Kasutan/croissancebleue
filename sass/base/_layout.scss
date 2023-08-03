@@ -67,8 +67,7 @@ body .entry-content {
 	min-height:150vh;
 	margin:0 auto;
 	max-width: calc(100% - 2* var(--padding-x));
-	padding: 2rem;
-	padding-bottom: 0;
+	padding:0;
 	position:relative;
 }
 
