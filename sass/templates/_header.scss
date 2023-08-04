@@ -175,7 +175,7 @@
 
 	@include bp(lg) {
 		--hauteur-banniere:63rem;
-		--fsz:18rem;
+		--fsz:16rem;
 
 		align-items: end;
 		justify-content: flex-end;
@@ -219,7 +219,9 @@
 			background-position: left bottom;
 			background-clip: text;
 			color:transparent;
+			font-family: var(--font-titre);
 			font-size: var(--fsz);
+			font-weight: 900;
 			line-height: 1;
 			font-weight: 800;
 
@@ -248,10 +250,10 @@
 
 	@include bp(xxl) {
 		.image {
-			width:calc(100% - 51rem);
+			width:calc(100% - 51rem - 29rem);
 		}
 		.textes {
-			padding-right: 0;
+			padding-right: 29rem;
 		}
 	}
 
@@ -306,7 +308,6 @@
 				padding-left:3rem;
 			}
 			.titre {
-				background-color: pink;
 				font-size: var(--fsz);
 				line-height: 1;
 				position: relative;
@@ -326,12 +327,12 @@
 				width:unset;
 			}
 		}
-		@include bp(xl) {
+		@include bp(xxl) {
 			.image {
-				width:calc(100% - 45rem);
+				width:calc(100% - 45rem - 25rem);
 			}
 			.textes {
-				padding:0;
+				padding:25rem;
 			}
 		}
 	}

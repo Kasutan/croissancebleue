@@ -487,12 +487,20 @@ Sous-menu desktop : 10;
   font-weight: 900;
   src: url("fonts/poppins-v20-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+/* montserrat-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/montserrat-v25-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 html {
   font-size: 62.5%;
   /* 1rem = 10px */
   --taille-texte: 1.4rem;
   --font-texte: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-titre: var(--font-texte);
+  --font-titre: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body,
@@ -1894,7 +1902,7 @@ button.ouvrir-sous-menu:focus {
 @media (min-width: 1024px) {
   .page-banniere {
     --hauteur-banniere:63rem;
-    --fsz:18rem;
+    --fsz:16rem;
     align-items: end;
     justify-content: flex-end;
     display: flex;
@@ -1934,7 +1942,9 @@ button.ouvrir-sous-menu:focus {
     -webkit-background-clip: text;
             background-clip: text;
     color: transparent;
+    font-family: var(--font-titre);
     font-size: var(--fsz);
+    font-weight: 900;
     line-height: 1;
     font-weight: 800;
   }
@@ -1956,10 +1966,10 @@ button.ouvrir-sous-menu:focus {
 }
 @media (min-width: 1920px) {
   .page-banniere .image {
-    width: calc(100% - 51rem);
+    width: calc(100% - 51rem - 29rem);
   }
   .page-banniere .textes {
-    padding-right: 0;
+    padding-right: 29rem;
   }
 }
 .page-banniere.pour-accueil {
@@ -2014,7 +2024,6 @@ button.ouvrir-sous-menu:focus {
     padding-left: 3rem;
   }
   .page-banniere.pour-accueil .titre {
-    background-color: pink;
     font-size: var(--fsz);
     line-height: 1;
     position: relative;
@@ -2033,12 +2042,12 @@ button.ouvrir-sous-menu:focus {
     width: unset;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1920px) {
   .page-banniere.pour-accueil .image {
-    width: calc(100% - 45rem);
+    width: calc(100% - 45rem - 25rem);
   }
   .page-banniere.pour-accueil .textes {
-    padding: 0;
+    padding: 25rem;
   }
 }
 
