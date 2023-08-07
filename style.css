@@ -707,32 +707,21 @@ input[type=reset],
 input[type=submit],
 a.bouton,
 a.wp-block-button__link {
-  --fond-lien-bouton:transparent;
-  --couleur-bouton:var(--bleu-9a);
   align-items: center;
-  font-weight: 700;
-  border-radius: 1px;
+  font-weight: 400;
+  border-radius: 5px;
   cursor: pointer;
-  display: inline-flex;
-  font-size: 1.8rem;
+  display: flex;
+  font-size: 1.6rem;
   justify-content: center;
-  line-height: 2.2rem;
+  line-height: 2.5rem;
   margin: 0;
-  min-height: 3.6rem;
-  min-width: 16rem;
-  padding: 0.7rem 1.3rem;
-  background: var(--fond-lien-bouton);
+  min-height: 3.3rem;
+  padding: 0.5rem;
+  text-decoration: none;
   position: relative;
   text-decoration: none;
   transition: all 0.5s;
-}
-button.blanc,
-input[type=button].blanc,
-input[type=reset].blanc,
-input[type=submit].blanc,
-a.bouton.blanc,
-a.wp-block-button__link.blanc {
-  --couleur-bouton:var(--blanc);
 }
 @media (min-width: 1024px) {
   button,
@@ -741,10 +730,10 @@ a.wp-block-button__link.blanc {
   input[type=submit],
   a.bouton,
   a.wp-block-button__link {
-    font-size: 1.9rem;
-    line-height: 2.4rem;
-    min-height: 5rem;
-    min-width: 22rem;
+    display: inline-flex;
+    min-height: 5.6rem;
+    min-width: 17.2rem;
+    padding: 1.6rem 3rem;
   }
 }
 button, button:visited,
@@ -758,8 +747,8 @@ a.bouton,
 a.bouton:visited,
 a.wp-block-button__link,
 a.wp-block-button__link:visited {
-  border: solid 1px var(--couleur-bouton);
-  color: var(--couleur-bouton);
+  background: var(--bleu-b8);
+  color: var(--blanc);
 }
 button:hover, button:focus, button:active,
 input[type=button]:hover,
@@ -777,6 +766,8 @@ a.bouton:active,
 a.wp-block-button__link:hover,
 a.wp-block-button__link:focus,
 a.wp-block-button__link:active {
+  background: var(--bleu-fonce);
+  color: var(--blanc);
   outline: none;
   text-decoration: none;
 }
@@ -786,7 +777,7 @@ input[type=reset]:focus-visible,
 input[type=submit]:focus-visible,
 a.bouton:focus-visible,
 a.wp-block-button__link:focus-visible {
-  outline: dashed 2px var(--fond-bouton);
+  outline: dashed 2px var(--fbleu-b8);
   outline-offset: 2px;
 }
 button:disabled,
@@ -796,58 +787,6 @@ input[type=submit]:disabled,
 a.bouton:disabled,
 a.wp-block-button__link:disabled {
   background-color: lightgrey;
-}
-
-.wp-block-button.is-style-outline > a.wp-block-button__link {
-  border-radius: 1px;
-  border-width: 1px;
-}
-
-.wp-block-buttons {
-  margin-bottom: 1em;
-}
-
-.wp-block-button {
-  --couleur-bouton:var(--bleu-9a);
-  --fond-bouton:var(--blanc);
-  display: inline-block;
-  position: relative;
-}
-.wp-block-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 1;
-  background-color: var(--couleur-bouton);
-  transition: all 0.5s;
-  transform: scale(0.5, 0.5);
-  z-index: 0;
-}
-.wp-block-button:hover > a.wp-block-button__link, .wp-block-button:focus-within > a.wp-block-button__link {
-  color: var(--fond-bouton);
-  color: white;
-  position: relative;
-  z-index: 1;
-}
-.wp-block-button:hover::before, .wp-block-button:focus-within::before {
-  opacity: 1;
-  transform: scale(1, 1);
-}
-.wp-block-button.is-style-outline {
-  --couleur-bouton:var(--blanc);
-  --fond-bouton:var(--bleu-9a);
-}
-.wp-block-button.is-style-outline:hover > a.wp-block-button__link, .wp-block-button.is-style-outline:focus-within > a.wp-block-button__link {
-  color: var(--fond-bouton);
-}
-
-a.bouton:hover, a.bouton:focus, a.bouton:active {
-  background-color: var(--bleu-9a);
-  color: var(--blanc);
 }
 
 input[type=submit] {
@@ -1846,7 +1785,16 @@ button.ouvrir-sous-menu:focus {
 }
 
 /*--------------------------------------------------------------
-## Entry-header
+## Entry-header : titre simple
+--------------------------------------------------------------*/
+.entry-header > .titre {
+  font-weight: 800;
+  padding: 3rem var(--padding-x);
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Entry-header : avec bannière
 --------------------------------------------------------------*/
 .page-banniere {
   --hauteur-banniere:59rem;
@@ -1936,7 +1884,6 @@ button.ouvrir-sous-menu:focus {
     width: auto;
   }
   .page-banniere .titre {
-    background-image: url(https://unsplash.it/801);
     background-size: cover;
     background-position: left bottom;
     -webkit-background-clip: text;

@@ -108,7 +108,16 @@
 	top:-200px;
 }
 /*--------------------------------------------------------------
-## Entry-header
+## Entry-header : titre simple
+--------------------------------------------------------------*/
+.entry-header > .titre {
+	font-weight: 800;
+	padding:3rem var(--padding-x);
+	text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Entry-header : avec bannière
 --------------------------------------------------------------*/
 .page-banniere {	
 	--hauteur-banniere:59rem;
@@ -214,7 +223,6 @@
 			width:auto;
 		}
 		.titre {
-			background-image: url(https://unsplash.it/801);
 			background-size: cover;
 			background-position: left bottom;
 			background-clip: text;
