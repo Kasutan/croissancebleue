@@ -133,4 +133,8 @@
 		top:calc(-0.5 * var(--trait));
 		width:1px;
 	}
+
+	@include bp(lg) {
+		--trait:20.5rem;
+	}
 }

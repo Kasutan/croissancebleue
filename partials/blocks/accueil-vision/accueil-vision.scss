@@ -76,7 +76,6 @@
 	}
 
 	@include bp(lg) {
-		--trait:20.5rem;
 		display: flex;
 		flex-direction: row-reverse;
 		padding:20rem var(--padding-x) 18rem;

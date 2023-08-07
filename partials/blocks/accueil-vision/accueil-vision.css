@@ -21,6 +21,11 @@
   top: calc(-0.5 * var(--trait));
   width: 1px;
 }
+@media (min-width: 1024px) {
+  .accueil-vision {
+    --trait:20.5rem;
+  }
+}
 .accueil-vision .desktop {
   display: none;
 }
@@ -85,7 +90,6 @@
 }
 @media (min-width: 1024px) {
   .accueil-vision {
-    --trait:20.5rem;
     display: flex;
     flex-direction: row-reverse;
     padding: 20rem var(--padding-x) 18rem;
