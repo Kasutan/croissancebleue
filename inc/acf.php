@@ -203,8 +203,8 @@ class BE_ACF_Customizations {
 		/*********Bloc blog ***************/
 		$this->helper_register_block_type( 
 			'blog',
-			'Bloc publications pour page Accueil',
-			'Section avec titre principal et les trois derniers articles publiés sur le blog.',
+			'Bloc actualités pour page Accueil',
+			'Section avec titre principal, sous-titre, et les trois derniers articles publiés sur le blog.',
 			'star-filled', 
 			false, 
 			array('blog', 'article', 'accueil','publication','actualité')

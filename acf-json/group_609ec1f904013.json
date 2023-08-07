@@ -1,10 +1,10 @@
 {
     "key": "group_609ec1f904013",
-    "title": "Bloc publications pour page Accueil",
+    "title": "Bloc actualités pour page Accueil",
     "fields": [
         {
             "key": "field_64a8653942687",
-            "label": "Bloc publications pour page Accueil",
+            "label": "Bloc actualités pour page Accueil",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Section avec titre principal et les trois derniers articles publiés sur le blog.",
+            "message": "Section avec titre principal, sous-titre, et les trois derniers articles publiés sur le blog.",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -34,16 +34,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Actualités & Publications",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
             "append": ""
         },
         {
-            "key": "field_64a865cc42688",
-            "label": "Label du lien vers la page des publications",
-            "name": "label_bouton",
+            "key": "field_64d0fc1848dc4",
+            "label": "Sous-titre",
+            "name": "sous_titre",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -54,7 +54,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Toutes nos publications",
+            "default_value": "",
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
@@ -79,5 +79,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688757754
+    "modified": 1691418076
 }

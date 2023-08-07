@@ -2177,23 +2177,108 @@ button.ouvrir-sous-menu:focus {
   margin: 0;
   padding-top: 0;
 }
-@media (min-width: 1024px) {
+.loop .vignette {
+  background-color: var(--blanc);
+}
+.loop .vignette .image {
+  aspect-ratio: 1.67;
+  display: flex;
+  margin-bottom: 11px;
+  width: 100%;
+}
+.loop .vignette .image img {
+  width: 100%;
+}
+.loop .vignette .texte {
+  padding: 0 3.7rem 3rem;
+}
+.loop .vignette .date {
+  color: #B1B1B1;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 2rem;
+  margin-bottom: 2.3rem;
+  text-align: right;
+}
+.loop .vignette .titre-item {
+  color: var(--noir-2e);
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 1.3rem;
+  text-align: left;
+}
+.loop .vignette .titre-item a {
+  text-decoration: none;
+}
+.loop .vignette a.extrait {
+  color: var(--gris-66);
+  display: block;
+  font-style: 1.4rem;
+  line-height: 1.8rem;
+  margin-bottom: 1.3rem;
+  text-decoration: none;
+}
+.loop .vignette .suite {
+  color: var(--noir-2e);
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 3rem;
+  text-align: right;
+}
+.loop .vignette:hover .titre-item a, .loop .vignette:hover .suite a, .loop .vignette:focus-within .titre-item a, .loop .vignette:focus-within .suite a {
+  color: var(--bleu-titre);
+}
+@media (min-width: 768px) {
   .loop {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    margin-bottom: var(--margin-y-1);
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 var(--padding-x-header);
   }
-  .loop .post-summary, .loop .vignette {
+  .loop .vignette {
     margin-bottom: 0;
-    max-width: unset;
-    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .loop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .loop .vignette .image {
+    margin-bottom: 8px;
+  }
+  .loop .vignette .texte {
+    padding: 0 1.5rem 4rem;
+  }
+  .loop .vignette .titre-item {
+    font-size: 2.3rem;
   }
 }
 @media (min-width: 1440px) {
   .loop {
-    -moz-column-gap: 6rem;
-         column-gap: 6rem;
+    gap: 1.6rem;
+  }
+  .loop .vignette .texte {
+    padding: 0 5rem 9rem 5rem;
+  }
+  .loop .vignette .date {
+    left: 4rem;
+    margin-bottom: 2.9rem;
+    position: relative;
+  }
+  .loop .vignette .titre-item {
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+    margin-bottom: 1em;
+  }
+  .loop .vignette a.extrait {
+    line-height: 2.4rem;
+    margin-bottom: 5rem;
+  }
+  .loop .vignette .suite {
+    font-size: 1.5rem;
+    left: 2rem;
+    line-height: 3rem;
+    position: relative;
   }
 }
 
@@ -2650,261 +2735,5 @@ form.search-form input.search-submit {
   .post-summary__content {
     flex-grow: 1;
   }
-}
-/************************* vignette de base : réalisation *******************/
-.vignette {
-  margin: 0 auto 2.8rem;
-  max-width: 42rem;
-  transition: transform var(--transition);
-}
-.vignette a {
-  text-decoration: none;
-}
-.vignette .image-wrap {
-  aspect-ratio: 3.45;
-  display: block;
-  overflow: hidden;
-  width: 100%;
-}
-.vignette .image {
-  display: flex;
-}
-.vignette .image img {
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition);
-  width: 100%;
-}
-.vignette .texte {
-  background-color: var(--blanc);
-  border: solid 1px var(--bleu-bordure);
-  border-top-width: 0;
-  display: block;
-  padding: 1.8rem 2rem 2rem;
-  transition: background-color var(--transition);
-}
-.vignette .titre-item {
-  margin-bottom: 8px;
-}
-.vignette .term, .vignette .nom {
-  display: block;
-}
-.vignette .term {
-  font-size: 1.8rem;
-  line-height: 2.2rem;
-}
-.vignette .nom {
-  font-size: 1.5rem;
-  line-height: 1.8rem;
-}
-.vignette .extrait {
-  color: var(--noir);
-  margin-bottom: 1.6rem;
-}
-.vignette .wp-block-button {
-  background-color: #fff;
-}
-.vignette:hover, .vignette:focus-within {
-  transform: translateY(-15px);
-}
-.vignette:hover .texte, .vignette:focus-within .texte {
-  background-color: var(--bleu-1fc);
-}
-.vignette:hover .nom, .vignette:hover .term, .vignette:focus-within .nom, .vignette:focus-within .term {
-  color: var(--rose-ec);
-}
-@media (min-width: 1024px) {
-  .vignette {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0 0 4rem;
-    max-width: unset;
-  }
-  .vignette .image-wrap {
-    aspect-ratio: 42/23;
-  }
-  .vignette .texte {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    height: auto;
-  }
-  .vignette .term {
-    font-size: 2.6rem;
-    line-height: 3rem;
-    margin-bottom: 1rem;
-  }
-  .vignette .nom {
-    font-size: 1.8rem;
-    line-height: 3rem;
-    margin-bottom: 1.5rem;
-  }
-  .vignette .extrait {
-    margin-bottom: 3rem;
-  }
-  .vignette .wp-block-buttons {
-    margin-top: auto;
-  }
-}
-
-/************************* styles spéciaux pour les vignettes post *******************/
-.vignette.post {
-  margin-bottom: 4.8rem;
-}
-.vignette.post .image {
-  aspect-ratio: 2.35;
-  margin-bottom: 1.8rem;
-}
-.vignette.post .titre-item {
-  font-weight: 600;
-}
-.vignette.post.sticky:not(:first-of-type) .ruban {
-  display: none;
-}
-@media (min-width: 1024px) {
-  .vignette.post .titre-item {
-    order: 1;
-  }
-  .vignette.post .meta {
-    order: 2;
-  }
-  .vignette.post .image {
-    order: 3;
-  }
-  .vignette.post .extrait {
-    order: 4;
-  }
-  .vignette.post .image-wrap {
-    aspect-ratio: 1.4;
-  }
-}
-@media (min-width: 1440px) {
-  .vignette.post {
-    margin-bottom: 6.8rem;
-  }
-}
-
-/************************* styles spéciaux pour l'article top post *******************/
-/************************* visible uniquement en desktop cf. blog.scss *******************/
-.top-post {
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 4.4rem;
-}
-.top-post a {
-  text-decoration: none;
-}
-.top-post .image {
-  aspect-ratio: auto;
-}
-.top-post .image img {
-  height: 100%;
-  object-fit: cover;
-}
-.top-post .col-texte {
-  padding-top: 4.4rem;
-  padding-bottom: 15rem;
-}
-.top-post h2 {
-  margin-bottom: 2.1rem;
-}
-@media (min-width: 1440px) {
-  .top-post {
-    -moz-column-gap: 6rem;
-         column-gap: 6rem;
-    margin-bottom: 8.8rem;
-  }
-}
-
-/******************** styles communs pour les vignettes post et l'article top-post***************/
-.vignette .image-wrap, .top-post .image-wrap {
-  height: 100%;
-  overflow: hidden;
-  width: 100%;
-}
-.vignette .image-wrap img, .top-post .image-wrap img {
-  transition: transform var(--transition);
-}
-.vignette:hover .image img, .vignette:focus-within .image img, .top-post:hover .image img, .top-post:focus-within .image img {
-  transform: scale(1.1);
-}
-
-.vignette.post, .top-post {
-  /************************* effets au survol *******************/
-  /************************* metas*******************/
-  /************************* ruban *******************/
-}
-.vignette.post .titre-item a, .top-post .titre-item a {
-  color: var(--bleu-9f);
-}
-.vignette.post .titre-item a:hover, .vignette.post .titre-item a:focus, .top-post .titre-item a:hover, .top-post .titre-item a:focus {
-  color: var(--violet-d2);
-}
-.vignette.post a.extrait, .top-post a.extrait {
-  color: var(--noir);
-}
-.vignette.post a.extrait:hover, .vignette.post a.extrait:focus, .top-post a.extrait:hover, .top-post a.extrait:focus {
-  color: var(--bleu-9a);
-}
-.vignette.post .meta, .top-post .meta {
-  font-size: 1.8rem;
-  line-height: 2.5rem;
-}
-.vignette.post .meta a, .top-post .meta a {
-  color: var(--violet-d2);
-}
-.vignette.post .meta a:hover, .vignette.post .meta a:focus, .top-post .meta a:hover, .top-post .meta a:focus {
-  color: var(--bleu-9a);
-}
-.vignette.post .meta .date, .top-post .meta .date {
-  color: var(--violet-d2);
-  display: inline-block;
-  margin-right: 0.5ch;
-}
-.vignette.post .meta .cats a, .top-post .meta .cats a {
-  display: inline-block;
-}
-.vignette.post .meta .cats .vir, .vignette.post .meta .cats a:not(:first-of-type), .top-post .meta .cats .vir, .top-post .meta .cats a:not(:first-of-type) {
-  display: none;
-}
-@media (min-width: 1024px) {
-  .vignette.post .meta .cats .vir, .vignette.post .meta .cats a:not(:first-of-type), .top-post .meta .cats .vir, .top-post .meta .cats a:not(:first-of-type) {
-    display: inline-block;
-  }
-  .vignette.post .meta .cats .vir, .top-post .meta .cats .vir {
-    margin-right: 0.5ch;
-  }
-}
-.vignette.post .image, .top-post .image {
-  position: relative;
-}
-.vignette.post .ruban, .top-post .ruban {
-  background-color: var(--violet-d2);
-  color: var(--blanc);
-  display: inline-block;
-  font-size: 1.7rem;
-  font-weight: 600;
-  left: -11px;
-  line-height: 1.5rem;
-  padding: 5px 12px 3px 9px;
-  position: absolute;
-  text-transform: uppercase;
-  top: 13px;
-}
-.vignette.post .ruban::after, .top-post .ruban::after {
-  background-color: var(--violet-ba);
-  border-top: solid 4px var(--violet-ba);
-  border-right: solid 4px var(--violet-ba);
-  border-left: solid 4px var(--blanc);
-  border-bottom: solid 4px var(--blanc);
-  content: " ";
-  display: block;
-  height: 10px;
-  left: 0;
-  position: absolute;
-  top: 100%;
-  width: 10px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -4,21 +4,128 @@
 	margin:0;
 	padding-top:0;
 
+	.vignette {
+		background-color: var(--blanc);
+		.image {
+			aspect-ratio: 1.67;
+			display: flex;
+			margin-bottom: 11px; 
+			width: 100%;
+			img {
+				width:100%;
+			}
+		}
+
+		.texte {
+			padding:0 3.7rem 3rem;
+
+		}
+
+		.date {
+			color:#B1B1B1;
+			font-size: 1.3rem;
+			font-weight: 500;
+			line-height: 2rem;
+			margin-bottom: 2.3rem;
+			text-align: right;
+		}
+		
+		.titre-item {
+			color:var(--noir-2e);
+			font-size: 1.8rem;
+			line-height: 1;
+			margin-bottom: 1.3rem;
+			text-align: left;
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		a.extrait {
+			color:var(--gris-66);
+			display: block;
+			font-style: 1.4rem;
+			line-height: 1.8rem;
+			margin-bottom: 1.3rem;
+			text-decoration: none;
+		}
+		
+		.suite {
+			color:var(--noir-2e);
+			font-size: 1.2rem;
+			font-weight: 800;
+			line-height: 3rem;
+			text-align: right;
+		}
+
+		&:hover, &:focus-within {
+			.titre-item a, .suite a {
+				color:var(--bleu-titre);
+			}
+		}
+	}
+
+	@include bp(md) {
+		display: grid;
+		gap:1rem;
+		grid-template-columns: repeat(2,1fr);
+		padding:0 var(--padding-x-header);
+
+		.vignette {
+			margin-bottom: 0;
+		
+		}
+
+	}
 
 
 	@include bp(lg) {
-		display: grid;
 		grid-template-columns: repeat(3,1fr);
-		gap:4rem;
-		margin-bottom: var(--margin-y-1);
-		.post-summary , .vignette {
-			margin-bottom: 0;
-			max-width:unset;
-			width:100%;
+		
+		.vignette {
+			.image {
+				margin-bottom: 8px;
+			}
+			.texte {
+				padding:0 1.5rem 4rem;
+			}
+			.titre-item {
+				font-size: 2.3rem;
+			}
+			
 		}
 	}
 
 	@include bp(xl) {
-		column-gap:6rem;
+		gap:1.6rem;
+		.vignette {
+
+			.texte {
+				padding:0 5rem 9rem 5rem;
+			}
+
+			.date {
+				left:4rem;
+				margin-bottom: 2.9rem;
+				position: relative;
+			}
+
+			.titre-item {
+				font-size: 2.8rem;
+				line-height: 3.5rem;
+				margin-bottom: 1em;
+			}
+			a.extrait {
+				line-height: 2.4rem;
+				margin-bottom: 5rem;
+			}
+			.suite {
+				font-size: 1.5rem;
+				left:2rem;
+				line-height: 3rem;
+				position: relative;
+			}
+		}
 	}
 }

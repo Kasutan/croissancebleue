@@ -17,18 +17,23 @@ $class=get_post_type();
 $post_id=get_the_ID();
 $titre=get_the_title($post_id);
 $link=get_the_permalink($post_id);
-$ruban='';
-if(is_sticky($post_id)) {
-	$ruban=sprintf('<div class="ruban">%s</div>',__('à la une','croissancebleue'));
-	$class.=' sticky';
-}
+
 
 printf('<%s class="vignette %s">',$tag,$class);
-	if(has_post_thumbnail()) {
-		printf('<a href="%s" class="image"><div class="image-wrap">%s</div> %s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'),$ruban);
+	if(has_post_thumbnail()) { 
+		printf('<a href="%s" class="image">%s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
 	}
-	printf('<h2 class="titre-item h4"><a href="%s">%s</a></h2>',$link,$titre);
-	kasutan_affiche_metas_article($post_id);	
-	printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt($post_id));
+
+	echo '<div class="texte">';
+
+		$date=get_the_date('',$post_id);
+		printf('<p class="date">%s</p>',$date);
+
+		printf('<h2 class="titre-item"><a href="%s">%s</a></h2>',$link,$titre);
+			
+		printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt($post_id));
+
+		printf('<div class="suite"><a href="%s">Lire l\'article<span class="screen-reader-text"> %s</span></a></div>',$link,$titre);
+	echo '</div>';
 printf('</%s>',$tag);
 

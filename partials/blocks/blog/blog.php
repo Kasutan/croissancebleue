@@ -9,9 +9,6 @@
 */
 
 
-if(!function_exists('kasutan_affiche_trois_articles')) {
-	return;
-}
 
 if(array_key_exists('className',$block)) {
 	$className=esc_attr($block["className"]);
@@ -19,7 +16,35 @@ if(array_key_exists('className',$block)) {
 
 
 $titre_section=wp_kses_post( get_field('titre_section') );
+$sous_titre=wp_kses_post( get_field('sous_titre') );
 $label_bouton=wp_kses_post( get_field('label_bouton') );
 
-//On réutilise la fonction définie pour la section related au bas des pages single post
-kasutan_affiche_trois_articles(false, $titre_section, array(),'pour-bloc',$label_bouton) ;
+$args=array(
+	'posts_per_page' => '3',
+	'orderby' => 'date',
+	'order' => 'DESC',
+);
+
+
+$articles=new WP_Query($args);
+
+if($articles->have_posts(  )) {
+	printf('<section class="acf-blog %s">', $className);
+
+		printf('<h2 class="titre-section">%s</h2>',$titre_section);
+		printf('<p class="sous-titre">%s</p>',$sous_titre);
+
+			echo '<ul class="loop">';
+			$n=1;
+			//forcer loop à s'arrêter à  (même s'il y a un sticky post)
+			while ( $articles->have_posts() && $n<=3) {
+				$articles->the_post();
+				get_template_part( 'partials/archive');
+				$n++;
+			}
+			echo '</ul>';
+		wp_reset_postdata();
+
+
+	echo '</section>';
+}

@@ -14,9 +14,9 @@
 			}
 
 			var padding= {
-				xsm : 120,
-				sm : 150,
-				md : 170,
+				xsm : 60,
+				sm : 70,
+				md : 80,
 				lg : 100,
 				xl:200
 			}

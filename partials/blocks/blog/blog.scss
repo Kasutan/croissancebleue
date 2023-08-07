@@ -1,3 +1,45 @@
 @import "./././sass/abstracts/variables-et-mixins";
 
-//style dans components/_posts-related (communs avec single post)
+
+.acf-blog {
+	@include bleed;
+	@include trait;
+	background-color: rgba(207,203,212,0.17);
+	padding:7rem 0 5rem;
+
+
+	.titre-section {
+		line-height: 1;
+		letter-spacing: -0.56px;
+		margin-bottom: 0;
+		text-align: center;
+		
+	}
+	.sous-titre {
+		font-style: 2rem;
+		line-height: 2.5rem;
+		letter-spacing: -0.37px;
+		text-align: center;
+	}
+	
+	
+
+	@include bp(lg) {
+		padding:19.3rem 0 7rem;
+		.titre-section {
+			letter-spacing: -1.19px;
+		}
+
+		.sous-titre { 
+			font-size: 3.2rem;
+			line-height: 4.5rem;
+			letter-spacing: -0.59px;
+			margin-bottom: 9.8rem;
+		}
+	
+
+	}
+	@include bp(xl) {
+		
+	}
+} 
