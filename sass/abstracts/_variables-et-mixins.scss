@@ -37,7 +37,7 @@
 
 @mixin bleed {
 	width: 100vw;
-	margin-left: calc(-1 * var(--padding-x) - 2rem); //pour compenser le padding-interne de .entry-content
+	margin-left: calc(-1 * var(--padding-x));
 	@include bp(xxl) {
 		width:var(--largeur-max);
 	}
@@ -117,5 +117,20 @@
 		br {
 			display: block;
 		}
+	}
+}
+
+@mixin trait {
+	
+	--trait:9.7rem;
+	&::before {
+		background-color:var(--bleu-d3);
+		content:'';
+		display: block;
+		height:var(--trait);
+		left:50%;
+		position: absolute;
+		top:calc(-0.5 * var(--trait));
+		width:1px;
 	}
 }

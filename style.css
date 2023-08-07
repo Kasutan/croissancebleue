@@ -384,7 +384,7 @@ body.home .entry-content {
 
 .alignfull, .bleed-container {
   width: 100vw;
-  margin-left: calc(-1 * var(--padding-x) - 2rem);
+  margin-left: calc(-1 * var(--padding-x));
 }
 @media (min-width: 1920px) {
   .alignfull, .bleed-container {
@@ -2386,78 +2386,6 @@ form.search-form input.search-submit {
 .wp-block-image.aligncenter {
   display: flex;
   justify-content: center;
-}
-
-.entry-content p.intro {
-  color: var(--bleu-9f);
-  font-size: 2rem;
-  font-weight: 500;
-  line-height: 2.4rem;
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-.entry-content p.intro br {
-  display: none;
-}
-@media (min-width: 1024px) {
-  .entry-content p.intro {
-    font-size: 2.6rem;
-    line-height: 3.6rem;
-  }
-  .entry-content p.intro br {
-    display: block;
-  }
-}
-@media (min-width: 1024px) {
-  .entry-content p.intro {
-    margin-bottom: 4rem;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 114rem;
-  }
-  .entry-content p.intro:first-child {
-    margin-top: 4rem;
-  }
-}
-@media (min-width: 1024px) {
-  .entry-content p.intro-suite {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 93rem;
-    text-align: center;
-  }
-}
-
-.rejoindre-croissancebleue {
-  background: transparent linear-gradient(180deg, #EBF1FC 0%, #FFFFFF 100%) 0% 0% no-repeat padding-box;
-  width: 100vw;
-  margin-left: calc(-1 * var(--padding-x) - 2rem);
-  padding: 3.5rem var(--padding-x) 5.1rem;
-}
-@media (min-width: 1920px) {
-  .rejoindre-croissancebleue {
-    width: var(--largeur-max);
-  }
-}
-.rejoindre-croissancebleue h2 strong {
-  color: var(--rose-ec);
-}
-.rejoindre-croissancebleue .wp-block-buttons {
-  margin-top: 2rem;
-}
-.rejoindre-croissancebleue a.wp-block-button__link {
-  border-color: var(--bleu-9a);
-}
-@media (min-width: 1024px) {
-  .rejoindre-croissancebleue {
-    padding: 8.5rem var(--padding-x);
-  }
-  .rejoindre-croissancebleue h2 {
-    margin-bottom: 3rem;
-  }
-  .rejoindre-croissancebleue .wp-block-buttons {
-    margin-top: 4.3rem;
-  }
 }
 
 .decor-top {

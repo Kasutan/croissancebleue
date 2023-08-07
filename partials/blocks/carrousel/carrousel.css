@@ -1,6 +1,6 @@
 .carrousel {
   width: 100vw;
-  margin-left: calc(-1 * var(--padding-x) - 2rem);
+  margin-left: calc(-1 * var(--padding-x));
   padding: 4rem 0 5rem;
   /*
   	.owl-dots {
