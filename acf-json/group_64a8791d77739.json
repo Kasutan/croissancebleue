@@ -1,10 +1,10 @@
 {
     "key": "group_64a8791d77739",
-    "title": "Bloc services pour page Accueil",
+    "title": "Bloc accompagnement pour page Accueil",
     "fields": [
         {
             "key": "field_64a8791d7f0e2",
-            "label": "Bloc services pour page Accueil",
+            "label": "Bloc accompagnement pour page Accueil",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Section avec intro, titre et grille de services avec pictos.",
+            "message": "Section avec titre, intro, services avec pictos sur 3 colonnes et bouton. Affichage simplifié en mobile.",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -62,7 +62,7 @@
         },
         {
             "key": "field_64a8791d8682d",
-            "label": "Services",
+            "label": "Prestations",
             "name": "services",
             "aria-label": "",
             "type": "repeater",
@@ -78,35 +78,14 @@
             "pagination": 0,
             "min": 1,
             "max": 0,
-            "collapsed": "field_649f0e996830b",
+            "collapsed": "",
             "button_label": "Ajouter un service",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_64a8791d91e15",
+                    "key": "field_64d0c603465f5",
                     "label": "Titre",
                     "name": "titre",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_64a8791d8682d"
-                },
-                {
-                    "key": "field_64a8791d95a27",
-                    "label": "Texte",
-                    "name": "texte",
                     "aria-label": "",
                     "type": "textarea",
                     "instructions": "",
@@ -125,12 +104,12 @@
                     "parent_repeater": "field_64a8791d8682d"
                 },
                 {
-                    "key": "field_64a8791d99596",
+                    "key": "field_64d0c60b465f6",
                     "label": "Picto",
                     "name": "picto",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "PNG ou SVG blanc",
+                    "instructions": "SVG ou PNG noir sur fond transparent",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -146,16 +125,16 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": "",
+                    "mime_types": "svg,png",
                     "preview_size": "medium",
                     "parent_repeater": "field_64a8791d8682d"
                 },
                 {
-                    "key": "field_64a8791d9d027",
-                    "label": "Lien pour le bouton \"En savoir plus\"",
-                    "name": "lien",
+                    "key": "field_64d0c61c465f7",
+                    "label": "Chiffre",
+                    "name": "chiffre",
                     "aria-label": "",
-                    "type": "page_link",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -164,17 +143,51 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": [
-                        "page"
-                    ],
-                    "post_status": "",
-                    "taxonomy": "",
-                    "allow_archives": 0,
-                    "multiple": 0,
-                    "allow_null": 0,
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64a8791d8682d"
+                },
+                {
+                    "key": "field_64d0c62a465f8",
+                    "label": "Texte",
+                    "name": "texte",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": "br",
                     "parent_repeater": "field_64a8791d8682d"
                 }
             ]
+        },
+        {
+            "key": "field_64d0c66d2daaa",
+            "label": "Bouton",
+            "name": "lien",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -182,7 +195,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/accueil-services"
+                "value": "acf\/accueil-accompagnement"
             }
         ]
     ],
@@ -195,5 +208,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688763522
+    "modified": 1691404144
 }

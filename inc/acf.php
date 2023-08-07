@@ -133,14 +133,14 @@ class BE_ACF_Customizations {
 				array(
 					'slug' => 'croissancebleue',
 					'title' => 'croissancebleue',
-					'icon'  => 'site',
+					'icon'  => 'star-filled',
 				),
 			),
 			$categories
 		);
 	}
 
-	function helper_register_block_type($slug,$titre,$description,$icon='site',$js=false,$keywords=[], $multiple=true ){
+	function helper_register_block_type($slug,$titre,$description,$icon='star-filled',$js=false,$keywords=[], $multiple=true ){
 		$keywords_from_slug=explode('-',$slug);
 		$keywords=array_merge($keywords,$keywords_from_slug, array('croissance','bleue'));
 		$args=[
@@ -185,19 +185,19 @@ class BE_ACF_Customizations {
 			'accueil-vision',
 			'Bloc vision pour page Accueil',
 			'Section avec titre, intro, citation, photo et bouton.',
-			'site', 
+			'star-filled', 
 			false, 
 			array('accueil', 'vision','citation')
 		);
 
-		/*********Bloc accueil-services ***************/
+		/*********Bloc accueil-accompagnement ***************/
 		$this->helper_register_block_type( 
-			'accueil-services',
-			'Bloc services pour page Accueil',
-			'Section avec intro, titre et grille de services avec pictos.',
-			'site', 
+			'accueil-accompagnement',
+			'Bloc accompagnement pour page Accueil',
+			'Section avec titre, intro, services avec pictos sur 3 colonnes et bouton.',
+			'star-filled', 
 			false, 
-			array('accueil', 'service')
+			array('accueil', 'service', 'accompagnement')
 		);
 		
 		/*********Bloc blog ***************/
@@ -205,7 +205,7 @@ class BE_ACF_Customizations {
 			'blog',
 			'Bloc publications pour page Accueil',
 			'Section avec titre principal et les trois derniers articles publiés sur le blog.',
-			'site', 
+			'star-filled', 
 			false, 
 			array('blog', 'article', 'accueil','publication','actualité')
 		);
@@ -216,7 +216,7 @@ class BE_ACF_Customizations {
 			'carrousel',
 			'Bloc carrousel de logos de clients',
 			'Section avec titre, carrousel de logos des clients et un lien.',
-			'site', 
+			'star-filled', 
 			true, //besoin de JS pour le carrousel
 			array('logo', 'accueil','carrousel','client')
 		);
@@ -228,7 +228,7 @@ class BE_ACF_Customizations {
 			'equipe',
 			'Bloc équipe pour page Qui sommes-nous',
 			'Section avec liste de portraits de dirigeants. Pour chaque personne : photo, nom, diplômes, bio et lien LinkedIn.',
-			'site', 
+			'star-filled', 
 			false, 
 			array('equipe', 'qui sommes-nous','dirigeant')
 		);
@@ -239,7 +239,7 @@ class BE_ACF_Customizations {
 			'logos-grille',
 			'Bloc grille de logos pour page Nos clients',
 			'Section avec grille de logos.',
-			'site', 
+			'star-filled', 
 			false, 
 			array('logo', 'client','ref','grille')
 		);

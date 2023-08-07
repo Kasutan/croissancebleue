@@ -1,0 +1,144 @@
+.accueil-accompagnement {
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x));
+  --trait:9.7rem;
+  background-color: rgba(207, 203, 212, 0.17);
+  padding: 5.4rem var(--padding-x) 8.6rem;
+}
+@media (min-width: 1920px) {
+  .accueil-accompagnement {
+    width: var(--largeur-max);
+  }
+}
+.accueil-accompagnement::before {
+  background-color: var(--bleu-d3);
+  content: "";
+  display: block;
+  height: var(--trait);
+  left: 50%;
+  position: absolute;
+  top: calc(-0.5 * var(--trait));
+  width: 1px;
+}
+.accueil-accompagnement .titre-section {
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.accueil-accompagnement .intro {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 3rem;
+}
+.accueil-accompagnement .desktop {
+  display: none;
+}
+.accueil-accompagnement .services {
+  margin-bottom: 5rem;
+}
+.accueil-accompagnement .titre {
+  border-top: solid 1px var(--noir);
+  font-weight: 700;
+  line-height: 3.5rem;
+  margin-bottom: 0;
+  padding: 1.7rem 0;
+}
+@media (min-width: 500px) {
+  .accueil-accompagnement .titre-section {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1024px) {
+  .accueil-accompagnement {
+    padding-top: 7rem;
+    padding-bottom: 5.3rem;
+  }
+  .accueil-accompagnement .titre-section {
+    margin-bottom: 10rem;
+  }
+  .accueil-accompagnement .service {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .accueil-accompagnement .picto {
+    align-items: center;
+    background: transparent linear-gradient(0deg, #8E00D2 0%, #04329A 100%) 0% 0% no-repeat padding-box;
+    border-radius: 100px;
+    height: 5.9rem;
+    justify-content: center;
+    margin-bottom: 0.9rem;
+    padding: 1rem;
+    width: 5.9rem;
+  }
+  .accueil-accompagnement a.titre {
+    color: var(--bleu-texte);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 2.6rem;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+  .accueil-accompagnement a.titre:hover, .accueil-accompagnement a.titre:focus {
+    color: var(--violet-d2);
+  }
+  .accueil-accompagnement .texte {
+    color: var(--rose-e4);
+    font-size: 1.6rem;
+    font-style: italic;
+    line-height: 1.9rem;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .accueil-accompagnement .texte br {
+    display: none;
+  }
+  .accueil-accompagnement .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .accueil-accompagnement .service {
+    flex: 0 0 30rem;
+    margin-bottom: 9rem;
+    position: relative;
+  }
+  .accueil-accompagnement .picto {
+    height: 12.3rem;
+    margin-bottom: 2rem;
+    width: 12.3rem;
+  }
+  .accueil-accompagnement a.titre {
+    font-size: 2.6rem;
+    line-height: 3.6rem;
+    margin-bottom: 2rem;
+  }
+  .accueil-accompagnement .texte {
+    font-size: 1.7rem;
+    line-height: 2.3rem;
+    margin: 0 auto;
+    max-width: 22rem;
+  }
+  .accueil-accompagnement .texte br {
+    display: block;
+  }
+  .accueil-accompagnement .wp-block-buttons {
+    display: flex;
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
+  .accueil-accompagnement a.wp-block-button__link {
+    width: 22rem;
+  }
+}
+@media (min-width: 1440px) {
+  .accueil-accompagnement .services {
+    -moz-column-gap: 5.7rem;
+         column-gap: 5.7rem;
+  }
+  .accueil-accompagnement .service::after {
+    right: -4rem;
+  }
+}
