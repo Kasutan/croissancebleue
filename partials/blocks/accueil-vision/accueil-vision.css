@@ -3,6 +3,7 @@
   width: 100vw;
   margin-left: calc(-1 * var(--padding-x));
   --trait:9.7rem;
+  position: relative;
   padding: 10.8rem 0 6rem;
   position: relative;
 }

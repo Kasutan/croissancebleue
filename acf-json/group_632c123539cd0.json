@@ -67,29 +67,6 @@
             "mime_types": "",
             "insert": "append",
             "preview_size": "medium"
-        },
-        {
-            "key": "field_64abad710b76a",
-            "label": "Cible du bouton \"en savoir plus\"",
-            "name": "lien",
-            "aria-label": "",
-            "type": "page_link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "post_status": "",
-            "taxonomy": "",
-            "allow_archives": 0,
-            "multiple": 0,
-            "allow_null": 0
         }
     ],
     "location": [
@@ -110,5 +87,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688973534
+    "modified": 1691410812
 }

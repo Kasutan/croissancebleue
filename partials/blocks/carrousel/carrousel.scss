@@ -3,11 +3,12 @@
 .carrousel {
 
 	@include bleed;
-	padding:4rem 0 5rem;
+	@include trait;
+
+	padding:7rem 0 12rem;
 
 	.titre-section {
-		font-size: 2.6rem;
-		line-height: 2.7rem;
+	
 		margin-bottom: 2.2rem;
 		padding:0 var(--padding-x);
 		text-align: center;
@@ -17,7 +18,9 @@
 	}
 	
 	.owl-item {
-		height:15rem;
+		background-color: #F7F6F8;
+		height:23rem;
+		width:23rem;
 	}
 	.logo {
 		align-items: center;
@@ -27,47 +30,45 @@
 		padding:1rem 2rem;
 		img {
 			object-fit: contain;
+			filter:grayscale(1);
+			opacity:0.8;
+			transition-property:all;
+			transition-duration:2s;
 			width:unset;
 		}
 	}
-/*
-	.owl-dots {
-		display: flex;
-		justify-content: center;
-		margin-bottom: 4rem;
-		margin-top: 2rem;
-		width: 100%;
-		button {
-			background-color: lightgrey;
-			border-radius:100%;
-			height:0.9rem;
-			margin-bottom: 0;
-			margin-right: 0.5rem;
-			min-height: unset;
-			min-width: unset;
-			width:0.9rem;
-			&:last-of-type {
-				margin-right: 0;
-			}
-			&.active, &:hover, &:focus {
-				background-color: var(--rouge);
-				opacity: 1;
-			}
-		}
-	}*/
+
+	.owl-item.center .logo img {
+		filter:unset;
+		opacity: 1;
+	}
 
 	@include bp(lg) {
-		padding:10rem 0;
+		padding:18.3rem var(--padding-x) 20.9rem;
 		.titre-section {
-			font-size: 4.6rem;
-			line-height: 5rem;
 			margin-bottom: 9rem;
 		}
-		.owl-carousel {
-			margin-bottom: 5rem;
-		}
-		.logo img {
-			transform: scale(0.8);
+		
+		.owl-nav {
+			display: flex;
+			justify-content: center;
+
+			button {
+				
+				margin:3rem 2rem 0;
+				min-width:unset;
+				&:hover, &:focus {
+					span {
+						color:var(--bleu-fonce);
+					}
+				}
+			}
+			span {
+				color:#2AC1C8;
+				font-size: 4rem;
+				line-height: 4.5rem;
+				text-decoration: underline;
+			}
 		}
 	}
 }

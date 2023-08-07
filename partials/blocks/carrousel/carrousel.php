@@ -15,7 +15,6 @@ if(function_exists('get_field')) :
 	} else $className='';
 
 	$titre=wp_kses_post( get_field('titre') );
-	$lien=esc_url( get_field('lien') );
 
 	$galerie=get_field('galerie');
 
@@ -31,10 +30,6 @@ if(function_exists('get_field')) :
 					echo '</div>';
 				endforeach;
 			echo '</div>';
-
-			if($lien && function_exists('kasutan_affiche_bouton')) {
-				kasutan_affiche_bouton($lien,''); //label par défaut
-			}
 
 		echo '</section>';
 	endif;

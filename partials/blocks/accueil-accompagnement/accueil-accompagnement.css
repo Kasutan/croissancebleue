@@ -2,6 +2,7 @@
   width: 100vw;
   margin-left: calc(-1 * var(--padding-x));
   --trait:9.7rem;
+  position: relative;
   background-color: rgba(207, 203, 212, 0.17);
   padding: 5.4rem var(--padding-x) 8.6rem;
 }

@@ -123,6 +123,7 @@
 @mixin trait {
 	
 	--trait:9.7rem;
+	position: relative;
 	&::before {
 		background-color:var(--bleu-d3);
 		content:'';
