@@ -1,0 +1,183 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.agence-leviers {
+	background-color: rgba(207,203,212,0.17);
+
+	@include bleed;
+	@include trait;
+
+	padding:7.1rem 0 8rem;
+	position: relative;
+
+
+	.desktop {
+		display: none;
+	}
+
+	.texte-wrap {
+		padding:0 var(--padding-x);
+	}
+
+	.titre-section {
+		font-weight: 700;
+		margin-bottom: 4rem;
+	}
+	.encart {
+		font-size: 1.8rem;
+		line-height: 2.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.leviers {
+		li {
+			line-height: 2rem;
+			padding:1rem 0;
+			position: relative;
+			text-transform: uppercase;
+			&::after {
+				background-color: #2AC1C8;
+				content:'';
+				display: block;
+				height:2px;
+				position: relative;
+				top:1rem;
+				width: 10rem;
+			}
+			&:last-of-type::after {
+				display: none;
+			}
+		}
+	}
+	.texte {
+		margin-bottom: 2rem;
+		p {
+			margin-bottom: 1.5rem;
+		}
+		strong {
+			color:#00A0BC;
+		}
+	}
+
+	.image-wrap {display: none}
+
+	@include bp(md) {
+		column-gap:2rem;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding:7.1rem var(--padding-x) 8rem;
+
+		.mobile {
+			display:  none;
+		}
+		.desktop {
+			display: block;
+		}
+
+		.texte-wrap {
+			padding:2rem 0;
+		}
+		.titre-section {
+			text-align: left;
+		}
+		.image-wrap {
+			align-items: flex-start;
+			display: flex;
+			position: relative;
+			padding-top:25rem;
+		}
+
+		.image {
+			@include decor;
+
+
+			img {
+				height:100%;
+				width: 100%;
+			}
+		}
+
+		.image-2 {
+			display: none;
+		}
+
+		.encart {
+			background-color: var(--blanc);
+			max-width: 90%;;
+			padding:2rem 3rem;
+			position: relative;
+		}
+
+	}
+	
+
+	@include bp(lg){
+
+		grid-template-columns: 48rem 1fr;
+		padding:14rem var(--padding-x) 16.5rem;
+
+		.titre-section {
+			line-height: 7rem;
+			margin-bottom: 3.3rem;
+			text-align: left;
+		}
+
+		.leviers {
+			li {
+				padding:1.5rem 0;
+				&::after {
+					top:1.5rem;
+				}
+			}
+			br {
+				display: none;
+			}
+		}
+
+		.image-1 {
+			height:75%;
+		}
+
+		.image-2 {
+			bottom:0;
+			display: block;
+			height:35%;
+			left:unset;
+			right: 0;
+			top:unset;
+			width:45%;
+			img {
+				object-position: top center;;
+			}
+
+		}
+		
+	}
+
+	@include bp(xl) {
+		grid-template-columns: 50rem 1fr;
+
+
+		.encart {
+			font-size: 2.6rem;
+			line-height: 3.4rem;
+			max-width:85%;
+		}
+
+		.image-1 {
+			width:90%;
+		}
+		
+	}
+
+	@media screen and (min-width:1780px) {
+		column-gap:3.5rem;
+		grid-template-columns: 56rem 1fr;
+		.image-wrap {
+			padding-top:30rem;
+
+		}
+		.encart {
+			max-width:56rem;
+		}
+	}
+} 

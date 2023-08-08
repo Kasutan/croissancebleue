@@ -1,0 +1,182 @@
+.agence-leviers {
+  background-color: rgba(207, 203, 212, 0.17);
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x));
+  --trait:9.7rem;
+  position: relative;
+  padding: 7.1rem 0 8rem;
+  position: relative;
+}
+@media (min-width: 1920px) {
+  .agence-leviers {
+    width: var(--largeur-max);
+  }
+}
+.agence-leviers::before {
+  background-color: var(--bleu-d3);
+  content: "";
+  display: block;
+  height: var(--trait);
+  left: 50%;
+  position: absolute;
+  top: calc(-0.5 * var(--trait));
+  width: 1px;
+}
+@media (min-width: 1024px) {
+  .agence-leviers {
+    --trait:20.5rem;
+  }
+}
+.agence-leviers .desktop {
+  display: none;
+}
+.agence-leviers .texte-wrap {
+  padding: 0 var(--padding-x);
+}
+.agence-leviers .titre-section {
+  font-weight: 700;
+  margin-bottom: 4rem;
+}
+.agence-leviers .encart {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 3rem;
+}
+.agence-leviers .leviers li {
+  line-height: 2rem;
+  padding: 1rem 0;
+  position: relative;
+  text-transform: uppercase;
+}
+.agence-leviers .leviers li::after {
+  background-color: #2AC1C8;
+  content: "";
+  display: block;
+  height: 2px;
+  position: relative;
+  top: 1rem;
+  width: 10rem;
+}
+.agence-leviers .leviers li:last-of-type::after {
+  display: none;
+}
+.agence-leviers .texte {
+  margin-bottom: 2rem;
+}
+.agence-leviers .texte p {
+  margin-bottom: 1.5rem;
+}
+.agence-leviers .texte strong {
+  color: #00A0BC;
+}
+.agence-leviers .image-wrap {
+  display: none;
+}
+@media (min-width: 768px) {
+  .agence-leviers {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 7.1rem var(--padding-x) 8rem;
+  }
+  .agence-leviers .mobile {
+    display: none;
+  }
+  .agence-leviers .desktop {
+    display: block;
+  }
+  .agence-leviers .texte-wrap {
+    padding: 2rem 0;
+  }
+  .agence-leviers .titre-section {
+    text-align: left;
+  }
+  .agence-leviers .image-wrap {
+    align-items: flex-start;
+    display: flex;
+    position: relative;
+    padding-top: 25rem;
+  }
+  .agence-leviers .image {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .agence-leviers .image img {
+    height: 100%;
+    width: 100%;
+  }
+  .agence-leviers .image-2 {
+    display: none;
+  }
+  .agence-leviers .encart {
+    background-color: var(--blanc);
+    max-width: 90%;
+    padding: 2rem 3rem;
+    position: relative;
+  }
+}
+@media (min-width: 1024px) {
+  .agence-leviers {
+    grid-template-columns: 48rem 1fr;
+    padding: 14rem var(--padding-x) 16.5rem;
+  }
+  .agence-leviers .titre-section {
+    line-height: 7rem;
+    margin-bottom: 3.3rem;
+    text-align: left;
+  }
+  .agence-leviers .leviers li {
+    padding: 1.5rem 0;
+  }
+  .agence-leviers .leviers li::after {
+    top: 1.5rem;
+  }
+  .agence-leviers .leviers br {
+    display: none;
+  }
+  .agence-leviers .image-1 {
+    height: 75%;
+  }
+  .agence-leviers .image-2 {
+    bottom: 0;
+    display: block;
+    height: 35%;
+    left: unset;
+    right: 0;
+    top: unset;
+    width: 45%;
+  }
+  .agence-leviers .image-2 img {
+    object-position: top center;
+  }
+}
+@media (min-width: 1440px) {
+  .agence-leviers {
+    grid-template-columns: 50rem 1fr;
+  }
+  .agence-leviers .encart {
+    font-size: 2.6rem;
+    line-height: 3.4rem;
+    max-width: 85%;
+  }
+  .agence-leviers .image-1 {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1780px) {
+  .agence-leviers {
+    -moz-column-gap: 3.5rem;
+         column-gap: 3.5rem;
+    grid-template-columns: 56rem 1fr;
+  }
+  .agence-leviers .image-wrap {
+    padding-top: 30rem;
+  }
+  .agence-leviers .encart {
+    max-width: 56rem;
+  }
+}

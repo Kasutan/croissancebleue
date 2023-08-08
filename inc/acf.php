@@ -226,10 +226,20 @@ class BE_ACF_Customizations {
 		$this->helper_register_block_type( 
 			'agence-vision',
 			'Bloc vision pour page Agence',
-			'Section avec titre, intro, citation, plusieurs arguments et un texte en encart sur une photo.',
+			'Section avec titre, texte et un encart sur une photo.',
 			'star-filled', 
 			false, 
 			array('agence', 'vision')
+		);
+
+		/*********Bloc agence-leviers ***************/
+		$this->helper_register_block_type( 
+			'agence-leviers',
+			'Bloc leviers pour page Agence',
+			'Section sur fond gris avec titre, plusieurs leviers séparés par des traits bleus et un texte en encart sur deux photos. En version mobile, les photos sont masquées.',
+			'star-filled', 
+			false, 
+			array('agence', 'levier','performance')
 		);
 
 
