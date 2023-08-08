@@ -1,0 +1,123 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.agence-vision {
+	@include bleed;
+	@include trait;
+
+	padding:7.1rem 0 0;
+	position: relative;
+
+
+	.desktop {
+		display: none;
+	}
+
+	.texte-wrap {
+		padding:0 var(--padding-x);
+	}
+
+	.titre-section {
+		font-weight: 700;
+		margin-bottom: 3rem;
+	}
+	.encart {
+		font-size: 1.8rem;
+		line-height: 2.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.texte {
+		margin-bottom: 2rem;
+		p {
+			margin-bottom: 1.5rem;
+		}
+		strong {
+			color:#00A0BC;
+		}
+	}
+
+	.image {
+		aspect-ratio: 1.46;
+		display: flex;
+		img {
+			height:100%; 
+			width: 100%;
+		}
+	}
+	
+
+	@include bp(lg) {
+		display: flex;
+		flex-direction: row-reverse;
+		padding:12.5rem var(--padding-x) 18rem;
+		&::before {
+			display: none;
+		}
+		.mobile {
+			display:  none;
+		}
+		.desktop {
+			display: block;
+		}
+
+		.image-wrap {
+			align-items: flex-end;
+			display: flex;
+			flex-grow:1;
+			height: auto;
+			margin-bottom: 0;
+			padding:24rem 0;
+			position: relative;
+
+		}
+
+		.encart {
+			background-color: var(--blanc);
+			max-width: 90%;;
+			padding:2rem 3rem;
+			position: relative;
+		}
+	
+		.image {
+			@include decor;
+			img {
+				height:100%;
+				width: 100%;
+			}
+		}
+	
+	
+
+		.texte-wrap {
+			flex:0 0 43rem;
+			padding:5rem 0 5rem 2rem ;
+		}
+
+		.titre-section {
+			line-height: 7rem;
+			margin-bottom: 3.3rem;
+			text-align: left;
+		}
+		
+	}
+
+	@include bp(xl) {
+		&::before {
+			display: block;
+		}
+		.texte-wrap {
+			flex-basis:58.6rem;
+			padding-left: 5rem;
+		}
+		.encart {
+			font-size: 2.6rem;
+			line-height: 3.4rem;
+			max-width:47rem;
+		}
+		
+	}
+
+	@include bp(xxl) {
+		
+	}
+} 

@@ -1,0 +1,125 @@
+.agence-vision {
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x));
+  --trait:9.7rem;
+  position: relative;
+  padding: 7.1rem 0 0;
+  position: relative;
+}
+@media (min-width: 1920px) {
+  .agence-vision {
+    width: var(--largeur-max);
+  }
+}
+.agence-vision::before {
+  background-color: var(--bleu-d3);
+  content: "";
+  display: block;
+  height: var(--trait);
+  left: 50%;
+  position: absolute;
+  top: calc(-0.5 * var(--trait));
+  width: 1px;
+}
+@media (min-width: 1024px) {
+  .agence-vision {
+    --trait:20.5rem;
+  }
+}
+.agence-vision .desktop {
+  display: none;
+}
+.agence-vision .texte-wrap {
+  padding: 0 var(--padding-x);
+}
+.agence-vision .titre-section {
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.agence-vision .encart {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 2rem;
+}
+.agence-vision .texte {
+  margin-bottom: 2rem;
+}
+.agence-vision .texte p {
+  margin-bottom: 1.5rem;
+}
+.agence-vision .texte strong {
+  color: #00A0BC;
+}
+.agence-vision .image {
+  aspect-ratio: 1.46;
+  display: flex;
+}
+.agence-vision .image img {
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .agence-vision {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 12.5rem var(--padding-x) 18rem;
+  }
+  .agence-vision::before {
+    display: none;
+  }
+  .agence-vision .mobile {
+    display: none;
+  }
+  .agence-vision .desktop {
+    display: block;
+  }
+  .agence-vision .image-wrap {
+    align-items: flex-end;
+    display: flex;
+    flex-grow: 1;
+    height: auto;
+    margin-bottom: 0;
+    padding: 24rem 0;
+    position: relative;
+  }
+  .agence-vision .encart {
+    background-color: var(--blanc);
+    max-width: 90%;
+    padding: 2rem 3rem;
+    position: relative;
+  }
+  .agence-vision .image {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .agence-vision .image img {
+    height: 100%;
+    width: 100%;
+  }
+  .agence-vision .texte-wrap {
+    flex: 0 0 43rem;
+    padding: 5rem 0 5rem 2rem;
+  }
+  .agence-vision .titre-section {
+    line-height: 7rem;
+    margin-bottom: 3.3rem;
+    text-align: left;
+  }
+}
+@media (min-width: 1440px) {
+  .agence-vision::before {
+    display: block;
+  }
+  .agence-vision .texte-wrap {
+    flex-basis: 58.6rem;
+    padding-left: 5rem;
+  }
+  .agence-vision .encart {
+    font-size: 2.6rem;
+    line-height: 3.4rem;
+    max-width: 47rem;
+  }
+}
