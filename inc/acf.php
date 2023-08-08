@@ -242,6 +242,16 @@ class BE_ACF_Customizations {
 			array('agence', 'levier','performance')
 		);
 
+		/*********Bloc agence-adn ***************/
+		$this->helper_register_block_type( 
+			'agence-adn',
+			'Bloc ADN pour page Agence',
+			'Section avec titre, intro, 4 valeurs avec picto et texte.',
+			'star-filled', 
+			false, 
+			array('agence', 'valeur','adn')
+		);
+
 
 
 		/*********Bloc équipe ***************/
