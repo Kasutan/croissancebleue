@@ -252,16 +252,14 @@ class BE_ACF_Customizations {
 			array('agence', 'valeur','adn')
 		);
 
-
-
-		/*********Bloc équipe ***************/
+		/*********Bloc agence-equipe ***************/
 		$this->helper_register_block_type( 
-			'equipe',
-			'Bloc équipe pour page Qui sommes-nous',
-			'Section avec liste de portraits de dirigeants. Pour chaque personne : photo, nom, diplômes, bio et lien LinkedIn.',
+			'agence-equipe',
+			'Bloc équipes pour page Agence',
+			'Section sur fond gris avec titre, intro, photo et liste des collaborateurs (rôle et bio dans un volet escamotable). La photo est masquée en mobile',
 			'star-filled', 
-			false, 
-			array('equipe', 'qui sommes-nous','dirigeant')
+			true, //volet escamotable
+			array('agence', 'equipe')
 		);
 
 		

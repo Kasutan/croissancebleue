@@ -1,0 +1,170 @@
+.agence-equipe {
+  --trait:9.7rem;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x));
+  background-color: rgba(207, 203, 212, 0.17);
+  padding: 7.4rem 0 3.9rem;
+}
+.agence-equipe::before {
+  background-color: var(--bleu-d3);
+  content: "";
+  display: block;
+  height: var(--trait);
+  left: 50%;
+  position: absolute;
+  top: calc(-0.5 * var(--trait));
+  width: 1px;
+}
+@media (min-width: 1024px) {
+  .agence-equipe {
+    --trait:20.5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .agence-equipe {
+    width: var(--largeur-max);
+  }
+}
+.agence-equipe .intro-wrap {
+  padding: 0 var(--padding-x);
+}
+.agence-equipe .titre-section {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.agence-equipe .intro {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 5rem;
+}
+.agence-equipe .image {
+  display: none;
+}
+.agence-equipe .equipier {
+  background-color: var(--blanc);
+  margin-bottom: 1rem;
+  padding: 1.9rem var(--padding-x);
+}
+.agence-equipe .summary {
+  display: flex;
+}
+.agence-equipe .nom {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+  margin-bottom: 0;
+  margin-right: auto;
+}
+.agence-equipe a {
+  display: block;
+  margin-right: 1.8rem;
+  width: 4.5rem;
+}
+.agence-equipe a svg {
+  width: 100%;
+}
+.agence-equipe button {
+  background-color: transparent;
+  min-width: unset;
+  padding: 0;
+  width: 1.5rem;
+}
+.agence-equipe button .picto {
+  display: block;
+  transform-origin: center center;
+  transition: transform var(--transition);
+  width: 100%;
+}
+.agence-equipe button[aria-expanded=true] .picto {
+  transform: rotate(90deg);
+}
+.agence-equipe .volet {
+  display: none;
+}
+.agence-equipe .role {
+  font-weight: 700;
+}
+.agence-equipe .role1 {
+  font-size: 120%;
+  margin-bottom: 0;
+}
+.agence-equipe .bio {
+  font-weight: 300;
+}
+@media (min-width: 768px) {
+  .agence-equipe {
+    --gap:3rem;
+  }
+  .agence-equipe .texte-wrap {
+    align-items: center;
+    display: flex;
+  }
+  .agence-equipe .titre-section {
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+  .agence-equipe .intro {
+    margin-bottom: 0;
+  }
+  .agence-equipe .equipiers {
+    -moz-column-gap: var(--gap);
+         column-gap: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 5rem;
+    row-gap: var(--gap);
+  }
+}
+@media (min-width: 1024px) {
+  .agence-equipe {
+    --gap:2rem;
+    padding-top: 17.2rem;
+    padding-bottom: 19.5rem;
+  }
+  .agence-equipe .titre-section {
+    font-size: 6.5rem;
+    font-weight: 9.8rem;
+    margin-right: 4rem;
+  }
+  .agence-equipe .intro {
+    font-size: 2.6rem;
+    line-height: 3.4rem;
+  }
+  .agence-equipe .equipiers {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 9rem;
+  }
+  .agence-equipe .equipier {
+    border-bottom: solid 2px var(--noir);
+    padding-top: 6.6rem;
+    padding-bottom: 3rem;
+  }
+  .agence-equipe .picto {
+    height: 11.4rem;
+    margin-bottom: 7rem;
+    width: 11.3rem;
+  }
+  .agence-equipe .titre {
+    align-items: center;
+    display: flex;
+    font-size: 4rem;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    letter-spacing: -0.2px;
+    line-height: 1;
+    min-height: 8rem;
+    margin-bottom: 4.6rem;
+  }
+  .agence-equipe .texte {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1920px) {
+  .agence-equipe {
+    --gap:5rem;
+  }
+}
