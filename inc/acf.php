@@ -272,6 +272,16 @@ class BE_ACF_Customizations {
 			array('prestation', 'service', 'accompagnement')
 		);
 		
+		/*********Bloc prestations-expertise ***************/
+		$this->helper_register_block_type( 
+			'prestations-expertise',
+			'Bloc expertises pour page Prestations',
+			'Section avec titre, 4 expertises avec picto et texte.',
+			'star-filled', 
+			false, 
+			array('prestation', 'expertise')
+		);
+
 		/*********Bloc logos-grille ***************/
 		$this->helper_register_block_type( 
 			'logos-grille',

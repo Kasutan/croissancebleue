@@ -1,0 +1,108 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.prestations-expertise {
+	@include trait;
+	@include bleed;
+
+	background-color: var(--gris-bg);
+
+	padding:7.8rem var(--padding-x) 10rem;
+
+
+	.titre-section {
+		font-weight: 700;
+		letter-spacing: -0.56px;
+		margin-bottom: 6rem;
+		text-align: center;
+	}
+
+
+	.expertise {
+		border-top:solid 1px var(--noir);
+		padding:2.5rem 0 4rem;
+	}
+
+	.picto {
+		margin-bottom: 2rem;
+		width:6.9rem;
+	}
+
+
+	.titre {
+		font-size: 3rem;
+		font-weight: 800;
+		line-height: 3.5rem;
+		margin-bottom: 4rem;
+		text-transform: uppercase;
+	}
+
+	.texte {
+		line-height: 2.5rem;
+	}
+
+
+	@include bp(md) {
+		--gap:3rem;
+		
+
+		.expertises {
+			column-gap:var(--gap);
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			row-gap:var(--gap);
+		}
+
+		.expertise {
+			padding:3rem 0;
+			&:nth-of-type(1), &:nth-of-type(2) {
+				border-top:0;
+				padding-top:0;
+			}
+		}
+	}
+	
+	
+	@include bp(lg ) {
+
+		padding-top: 17.4rem;
+		padding-bottom: 17rem;
+		
+		.titre-section {
+			letter-spacing: 0;
+		}
+
+		.picto {
+			height:11.4rem;
+			margin-bottom: 2rem;
+			width:11.3rem;
+		}
+		.titre {
+			font-size: 3.5rem;
+			letter-spacing: -0.4px;
+			line-height: 1;
+			min-height: 7rem;
+			margin-bottom: 3rem;
+		}
+		.texte {
+			line-height: 4rem;
+			margin-bottom: 0;
+		}
+	
+	}
+
+	@include bp(xl) {
+		--gap:8rem;
+
+		.titre {
+			font-size: 4rem;
+			min-height: 8rem;
+
+		}
+
+	}
+
+	@include bp(xxl){
+		--gap:11.5rem;
+		
+	}
+} 

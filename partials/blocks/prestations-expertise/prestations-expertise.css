@@ -1,0 +1,110 @@
+.prestations-expertise {
+  --trait:9.7rem;
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x));
+  background-color: var(--gris-bg);
+  padding: 7.8rem var(--padding-x) 10rem;
+}
+.prestations-expertise::before {
+  background-color: var(--bleu-d3);
+  content: "";
+  display: block;
+  height: var(--trait);
+  left: 50%;
+  position: absolute;
+  top: calc(-0.5 * var(--trait));
+  width: 1px;
+}
+@media (min-width: 1024px) {
+  .prestations-expertise {
+    --trait:20.5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .prestations-expertise {
+    width: var(--largeur-max);
+  }
+}
+.prestations-expertise .titre-section {
+  font-weight: 700;
+  letter-spacing: -0.56px;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+.prestations-expertise .expertise {
+  border-top: solid 1px var(--noir);
+  padding: 2.5rem 0 4rem;
+}
+.prestations-expertise .picto {
+  margin-bottom: 2rem;
+  width: 6.9rem;
+}
+.prestations-expertise .titre {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 3.5rem;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+.prestations-expertise .texte {
+  line-height: 2.5rem;
+}
+@media (min-width: 768px) {
+  .prestations-expertise {
+    --gap:3rem;
+  }
+  .prestations-expertise .expertises {
+    -moz-column-gap: var(--gap);
+         column-gap: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--gap);
+  }
+  .prestations-expertise .expertise {
+    padding: 3rem 0;
+  }
+  .prestations-expertise .expertise:nth-of-type(1), .prestations-expertise .expertise:nth-of-type(2) {
+    border-top: 0;
+    padding-top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .prestations-expertise {
+    padding-top: 17.4rem;
+    padding-bottom: 17rem;
+  }
+  .prestations-expertise .titre-section {
+    letter-spacing: 0;
+  }
+  .prestations-expertise .picto {
+    height: 11.4rem;
+    margin-bottom: 2rem;
+    width: 11.3rem;
+  }
+  .prestations-expertise .titre {
+    font-size: 3.5rem;
+    letter-spacing: -0.4px;
+    line-height: 1;
+    min-height: 7rem;
+    margin-bottom: 3rem;
+  }
+  .prestations-expertise .texte {
+    line-height: 4rem;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .prestations-expertise {
+    --gap:8rem;
+  }
+  .prestations-expertise .titre {
+    font-size: 4rem;
+    min-height: 8rem;
+  }
+}
+@media (min-width: 1920px) {
+  .prestations-expertise {
+    --gap:11.5rem;
+  }
+}

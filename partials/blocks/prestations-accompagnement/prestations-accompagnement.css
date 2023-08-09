@@ -79,6 +79,7 @@
     display: none;
   }
   .prestations-accompagnement .titre-section {
+    letter-spacing: 0;
     margin-bottom: 6rem;
   }
   .prestations-accompagnement .colonnes {
