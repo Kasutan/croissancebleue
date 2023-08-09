@@ -1,0 +1,150 @@
+{
+    "key": "group_64d3b1aaeb73a",
+    "title": "Bloc accompagnement pour page Prestations",
+    "fields": [
+        {
+            "key": "field_64d3b1aaf4120",
+            "label": "Bloc accompagnement pour page Prestations",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Section avec titre et services détaillés sur 3 colonnes.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_64d3b1ab03985",
+            "label": "Titre de la section",
+            "name": "titre_section",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Les mots entre balises span seront affichés en rose",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 1,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_64d3b1ab0af45",
+            "label": "Colonnes",
+            "name": "colonnes",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 1,
+            "max": 3,
+            "collapsed": "field_64d3b1ab2158a",
+            "button_label": "Ajouter une colonne",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64d3b1ab2158a",
+                    "label": "Titre",
+                    "name": "titre",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_64d3b1ab0af45"
+                },
+                {
+                    "key": "field_64d3b1ab28953",
+                    "label": "Introduction de la colonne",
+                    "name": "intro",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_64d3b1ab0af45"
+                },
+                {
+                    "key": "field_64d3b1ab2c6b7",
+                    "label": "Texte",
+                    "name": "texte",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Les mots en gras seront affichés en bleu. Les items des listes à puces seront séparés par des traits bleus.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_64d3b1ab0af45"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/prestations-accompagnement"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1691595371
+}

@@ -819,25 +819,6 @@ hr, .wp-block-separator {
   }
 }
 
-.entry-content ul:not([class]) {
-  list-style: square;
-  padding-left: 2.7rem;
-  margin-bottom: 2rem;
-}
-.entry-content ul:not([class]) li {
-  line-height: 3rem;
-  margin-bottom: 0;
-}
-@media (min-width: 1024px) {
-  .entry-content ul:not([class]) {
-    margin-bottom: 2.6rem;
-  }
-}
-
-.entry-content p + ul:not([class]) {
-  margin-top: -1rem;
-}
-
 /*
 ul:not([class]),
 ol:not([class]) {

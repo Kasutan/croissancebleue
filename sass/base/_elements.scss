@@ -21,23 +21,6 @@ hr, .wp-block-separator {
 	}
 }
 
-.entry-content ul:not([class]) {
-	list-style: square;
-	padding-left: 2.7rem;
-	li {
-		line-height: 3rem;
-		margin-bottom:0;
-	}
-
-	margin-bottom: 2rem;
-	@include bp(lg){
-		margin-bottom: 2.6rem;
-	}
-}
-
-.entry-content p + ul:not([class]) {
-	margin-top: -1rem;
-}
 
 /*
 ul:not([class]),

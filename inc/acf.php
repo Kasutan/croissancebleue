@@ -262,6 +262,15 @@ class BE_ACF_Customizations {
 			array('agence', 'equipe')
 		);
 
+		/*********Bloc prestations-accompagnement ***************/
+		$this->helper_register_block_type( 
+			'prestations-accompagnement',
+			'Bloc accompagnement pour page Prestations',
+			'Section avec titre et services détaillés sur 3 colonnes.',
+			'star-filled', 
+			false, 
+			array('prestation', 'service', 'accompagnement')
+		);
 		
 		/*********Bloc logos-grille ***************/
 		$this->helper_register_block_type( 
