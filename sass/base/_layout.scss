@@ -45,8 +45,8 @@ body {
 
 	@include bp(xxl) {
 		--padding-x-pleine-largeur : calc(50vw - var(--largeur-max)/2);
-		--padding-x: calc(50vw - 1364px / 2);
-		--padding-x-header:calc(50vw - 1640px / 2);
+		--padding-x: calc((var(--largeur-max) - 1364px )/ 2);
+		--padding-x-header:calc((var(--largeur-max) - 1640px )/ 2);
 	}
 }
 
