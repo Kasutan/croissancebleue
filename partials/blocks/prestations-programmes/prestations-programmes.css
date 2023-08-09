@@ -1,0 +1,157 @@
+.prestations-programmes {
+  width: 100vw;
+  margin-left: calc(-1 * var(--padding-x));
+  --trait:9.7rem;
+  position: relative;
+  --li-spacing:1.5rem;
+  padding-bottom: 4rem;
+  position: relative;
+}
+@media (min-width: 1920px) {
+  .prestations-programmes {
+    width: var(--largeur-max);
+  }
+}
+.prestations-programmes::before {
+  background-color: var(--bleu-d3);
+  content: "";
+  display: block;
+  height: var(--trait);
+  left: 50%;
+  position: absolute;
+  top: calc(-0.5 * var(--trait));
+  width: 1px;
+}
+@media (min-width: 1024px) {
+  .prestations-programmes {
+    --trait:20.5rem;
+  }
+}
+.prestations-programmes .desktop {
+  display: none;
+}
+.prestations-programmes .image {
+  aspect-ratio: 1.1;
+  display: flex;
+  margin-bottom: 1.8rem;
+}
+.prestations-programmes .image img {
+  height: 100%;
+  width: 100%;
+}
+.prestations-programmes .texte-wrap {
+  padding: 0 var(--padding-x);
+}
+.prestations-programmes .titre-section {
+  font-weight: 700;
+  letter-spacing: -0.56px;
+  margin-bottom: 3rem;
+  text-align: left;
+}
+.prestations-programmes .encart {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 3rem;
+}
+.prestations-programmes .marque {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1em;
+}
+.prestations-programmes .texte ul {
+  list-style: none;
+  padding: 0;
+}
+.prestations-programmes .texte ul strong {
+  color: #00A0BC;
+}
+.prestations-programmes .texte ul li:not(:last-of-type) {
+  margin-bottom: var(--li-spacing);
+  padding-bottom: var(--li-spacing);
+  position: relative;
+}
+.prestations-programmes .texte ul li:not(:last-of-type)::after {
+  background-color: #2AC1C8;
+  content: "";
+  display: block;
+  height: 1px;
+  position: relative;
+  top: var(--li-spacing);
+  width: 10rem;
+}
+@media (min-width: 1024px) {
+  .prestations-programmes {
+    display: flex;
+    padding: 19.3rem var(--padding-x) 8rem;
+  }
+  .prestations-programmes .mobile {
+    display: none;
+  }
+  .prestations-programmes .desktop {
+    display: block;
+  }
+  .prestations-programmes .image-wrap {
+    align-items: flex-end;
+    display: flex;
+    flex-grow: 1;
+    height: auto;
+    margin-bottom: 0;
+    padding: 24rem 0;
+    position: relative;
+  }
+  .prestations-programmes .encart {
+    background-color: var(--blanc);
+    max-width: 90%;
+    padding: 2rem 3rem;
+    position: relative;
+  }
+  .prestations-programmes .image {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .prestations-programmes .image img {
+    height: 100%;
+    width: 100%;
+  }
+  .prestations-programmes .texte-wrap {
+    flex: 0 0 45rem;
+    padding: 5rem 0 1rem 2rem;
+  }
+  .prestations-programmes .titre-section {
+    font-size: 5rem;
+    line-height: 6rem;
+    margin-bottom: 5rem;
+    text-align: left;
+  }
+  .prestations-programmes .marque {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1440px) {
+  .prestations-programmes .titre-section {
+    font-size: 6.4rem;
+    line-height: 7.4rem;
+    letter-spacing: 0;
+  }
+  .prestations-programmes .texte-wrap {
+    flex-basis: 51rem;
+    padding-left: 6rem;
+  }
+  .prestations-programmes .marque {
+    font-size: 4.5rem;
+  }
+  .prestations-programmes .encart {
+    font-size: 2.6rem;
+    line-height: 3.4rem;
+  }
+}
+@media screen and (min-width: 1700px) {
+  .prestations-programmes .encart {
+    max-width: 66rem;
+  }
+}

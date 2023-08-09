@@ -282,6 +282,16 @@ class BE_ACF_Customizations {
 			array('prestation', 'expertise')
 		);
 
+		/*********Bloc prestations-programmes ***************/
+		$this->helper_register_block_type( 
+			'prestations-programmes',
+			'Bloc programmes pour page Prestations',
+			'Section avec titre, texte et un encart sur une photo.',
+			'star-filled', 
+			false, 
+			array('prestations', 'programmes')
+		);
+
 		/*********Bloc logos-grille ***************/
 		$this->helper_register_block_type( 
 			'logos-grille',
