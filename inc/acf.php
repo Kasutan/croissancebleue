@@ -313,6 +313,15 @@ class BE_ACF_Customizations {
 			array('logo', 'client','ref','grille')
 		);
 
+		/*********Bloc ecosysteme-mecenat ***************/
+		$this->helper_register_block_type( 
+			'ecosysteme-mecenat',
+			'Bloc mécénat pour page Ecosystème',
+			'Section avec titre, intro, texte et cta, à côté de deux photos.',
+			'star-filled', 
+			false, 
+			array('ecosysteme', 'mecenat','mécénat')
+		);
 		
 
 	}

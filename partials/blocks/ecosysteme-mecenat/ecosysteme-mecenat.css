@@ -1,0 +1,160 @@
+.ecosysteme-mecenat {
+  --trait:9.7rem;
+  position: relative;
+  padding: 8rem 0 8rem;
+  position: relative;
+}
+.ecosysteme-mecenat::before {
+  background-color: var(--bleu-d3);
+  content: "";
+  display: block;
+  height: var(--trait);
+  left: 50%;
+  position: absolute;
+  top: calc(-0.5 * var(--trait));
+  width: 1px;
+}
+@media (min-width: 1024px) {
+  .ecosysteme-mecenat {
+    --trait:20.5rem;
+  }
+}
+.ecosysteme-mecenat .texte-wrap {
+  margin-bottom: 7rem;
+}
+.ecosysteme-mecenat .titre-section {
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.ecosysteme-mecenat .intro {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 3rem;
+}
+.ecosysteme-mecenat .texte {
+  margin-bottom: 3rem;
+}
+.ecosysteme-mecenat .cta {
+  color: #179DB8;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+.ecosysteme-mecenat .image-wrap {
+  display: grid;
+  grid-template-columns: 2fr 4rem 1fr;
+  grid-template-rows: 20rem 11rem 5rem;
+}
+.ecosysteme-mecenat .image-1 {
+  grid-column: 1/span 2;
+  grid-row: 1/span 2;
+}
+.ecosysteme-mecenat .image-2 {
+  grid-column: 2/span 2;
+  grid-row: 2/span 2;
+}
+.ecosysteme-mecenat .image img {
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .ecosysteme-mecenat {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 7.1rem var(--padding-x) 8rem;
+  }
+  .ecosysteme-mecenat .texte-wrap {
+    padding: 2rem 0;
+  }
+  .ecosysteme-mecenat .titre-section {
+    text-align: left;
+  }
+  .ecosysteme-mecenat .image-wrap {
+    align-items: flex-start;
+    display: flex;
+    position: relative;
+    padding-top: 25rem;
+  }
+  .ecosysteme-mecenat .image {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .ecosysteme-mecenat .image img {
+    height: 100%;
+    width: 100%;
+  }
+  .ecosysteme-mecenat .image-2 {
+    display: none;
+  }
+  .ecosysteme-mecenat .intro {
+    background-color: var(--blanc);
+    max-width: 90%;
+    padding: 2rem 3rem;
+    position: relative;
+  }
+}
+@media (min-width: 1024px) {
+  .ecosysteme-mecenat {
+    grid-template-columns: 48rem 1fr;
+    padding: 14rem var(--padding-x) 16.5rem;
+  }
+  .ecosysteme-mecenat .titre-section {
+    line-height: 7rem;
+    margin-bottom: 3.3rem;
+    text-align: left;
+  }
+  .ecosysteme-mecenat .leviers li {
+    padding: 1.5rem 0;
+  }
+  .ecosysteme-mecenat .leviers li::after {
+    top: 1.5rem;
+  }
+  .ecosysteme-mecenat .leviers br {
+    display: none;
+  }
+  .ecosysteme-mecenat .image-1 {
+    height: 75%;
+  }
+  .ecosysteme-mecenat .image-2 {
+    bottom: 0;
+    display: block;
+    height: 35%;
+    left: unset;
+    right: 0;
+    top: unset;
+    width: 45%;
+  }
+  .ecosysteme-mecenat .image-2 img {
+    object-position: top center;
+  }
+}
+@media (min-width: 1440px) {
+  .ecosysteme-mecenat {
+    grid-template-columns: 50rem 1fr;
+  }
+  .ecosysteme-mecenat .intro {
+    font-size: 2.6rem;
+    line-height: 3.4rem;
+    max-width: 85%;
+  }
+  .ecosysteme-mecenat .image-1 {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1780px) {
+  .ecosysteme-mecenat {
+    -moz-column-gap: 3.5rem;
+         column-gap: 3.5rem;
+    grid-template-columns: 56rem 1fr;
+  }
+  .ecosysteme-mecenat .image-wrap {
+    padding-top: 30rem;
+  }
+  .ecosysteme-mecenat .intro {
+    max-width: 56rem;
+  }
+}
