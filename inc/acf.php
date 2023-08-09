@@ -271,7 +271,7 @@ class BE_ACF_Customizations {
 			false, 
 			array('prestation', 'service', 'accompagnement')
 		);
-		
+
 		/*********Bloc prestations-expertise ***************/
 		$this->helper_register_block_type( 
 			'prestations-expertise',
@@ -291,6 +291,17 @@ class BE_ACF_Customizations {
 			false, 
 			array('prestations', 'programmes')
 		);
+
+		/*********Bloc ecosysteme-partenaires ***************/
+		$this->helper_register_block_type( 
+			'ecosysteme-partenaires',
+			'Bloc partenaires pour page Ecosysteme',
+			'Section avec titre, intro et partenaires sur 3 colonnes.',
+			'star-filled', 
+			false, 
+			array('ecosysteme', 'partenaires')
+		);
+		
 
 		/*********Bloc logos-grille ***************/
 		$this->helper_register_block_type( 

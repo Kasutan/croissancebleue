@@ -1,0 +1,113 @@
+@import "./././sass/abstracts/variables-et-mixins";
+
+.ecosysteme-partenaires {
+	@include trait;
+	padding:6.7rem 0;
+
+	--col-spacing:4rem;
+	--li-spacing:1.5rem;
+
+	.titre-section {
+		font-weight: 700;
+		letter-spacing: -0.56px;
+		margin-bottom: 4rem;
+		text-align: center;
+	}
+	.intro {
+		font-size: 1.8rem;
+		line-height: 2.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.colonne {
+		border-top:solid 2px var(--noir);
+		padding: 4.2rem 0 3.2rem;
+
+	}
+
+	.titre {
+		font-weight: 800;
+		line-height: 1;
+		margin-bottom: 3rem;
+	}
+	
+
+	.texte {
+		font-size: 1.4rem;
+		font-weight: 600;
+		line-height: 2.2rem;
+	}
+
+
+	
+
+	@include bp(lg ) {
+		--gap:3rem;
+		&::before {
+			display: none;
+		}
+		padding-top: 15rem;
+
+		.titre-section {
+			letter-spacing: 0;
+			margin-bottom: 3rem;
+		}
+
+		.intro {
+			font-size: 2.6rem;
+			line-height: 3.4rem;
+			margin-bottom: 6.6rem;
+			text-align: center;
+		}
+		
+		.colonnes {
+			column-gap: var(--gap);
+			display: grid;
+			grid-template-columns: repeat(3,1fr);
+		}
+
+		.colonne {
+			border-top:solid 3px var(--noir);
+			padding: 4rem 0;
+	
+		}
+
+		.titre {
+			font-size: 3rem;
+			line-height: 4rem;
+			margin-bottom: 2rem;
+			min-height: 8rem;
+		}
+
+		.texte {
+			font-size: 1.8rem;
+			line-height: 2.5rem;
+		}
+	
+	}
+
+	@include bp(xl) {
+		&::before {
+			display: block;
+		}
+		--gap:5rem;
+
+		.titre {
+			font-size: 4rem;
+			line-height: 4.5rem;
+			min-height: 9.5rem;
+		}
+
+		.texte {
+			font-size: 2rem;
+			line-height: 3.2rem;
+		}
+
+		
+	}
+
+	@include bp(xxl) {
+		--gap:6.4rem;
+		
+	}
+} 

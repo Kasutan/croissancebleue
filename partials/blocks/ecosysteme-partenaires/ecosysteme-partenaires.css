@@ -1,0 +1,108 @@
+.ecosysteme-partenaires {
+  --trait:9.7rem;
+  position: relative;
+  padding: 6.7rem 0;
+  --col-spacing:4rem;
+  --li-spacing:1.5rem;
+}
+.ecosysteme-partenaires::before {
+  background-color: var(--bleu-d3);
+  content: "";
+  display: block;
+  height: var(--trait);
+  left: 50%;
+  position: absolute;
+  top: calc(-0.5 * var(--trait));
+  width: 1px;
+}
+@media (min-width: 1024px) {
+  .ecosysteme-partenaires {
+    --trait:20.5rem;
+  }
+}
+.ecosysteme-partenaires .titre-section {
+  font-weight: 700;
+  letter-spacing: -0.56px;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.ecosysteme-partenaires .intro {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 3rem;
+}
+.ecosysteme-partenaires .colonne {
+  border-top: solid 2px var(--noir);
+  padding: 4.2rem 0 3.2rem;
+}
+.ecosysteme-partenaires .titre {
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 3rem;
+}
+.ecosysteme-partenaires .texte {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+}
+@media (min-width: 1024px) {
+  .ecosysteme-partenaires {
+    --gap:3rem;
+    padding-top: 15rem;
+  }
+  .ecosysteme-partenaires::before {
+    display: none;
+  }
+  .ecosysteme-partenaires .titre-section {
+    letter-spacing: 0;
+    margin-bottom: 3rem;
+  }
+  .ecosysteme-partenaires .intro {
+    font-size: 2.6rem;
+    line-height: 3.4rem;
+    margin-bottom: 6.6rem;
+    text-align: center;
+  }
+  .ecosysteme-partenaires .colonnes {
+    -moz-column-gap: var(--gap);
+         column-gap: var(--gap);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .ecosysteme-partenaires .colonne {
+    border-top: solid 3px var(--noir);
+    padding: 4rem 0;
+  }
+  .ecosysteme-partenaires .titre {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+    min-height: 8rem;
+  }
+  .ecosysteme-partenaires .texte {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .ecosysteme-partenaires {
+    --gap:5rem;
+  }
+  .ecosysteme-partenaires::before {
+    display: block;
+  }
+  .ecosysteme-partenaires .titre {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    min-height: 9.5rem;
+  }
+  .ecosysteme-partenaires .texte {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+}
+@media (min-width: 1920px) {
+  .ecosysteme-partenaires {
+    --gap:6.4rem;
+  }
+}
