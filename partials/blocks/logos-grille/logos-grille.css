@@ -71,10 +71,15 @@
   border: solid 1px #707070;
   border-radius: 50%;
   color: transparent;
+  display: block;
   height: var(--dot);
   margin: 0 1.2rem;
   opacity: 0.33;
   width: var(--dot);
+}
+.logos-grille .pagination a.page:hover, .logos-grille .pagination a.page:focus {
+  background-color: #009db8;
+  border-color: #009db8;
 }
 .logos-grille .pagination li.active a.page {
   opacity: 1;

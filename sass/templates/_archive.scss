@@ -5,11 +5,11 @@
 		font-weight: 700;
 		line-height: 4rem;
 		@include bp(lg) {
-			font-size: 7rem;
+			font-size: 5rem;
 			line-height: 1;
 		}
 		@include bp(xl) {
-			font-size: 15rem;
+			font-size: 9rem;
 			line-height: 1;
 		}
 	}

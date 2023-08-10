@@ -2195,13 +2195,13 @@ button.ouvrir-sous-menu:focus {
 }
 @media (min-width: 1024px) {
   .archive .titre {
-    font-size: 7rem;
+    font-size: 5rem;
     line-height: 1;
   }
 }
 @media (min-width: 1440px) {
   .archive .titre {
-    font-size: 15rem;
+    font-size: 9rem;
     line-height: 1;
   }
 }
@@ -2657,14 +2657,23 @@ form.search-form input.search-submit {
   display: flex;
   justify-content: center;
   list-style: none;
-  padding: 0;
-  margin: 5.5rem 0 3.5rem;
+  margin: 0;
+  padding: 5.5rem 0 3.5rem;
 }
-.pagination a.page {
+@media (min-width: 1024px) {
+  .pagination {
+    padding: 7.7rem 0 6rem;
+  }
+}
+
+.archive .pagination {
+  background-color: var(--gris-bg);
+}
+.archive .pagination a.page {
   align-items: center;
-  background-color: var(--bleu-1fc);
-  border: solid 1px var(--bleu-bordure);
-  color: var(--noir);
+  background-color: #009DB8;
+  border: solid 1px #009DB8;
+  color: var(--blanc);
   display: flex;
   font-weight: 700;
   height: 3rem;
@@ -2673,26 +2682,25 @@ form.search-form input.search-submit {
   text-decoration: none;
   width: 3rem;
 }
-.pagination a.page:hover, .pagination a.page:focus {
-  background-color: var(--violet-ba);
+.archive .pagination a.page:hover, .archive .pagination a.page:focus {
+  background-color: var(--bleu-fonce);
+  border-color: var(--bleu-fonce);
   color: var(--blanc);
 }
-.pagination li.active a {
-  background-color: var(--violet-ba);
-  color: var(--blanc);
+.archive .pagination li.active a {
+  background-color: var(--blanc);
+  border-color: var(--bleu-fonce);
+  color: var(--bleu-fonce);
 }
-.pagination li.disabled a {
+.archive .pagination li.disabled a {
   cursor: default;
 }
-.pagination li.disabled a:hover, .pagination li.disabled a:focus {
+.archive .pagination li.disabled a:hover, .archive .pagination li.disabled a:focus {
   border-color: transparent;
   color: var(--bleu);
 }
 @media (min-width: 1024px) {
-  .pagination {
-    margin: 7.7rem 0 6rem;
-  }
-  .pagination a.page {
+  .archive .pagination a.page {
     height: 5rem;
     margin: 0 1rem;
     width: 5rem;
