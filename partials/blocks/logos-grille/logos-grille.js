@@ -28,6 +28,9 @@
 	
 		var listePosts = new List('logos-avec-pagination', optionsListe);
 
+		//Figer la hauteur du bloc avec le nombre maxi d'éléments
+		var height=$(logos).outerHeight();
+		$(logos).css('height',height+'px');
 
 		//Défilement auto
 		setInterval(defileAuto,delai);
