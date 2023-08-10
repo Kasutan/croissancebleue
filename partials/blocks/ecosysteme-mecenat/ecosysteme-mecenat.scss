@@ -55,119 +55,81 @@
 	}
 
 
-	@include bp(md) {
+	@include bp(lg) {
 		column-gap:2rem;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		padding:7.1rem var(--padding-x) 8rem;
-
-		
+		grid-template-columns: 1.5fr 1fr;
+		padding:6.8rem 0 10.8rem;
 
 		.texte-wrap {
-			padding:2rem 0;
+			grid-column: 2;
+			grid-row:1;
+			padding:5rem 0;
 		}
+
 		.titre-section {
+			font-size: 4.7rem;
+			line-height: 6.3rem;
 			text-align: left;
-		}
-		.image-wrap {
-			align-items: flex-start;
-			display: flex;
-			position: relative;
-			padding-top:25rem;
-		}
-
-		.image {
-			@include decor;
-
-
-			img {
-				height:100%;
-				width: 100%;
-			}
-		}
-
-		.image-2 {
-			display: none;
 		}
 
 		.intro {
-			background-color: var(--blanc);
-			max-width: 90%;;
-			padding:2rem 3rem;
-			position: relative;
+			font-size: 2.3rem;
+			line-height: 3.2rem;
+		}
+
+		.cta {
+			font-size: 2.5rem;
+		}
+
+		.image-wrap {
+			grid-template-columns: 36% 53% 11%;
+			grid-template-rows: 55% 39% 6%;
+			width:100%;
+		}
+		.image-1 {
+			grid-column: 1 / span 2;
+		}
+
+		.image-2 {
+			grid-column: 2 / span 2;
+			
+
 		}
 
 	}
 	
 
-	@include bp(lg){
-
-		grid-template-columns: 48rem 1fr;
-		padding:14rem var(--padding-x) 16.5rem;
-
-		.titre-section {
-			line-height: 7rem;
-			margin-bottom: 3.3rem;
-			text-align: left;
-		}
-
-		.leviers {
-			li {
-				padding:1.5rem 0;
-				&::after {
-					top:1.5rem;
-				}
-			}
-			br {
-				display: none;
-			}
-		}
-
-		.image-1 {
-			height:75%;
-		}
-
-		.image-2 {
-			bottom:0;
-			display: block;
-			height:35%;
-			left:unset;
-			right: 0;
-			top:unset;
-			width:45%;
-			img {
-				object-position: top center;;
-			}
-
-		}
-		
-	}
 
 	@include bp(xl) {
-		grid-template-columns: 50rem 1fr;
+		column-gap: 3rem;
+		grid-template-columns: 1fr 1fr;
 
+		.texte-wrap {
+			padding:10rem 0;
+		}
+		.titre-section {
+			font-size: 6.4rem;
+			line-height: 7.2rem;
+		}
 
 		.intro {
 			font-size: 2.6rem;
 			line-height: 3.4rem;
-			max-width:85%;
+		}
+		.cta {
+			font-size: 2.5rem;
+			line-height: 3.2rem;
 		}
 
-		.image-1 {
-			width:90%;
-		}
+		
 		
 	}
 
 	@media screen and (min-width:1780px) {
 		column-gap:3.5rem;
-		grid-template-columns: 56rem 1fr;
-		.image-wrap {
-			padding-top:30rem;
-
-		}
-		.intro {
-			max-width:56rem;
+		.texte-wrap {
+			padding:15rem 0;
 		}
 	}
 } 
