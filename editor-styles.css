@@ -37,7 +37,7 @@ textarea {
   justify-content: center;
 }
 
-.wp-block-pullquote {
+.wp-block-pullquote, .wp-block-quote {
   background-color: rgba(0, 157, 184, 0.05);
   border-radius: 4px;
   color: #1E2022;
@@ -47,8 +47,9 @@ textarea {
   margin: 3rem 0;
   padding: 1.5rem;
   position: relative;
+  text-align: center;
 }
-.wp-block-pullquote::before, .wp-block-pullquote::after {
+.wp-block-pullquote::before, .wp-block-pullquote::after, .wp-block-quote::before, .wp-block-quote::after {
   content: "“";
   color: var(--bleu-b8);
   font-family: var(--font-titre);
@@ -58,7 +59,7 @@ textarea {
   position: absolute;
   top: 1.4rem;
 }
-.wp-block-pullquote::after {
+.wp-block-pullquote::after, .wp-block-quote::after {
   bottom: 1rem;
   content: "”";
   left: unset;
@@ -66,18 +67,18 @@ textarea {
   top: unset;
 }
 @media (min-width: 1024px) {
-  .wp-block-pullquote {
+  .wp-block-pullquote, .wp-block-quote {
     font-size: 2.2rem;
     letter-spacing: 0.82px;
     line-height: 3.2rem;
     margin: 5.8rem 0;
     padding: 4.5rem;
   }
-  .wp-block-pullquote::before {
+  .wp-block-pullquote::before, .wp-block-quote::before {
     left: 3rem;
     top: 3rem;
   }
-  .wp-block-pullquote::after {
+  .wp-block-pullquote::after, .wp-block-quote::after {
     bottom: 3rem;
     right: 3rem;
   }

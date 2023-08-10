@@ -1,0 +1,263 @@
+.loop {
+	/***********Vignette ordinaire*****************/
+	.vignette {
+		background-color: var(--blanc);
+
+		.image {
+			aspect-ratio: 1.67;
+			display: flex;
+			margin-bottom: 11px;
+			width: 100%;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.texte {
+			padding: 0 3.7rem 3rem;
+
+		}
+
+		.date {
+			color: #B1B1B1;
+			font-size: 1.3rem;
+			font-weight: 500;
+			line-height: 2rem;
+			margin-bottom: 2.3rem;
+			text-align: right;
+		}
+
+		.titre-item {
+			color: var(--noir-2e);
+			font-size: 1.8rem;
+			line-height: 1;
+			margin-bottom: 1.3rem;
+			text-align: left;
+
+			a {
+				text-decoration: none;
+			}
+		}
+
+		a.extrait {
+			color: var(--gris-66);
+			display: block;
+			font-style: 1.4rem;
+			line-height: 1.8rem;
+			margin-bottom: 1.3rem;
+			text-decoration: none;
+		}
+
+		.suite {
+			color: var(--noir-2e);
+			font-size: 1.2rem;
+			font-weight: 800;
+			line-height: 3rem;
+			text-align: right;
+		}
+
+		.top-post, a.top-post {
+			display: none;
+		}
+
+		
+
+		/*****************Première vignette*************/
+		&:first-of-type {
+			@include bleed;
+			margin-left: calc(-1 * var(--padding-x-header));
+			margin-bottom: 3rem;
+			position: relative;
+
+
+			align-items: center;
+			column-gap:1rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			padding-bottom: 3rem;
+
+			.image {
+				aspect-ratio: 1;
+				display: flex;
+			}
+
+			.texte {
+				display: none;
+			}
+
+			.top-post, a.top-post {
+				display: block;
+			}
+
+			.titre-item {
+				font-size: 1.8rem;
+				font-weight: 700;
+				grid-column: 2;
+				grid-row: 1;
+				line-height: 2rem;
+				padding-right: var(--padding-x);
+				text-align: left;
+				text-transform: uppercase;
+
+				a {
+					color: #05222E;
+					text-decoration: none;
+				}
+			}
+
+			.extrait,
+			.suite {
+				grid-column: 1 / span 2;
+				padding: 0 var(--padding-x);
+			}
+
+			.extrait {
+				color: #666666;
+				font-size: 1.4rem;
+				line-height: 2rem;
+				margin-bottom: 1em;
+				margin-top: 3rem;
+				text-decoration: none;
+			}
+
+			.suite {
+				color: var(--noir-2e);
+				font-size: 1.4rem;
+				font-weight: 800;
+				line-height: 3rem;
+				text-align: right;
+			}
+
+		}
+
+		/*******Commun à toutes les vignettes*****/
+		&:hover,
+		&:focus-within {
+
+			.titre-item a,
+			.suite a {
+				color: var(--bleu-titre);
+			}
+		}
+	}
+}
+
+/********** Première vignette en tablette (2 colonnes)********/
+@include bp(md){
+	.loop .vignette:first-of-type {
+		grid-column: 1 / span 2;
+	
+		align-items: stretch;
+		column-gap: 2rem;
+		padding:0 var(--padding-x) 3rem;
+		.image {
+			aspect-ratio: unset;
+			grid-row:1 / span 3;
+		}
+		.titre-item, .extrait, .suite {
+			grid-column: 2;
+			padding:0;
+		}
+		.extrait {
+			grid-row:2;
+			margin-top: 0;
+		}
+		.suite {
+			grid-row:3;
+		}
+	}
+}
+
+/********** Vignette ordinaire en desktop ********/
+@include bp(lg) {
+	.loop .vignette {
+		display: flex;
+		flex-direction: column;
+		.image {
+			margin-bottom: 8px;
+		}
+
+		.texte {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			padding: 0 1.5rem 4rem;
+		}
+
+		.titre-item {
+			font-size: 2.3rem;
+		}
+		.suite {
+			margin-top: auto;
+		}
+	}
+}
+
+
+/********** Première vignette en desktop (3 colonnes)********/
+@include bp(lg) {
+	.loop .vignette:first-of-type {
+		grid-column: 1 / span 3;
+		margin-bottom: 11rem;
+		padding-bottom: 6.8rem;
+		.titre-item {
+			font-size: 3rem;
+			line-height: 1.05;
+		}
+
+		.extrait, .suite {
+			font-size: 2.5rem;
+			line-height: 3.5rem;
+		}
+	
+
+	}
+}
+
+/********** Vignettes avec textes XL********/
+@include bp(xl) {
+	.loop .vignette {
+		.texte {
+			padding: 0 5rem 9rem 5rem;
+		}
+
+		.date {
+			left: 4rem;
+			margin-bottom: 2.9rem;
+			position: relative;
+		}
+
+		.titre-item {
+			font-size: 2.8rem;
+			line-height: 3.5rem;
+			margin-bottom: 1em;
+		}
+
+		a.extrait {
+			line-height: 2.4rem;
+			margin-bottom: 5rem;
+		}
+
+		.suite {
+			font-size: 1.5rem;
+			left: 2rem;
+			line-height: 3rem;
+			position: relative;
+		}
+
+		&:first-of-type {
+			.titre-item {
+				font-size:4.5rem;
+			}
+			.extrait {
+				font-size: 3rem;
+				line-height: 4.5rem;
+			}
+			.suite {
+				font-size: 2rem;
+				line-height: 3rem;
+			}
+		}
+	}
+}

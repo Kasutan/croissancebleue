@@ -35,5 +35,13 @@ printf('<%s class="vignette %s">',$tag,$class);
 
 		printf('<div class="suite"><a href="%s">Lire l\'article<span class="screen-reader-text"> %s</span></a></div>',$link,$titre);
 	echo '</div>';
+
+	/**Pour vignette en position top post */
+	printf('<h2 class="titre-item top-post"><a href="%s">%s</a></h2>',$link,$titre);
+			
+	printf('<a class="extrait top-post" href="%s">%s</a>',$link,get_the_excerpt($post_id));
+
+	printf('<div class="suite top-post"><a href="%s">Lire l\'article<span class="screen-reader-text"> %s</span></a></div>',$link,$titre);
+	
 printf('</%s>',$tag);
 

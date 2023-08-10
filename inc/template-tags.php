@@ -264,43 +264,8 @@ function kasutan_affiche_metas_single($post_id) {
 }
 
 
-/**
-* Afficher le premier article de la page blog
-*
-*/
-function kasutan_affiche_top_article() {
-	$articles=new WP_Query(array(
-		'post_type' => 'post',
-		'posts_per_page' => 1,
-		'orderby' => 'date',
-		'order' => 'DESC'
-	));
-	if(!$articles->have_posts(  )) {
-		return;
-	}
-	$n=1;
-	while ( $articles->have_posts() && $n<=1) {
-		$articles->the_post();
-		$post_id=get_the_ID();
-		$link=get_the_permalink();
-		$titre=get_the_title($post_id);
-
-		echo '<div class="top-post">';
-			if(function_exists('kasutan_affiche_image_vignette')) {
-				kasutan_affiche_image_vignette($post_id,$link);
-			}
-				printf('<h2 class="h3 titre-item"><a href="%s">%s</a></h2>',$link,$titre);
-				printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt());
-				printf('<div class="suite"><a href="%s">Lire l\'article<span class="screen-reader-text"> %s</span></a></div>',$link,$titre);
-		echo '</div>';
-		$n++;
-	}
-	wp_reset_postdata();
-
-}
-
 /***
- * Post thumbnail avec fallback
+ * Post thumbnail cliquable avec fallback
  */
 function kasutan_affiche_image_vignette($post_id,$link) {
 	if(has_post_thumbnail()) { 

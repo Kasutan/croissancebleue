@@ -35,18 +35,8 @@ function ea_archive_header() {
 	echo '</header>';
 
 	echo '<div class="container">';
-		$pag_desktop=6;
-		if(is_home()) {
-			if(function_exists('kasutan_affiche_top_article')) {
-				kasutan_affiche_top_article();
 
-			}
-			if(function_exists('kasutan_affiche_liste_cats')) {
-				kasutan_affiche_liste_cats();
-			}
-		}
-
-		printf('<div id="archive-avec-pagination" data-pag-mobile="10" data-pag-desktop="%s">',$pag_desktop);
+		printf('<div id="archive-avec-pagination">');
 			echo '<ul class="loop list">';
 		
 
@@ -62,9 +52,6 @@ function ea_archive_while_after() {
 			echo '</ul> <!--end .loop-->';
 		echo '<ul class="pagination"></ul>';
 		echo '</div>'; // end #archive-avec-pagination
-		if(!is_home() && function_exists('kasutan_affiche_liste_cats')) {
-			kasutan_affiche_liste_cats();
-		}
 	echo '</div>'; //end .container
 }
 // Build the page
