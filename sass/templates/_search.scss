@@ -6,10 +6,12 @@ form.search-form {
 		flex-grow:1;
 	}
 	input.search-field {
-		height: 42px;
+		border:solid 1px var(--bleu-titre);
 		width:100%
 	}
 	input.search-submit {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
 		margin-bottom: 0;
 		min-width: unset;
 	}
