@@ -306,11 +306,11 @@ class BE_ACF_Customizations {
 		/*********Bloc logos-grille ***************/
 		$this->helper_register_block_type( 
 			'logos-grille',
-			'Bloc grille de logos pour page Nos clients',
-			'Section avec grille de logos.',
+			'Bloc grille de logos pour page Ecosystème',
+			'Section avec titre, intro, et grille de logos avec pagination.',
 			'star-filled', 
-			false, 
-			array('logo', 'client','ref','grille')
+			true, //pour pagination
+			array('logo', 'référence','ecosysteme','grille')
 		);
 
 		/*********Bloc ecosysteme-mecenat ***************/

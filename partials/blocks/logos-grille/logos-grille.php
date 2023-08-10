@@ -14,17 +14,34 @@ if(array_key_exists('className',$block)) {
 } else $className='';
 
 
+$titre=wp_kses_post( get_field('titre') );
+$intro=wp_kses_post( get_field('intro') );
+$delai=esc_attr(get_field('delai'));
+if(!$delai) {
+	$delai=6000;
+} else {
+	$delai=$delai*1000;
+}
+
 $logos=get_field('logos'); //champ ACF galerie
+
 if(!empty($logos)) :
 	printf('<section class="acf logos-grille %s">', $className);
-		for($i=1;$i<=3;$i++) {
-			printf('<div class="ligne ligne-%s" aria-hidden="true"></div>',$i);
+		
+		printf('<h2 class="titre-section">%s</h2>',$titre);
+		if($intro) {
+			printf('<p class="intro ">%s</p>',$intro);
 		}
-		echo '<ul class="logos">';
-			foreach($logos as $logo) {
-				printf('<li class="logo">%s</li>',wp_get_attachment_image($logo,'medium'));
-			}
-		echo '</ul>';
+	
+		echo '<div  id="logos-avec-pagination">';
+			printf('<ul class="logos list" data-delai="%s">',$delai);
+				foreach($logos as $logo) {
+					printf('<li class="logo">%s</li>',wp_get_attachment_image($logo,'medium'));
+				}
+			echo '</ul>';
+
+			echo '<ul class="pagination"></ul>';
+		echo '</div>';
 
 	echo '</section>';
 endif;

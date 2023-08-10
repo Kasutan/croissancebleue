@@ -3,66 +3,109 @@
 .logos-grille {
 	--nb-col:2;
 	--taille-col:1fr;
-	--gap:1rem;
-	margin-bottom: 4.3rem;
+	--gap:8px;
+	--dot:1rem;
+
+	@include bleed;
+	@include trait;
+
+	background-color: var(--gris-bg);
+	padding:8.5rem var(--padding-x);
 	position: relative;
+
+	.titre-section {
+		font-weight: 700;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+
+	.intro {
+		font-size: 1.8rem;
+		line-height: 2.5rem;
+		margin-bottom: 3rem;
+	}
+
 	.logos {
 		column-gap:var(--gap);
 		display: grid;
 		grid-template-columns: repeat(var(--nb-col),var(--taille-col));
 		justify-content: center;
+		margin-bottom: 3.6rem;
+		opacity: 1;
+		row-gap:var(--gap);
+		transition: opacity var(--transition);
+		
+		&.js-opaque {
+			opacity:0;
+		}
 	}
 
-	.ligne {
-		background-color: var(--bleu-bordure);
-		height:100%;
-		left:50%;
-		position:absolute;
-		top:0;
-		width:1px;
-		
+	.logo {
+		align-items: center;
+		background: var(--blanc);
+		display: flex;
+		justify-content: center;
+		padding:1rem;
+
+		img {
+			aspect-ratio: 1;
+			object-fit: contain;
+		}
 	}
-	.ligne-2, .ligne-3 {
-		display: none;
+
+	.pagination {
+		a.page {
+			background-color: #707070;
+			border:solid 1px #707070;
+			border-radius: 50%;
+			color:transparent;
+			height:var(--dot);
+			margin:0 1.2rem;
+			opacity: 0.33;
+			width:var(--dot);
+		}
+
+		li.active a.page {
+			opacity: 1;
+		}
 	}
+
 
 	@include bp(sm) {
-		--taille-col:20rem;
-		--gap:2rem;
+		--taille-col:14rem;
+		--gap:1.6rem;
+
+		.intro {
+			text-align: center;
+		}
 	}
 	@include bp(md) {
 		--nb-col:3;
 		--taille-col:1fr;
-		--gap:4rem;
-		.ligne-1 {
-			left:33%;
-		}
-		.ligne-2 {
-			display: block;
-			left:66%;
-		}
 	}
 
 	@include bp(lg) {
 		--nb-col:4;
-		.ligne-1 {
-			left:25%;
-		}
-		.ligne-2 {
-			left:50%;
-		}
-		.ligne-3 {
-			display: block;
-			left:75%;
+		--dot : 1.6rem;
+
+		padding : 13.7rem var(--padding-x) 19rem;
+
+		.intro {
+			font-size: 2.6rem;
+			line-height: 3.4rem;
+			margin-bottom: 9rem;
 		}
 
-		.logo img {
-			transform: scale(0.8);
+		.pagination {
+			margin-bottom: 0;
+			a.page {
+				margin: 0 2rem;
+			}
 		}
 	}
 
 	@include bp(xl) {
-		--gap:8rem;
+		--nb-col:5;
 	}
 	
 

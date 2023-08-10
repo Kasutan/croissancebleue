@@ -1,10 +1,10 @@
 {
     "key": "group_64a3f6d2d0c23",
-    "title": "Bloc grille de logos pour page Nos clients",
+    "title": "Bloc grille de logos pour page Ecosystème",
     "fields": [
         {
             "key": "field_64a3f6d2dea3e",
-            "label": "Bloc grille de logos pour page Nos clients",
+            "label": "Bloc grille de logos pour page Ecosystème",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -16,9 +16,71 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Section avec grille de logos.",
+            "message": "Section avec titre, intro, et grille de logos avec pagination.",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_64d4a2110db7c",
+            "label": "Titre",
+            "name": "titre",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64d4a21d0db7d",
+            "label": "Introduction",
+            "name": "intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_64d4b2c66094b",
+            "label": "Délai (en secondes) du défilement automatique",
+            "name": "delai",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 6,
+            "min": "",
+            "max": "",
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_64a3f70128d22",
@@ -67,5 +129,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688467219
+    "modified": 1691661037
 }
