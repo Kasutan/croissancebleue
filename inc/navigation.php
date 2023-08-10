@@ -81,7 +81,8 @@ function kasutan_mobile_nav() {
 
 		//Favicon blanc
 		if($fav) {
-			printf('<div class="logo">%s</div>',wp_get_attachment_image($fav));
+			$url=get_option( 'home' );
+			printf('<a href="%s" class="logo">%s</a>',$url,wp_get_attachment_image($fav));
 		}
 
 		wp_nav_menu( array(
