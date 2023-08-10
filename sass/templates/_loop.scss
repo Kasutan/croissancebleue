@@ -1,8 +1,8 @@
 .loop {
-	
+	background-color: var(--gris-bg);
 	list-style:none;
 	margin:0;
-	padding-top:0;
+	padding:3rem var(--padding-x);
 
 	.vignette {
 		background-color: var(--blanc);

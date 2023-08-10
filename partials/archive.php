@@ -20,8 +20,8 @@ $link=get_the_permalink($post_id);
 
 
 printf('<%s class="vignette %s">',$tag,$class);
-	if(has_post_thumbnail()) { 
-		printf('<a href="%s" class="image">%s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
+	if(function_exists('kasutan_affiche_image_vignette')) {
+		kasutan_affiche_image_vignette($post_id,$link);
 	}
 
 	echo '<div class="texte">';

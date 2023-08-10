@@ -263,40 +263,6 @@ function kasutan_affiche_metas_single($post_id) {
 
 }
 
-/**
-* Image banniere pour les actus + utilisée aussi pour la recherche
-*
-*/
-function kasutan_actus_banniere() {
-	if(!function_exists('get_field')) {
-		return;
-	}
-
-
-	if(is_single()) {
-		//On est sur un post single, on vérifie s'il a sa propre image bannière
-		$image_id=esc_attr(get_field('cb_banniere_image'));
-		if(!$image_id) {
-			//si le post n'a pas d'image bannière on utilise l'image par défaut
-			$image_id=esc_attr(get_field('cb_bg_image','option'));//image par défaut
-		}
-
-		kasutan_page_banniere(get_the_ID());
-		return;
-	} 
-
-	if(is_search()) {
-		
-		kasutan_page_banniere(false,true);
-		return;
-	}
-
-	//On est sur une page d'archive, on affiche la bannière de la page des actualités
-	$actus=get_option('page_for_posts'); 
-
-	kasutan_page_banniere($actus);
-}
-
 
 /**
 * Afficher le premier article de la page blog
@@ -317,18 +283,15 @@ function kasutan_affiche_top_article() {
 		$articles->the_post();
 		$post_id=get_the_ID();
 		$link=get_the_permalink();
-		echo '<div class="top-post" style="position:relative">';
-			printf('<a class="image" href="%s"><div class="image-wrap">',$link);
-				echo get_the_post_thumbnail($post_id,'large');
-				echo '</div>';
-				if(is_sticky($post_id)) {
-					printf('<div class="ruban">%s</div>',__('à la une','croissancebleue'));
-				}
-			echo '</a>';
-			echo '<div class="col-texte">';
-				printf('<h2 class="h3 titre-item"><a href="%s">%s</a></h2>',$link,get_the_title());
+		$titre=get_the_title($post_id);
+
+		echo '<div class="top-post">';
+			if(function_exists('kasutan_affiche_image_vignette')) {
+				kasutan_affiche_image_vignette($post_id,$link);
+			}
+				printf('<h2 class="h3 titre-item"><a href="%s">%s</a></h2>',$link,$titre);
 				printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt());
-			echo '</div>';
+				printf('<div class="suite"><a href="%s">Lire l\'article<span class="screen-reader-text"> %s</span></a></div>',$link,$titre);
 		echo '</div>';
 		$n++;
 	}
@@ -336,19 +299,16 @@ function kasutan_affiche_top_article() {
 
 }
 
-
-/**
-* Afficher un bouton avec le même markup que Gutenberg
-*
-*/
-
-function kasutan_affiche_bouton($url,$label='',$classe='') {
-	if(empty($label)) {
-		$label=__('En savoir +','croissancebleue');
+/***
+ * Post thumbnail avec fallback
+ */
+function kasutan_affiche_image_vignette($post_id,$link) {
+	if(has_post_thumbnail()) { 
+		printf('<a href="%s" class="image">%s</a>',$link,get_the_post_thumbnail( $post_id, 'medium'));
+	} else if(function_exists('get_field')) {
+		$defaut=esc_attr(get_field('vignette_defaut','option'));
+		if($defaut) {
+			printf('<a href="%s" class="image">%s</a>',$link,wp_get_attachment_image( $defaut, 'medium'));
+		}
 	}
-	printf('<div class="wp-block-buttons is-content-justification-center is-layout-flex">
-		<div class="wp-block-button %s">
-			<a class="wp-block-button__link wp-element-button" href="%s">%s</a>
-		</div>
-	</div>', $classe,$url,$label);
 }
