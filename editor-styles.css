@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*@import "base/typography";*/
 /*@import "base/normalize";
 @import "base/utilities";
@@ -34,5 +35,51 @@ textarea {
 .wp-block-image.aligncenter {
   display: flex;
   justify-content: center;
+}
+
+.wp-block-pullquote {
+  background-color: rgba(0, 157, 184, 0.05);
+  border-radius: 4px;
+  color: #1E2022;
+  font-size: 1.8rem;
+  letter-spacing: 0.68px;
+  line-height: 2.2rem;
+  margin: 3rem 0;
+  padding: 1.5rem;
+  position: relative;
+}
+.wp-block-pullquote::before, .wp-block-pullquote::after {
+  content: "“";
+  color: var(--bleu-b8);
+  font-family: var(--font-titre);
+  font-size: 150%;
+  left: 1.4rem;
+  opacity: 0.4;
+  position: absolute;
+  top: 1.4rem;
+}
+.wp-block-pullquote::after {
+  bottom: 1rem;
+  content: "”";
+  left: unset;
+  right: 1.4rem;
+  top: unset;
+}
+@media (min-width: 1024px) {
+  .wp-block-pullquote {
+    font-size: 2.2rem;
+    letter-spacing: 0.82px;
+    line-height: 3.2rem;
+    margin: 5.8rem 0;
+    padding: 4.5rem;
+  }
+  .wp-block-pullquote::before {
+    left: 3rem;
+    top: 3rem;
+  }
+  .wp-block-pullquote::after {
+    bottom: 3rem;
+    right: 3rem;
+  }
 }
 /*# sourceMappingURL=editor-styles.css.map */

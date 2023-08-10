@@ -4,3 +4,48 @@
 }
 
 
+.wp-block-pullquote {
+	background-color: rgba(0,157,184,0.05);
+	border-radius: 4px;
+	color:#1E2022;
+	font-size: 1.8rem;
+	letter-spacing: 0.68px;
+	line-height: 2.2rem;
+	margin:3rem 0;
+	padding:1.5rem;
+	position: relative;
+	&::before, &::after {
+		content:'“';
+		color:var(--bleu-b8);
+		font-family: var(--font-titre);
+		font-size: 150%;
+		left: 1.4rem;
+		opacity: 0.4;
+		position: absolute;
+		top:1.4rem;
+	}
+
+	&::after {
+		bottom:1rem;
+		content:'”';
+		left:unset;
+		right:1.4rem;
+		top:unset;
+	}
+
+	@include bp(lg) {
+		font-size: 2.2rem;
+		letter-spacing: 0.82px;
+		line-height: 3.2rem;
+		margin:5.8rem 0;
+		padding:4.5rem;
+		&::before {
+			left:3rem;
+			top:3rem;
+		}
+		&::after {
+			bottom:3rem;
+			right:3rem;
+		}
+	}
+}

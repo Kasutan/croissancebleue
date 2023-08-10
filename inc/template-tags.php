@@ -73,7 +73,7 @@ function kasutan_page_titre() {
 		$titre=strip_tags(single_tag_title( '', false ));
 	} elseif (is_home()) {
 		$home_id=get_option('page_for_posts');
-		$titre=get_the_title($page_id);
+		$titre=get_the_title($home_id);
 	}
 
 	if($titre) printf('<h1 class="titre">%s</h1>',$titre);
@@ -197,6 +197,72 @@ function kasutan_front_page_banniere() {
 	echo '</div>';
 } 
 
+
+
+/**
+* Banniere pour les articles single
+*
+*/
+function kasutan_single_banniere() {
+	
+
+	$titre=get_the_title();
+
+	//Pour le fil d'ariane : couper le titre au premier espace après X caractères
+	$limite=30;
+	$espace=strpos($titre,' ',$limite);
+	$titre_coupe=substr($titre,0,$espace);
+	$titre_coupe.='&mldr;'; //on ajoute le caractère pour l'ellipse
+
+
+	printf('<div class="single-banniere">');
+		if(has_post_thumbnail()) {
+			echo '<div class="image">';
+				the_post_thumbnail('banniere');
+			echo '</div>';
+		}
+		
+		$home_id=get_option('page_for_posts');
+		printf('<p class="ariane"><a href="%s">%s</a> > %s</p>',
+			get_the_permalink($home_id),
+			get_the_title($home_id),
+			$titre_coupe
+		);
+
+		echo '<div class="textes">';
+			printf('<h1 class="titre">%s</h1>',$titre);
+			if(has_excerpt()) {
+				printf('<div class="extrait">%s</div>',get_the_excerpt());
+			}
+			
+		echo '</div>';
+	echo '</div>';
+	
+}
+
+/**
+* Afficher les métas dans les single article
+*
+*/
+function kasutan_affiche_metas_single($post_id) {
+	$autrice=get_the_author_meta('display_name');
+	
+	$image=false;
+	if(function_exists('get_field')) {
+		$id=get_the_author_meta('id');
+		$image=esc_attr(get_field('photo','user_'.$id)); //TODO image en meta de l'autrice
+	}
+	//Métas single
+	echo '<div class="meta-single">';
+		if($image) printf('<div class="image">%s</div>',wp_get_attachment_image($image));
+		echo '<div class="textes">';
+			printf('<p class="autrice">%s </p>',$autrice);
+			printf('<p class="date">%s %s</p>',__('Publié le ','croissancebleue'),get_the_date());
+		echo '</div>';
+	echo '</div>';
+
+}
+
 /**
 * Image banniere pour les actus + utilisée aussi pour la recherche
 *
@@ -231,17 +297,6 @@ function kasutan_actus_banniere() {
 	kasutan_page_banniere($actus);
 }
 
-/**
-* Image mise en avant
-*
-*/
-function kasutan_affiche_thumbnail_dans_contenu() {
-	if(has_post_thumbnail()) {
-		echo '<div class="thumbnail">';
-			the_post_thumbnail( 'large');
-		echo '</div>';
-	}
-}
 
 /**
 * Afficher le premier article de la page blog
@@ -272,7 +327,6 @@ function kasutan_affiche_top_article() {
 			echo '</a>';
 			echo '<div class="col-texte">';
 				printf('<h2 class="h3 titre-item"><a href="%s">%s</a></h2>',$link,get_the_title());
-				kasutan_affiche_metas_article($post_id);
 				printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt());
 			echo '</div>';
 		echo '</div>';
@@ -281,19 +335,7 @@ function kasutan_affiche_top_article() {
 	wp_reset_postdata();
 
 }
-/**
-* Afficher les métas dans les vignettes article
-*
-*/
-function kasutan_affiche_metas_article($post_id) {
-	$date=get_the_date('d/m/Y',$post_id);
-	$list=get_the_category_list('<span class="vir">, </span>', '', $post_id);
-	echo '<p class="meta">';
-		printf('<span class="date">%s <span class="sep">|</span></span>',$date);
-		printf('<span class="cats">%s</span>',$list);
-	echo '</p>';
 
-}
 
 /**
 * Afficher un bouton avec le même markup que Gutenberg
