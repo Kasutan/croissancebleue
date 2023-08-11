@@ -35,6 +35,7 @@
   text-align: center;
 }
 .agence-equipe .intro {
+  color: var(--noir);
   font-size: 1.8rem;
   line-height: 2.5rem;
   margin-bottom: 5rem;
@@ -149,6 +150,9 @@
   .agence-equipe .equipiers {
     grid-template-columns: repeat(3, 1fr);
     margin-top: 13rem;
+  }
+  .agence-equipe .bio {
+    line-height: 2.5rem;
   }
 }
 @media (min-width: 1440px) {

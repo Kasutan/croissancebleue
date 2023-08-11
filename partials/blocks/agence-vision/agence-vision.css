@@ -37,11 +37,13 @@
   margin-bottom: 3rem;
 }
 .agence-vision .encart {
+  color: var(--noir);
   font-size: 1.8rem;
   line-height: 2.5rem;
   margin-bottom: 2rem;
 }
 .agence-vision .texte {
+  color: var(--noir);
   margin-bottom: 2rem;
 }
 .agence-vision .texte p {

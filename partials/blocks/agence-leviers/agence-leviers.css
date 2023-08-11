@@ -38,11 +38,13 @@
   margin-bottom: 4rem;
 }
 .agence-leviers .encart {
+  color: var(--noir);
   font-size: 1.8rem;
   line-height: 2.5rem;
   margin-bottom: 3rem;
 }
 .agence-leviers .leviers li {
+  color: var(--noir);
   line-height: 2rem;
   padding: 1rem 0;
   position: relative;
@@ -158,6 +160,10 @@
   .agence-leviers {
     grid-template-columns: 50rem 1fr;
   }
+  .agence-leviers .texte-wrap {
+    padding-top: 5rem;
+    padding-bottom: 10rem;
+  }
   .agence-leviers .encart {
     font-size: 2.6rem;
     line-height: 3.4rem;
@@ -165,6 +171,9 @@
   }
   .agence-leviers .image-1 {
     width: 90%;
+  }
+  .agence-leviers .image-2 {
+    height: 45%;
   }
 }
 @media screen and (min-width: 1780px) {

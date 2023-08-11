@@ -17,6 +17,7 @@
 	}
 
 	.intro {
+		color:var(--noir);
 		font-size: 1.8rem;
 		line-height: 2.5rem;
 		margin-bottom: 5rem;
@@ -156,6 +157,10 @@
 		.equipiers {
 			grid-template-columns: repeat(3, 1fr);
 			margin-top: 13rem;
+		}
+
+		.bio {
+			line-height: 2.5rem;
 		}
 
 		
