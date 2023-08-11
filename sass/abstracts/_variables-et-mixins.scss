@@ -31,10 +31,6 @@
 	font-size:calc(#{$px} * var(--taille-texte) / 15);
 }
 
-@mixin box-shadow {
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
 @mixin bleed {
 	width: 100vw;
 	margin-left: calc(-1 * var(--padding-x));
@@ -85,10 +81,6 @@
 	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
-@mixin placeholder {
-	color:#727272;
-	opacity:1;
-}
 
 @mixin object-fit {
 	object-fit: cover;
@@ -102,22 +94,6 @@
 	position:absolute;
 	top:0;
 	width:100%;
-}
-
-@mixin intro {
-	color:var(--bleu-9f);
-	font-size: 2rem;
-	font-weight: 500;
-	line-height: 2.4rem;
-	text-align: center;
-	br {display: none;}
-	@include bp(lg) {
-		font-size: 2.6rem;
-		line-height: 3.6rem;
-		br {
-			display: block;
-		}
-	}
 }
 
 @mixin trait {

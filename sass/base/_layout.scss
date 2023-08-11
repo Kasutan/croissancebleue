@@ -18,16 +18,7 @@ body {
 	--padding-x-pleine-largeur:0;
 	--largeur-max:1920px;
 
-	//--header-height:80px;
-	//--max-width-xl:1900px;
-
-	/*Valeurs en dur pour les navigateurs qui ne supportent pas clamp*/
-	--hauteur-banniere :588px; 
 	
-	@supports(height:clamp(588px,48vw,930px)) {
-		--hauteur-banniere :clamp(588px,48vw,930px);
-	}
-
 	@include bp(md) {
 		--padding-x : 10vw;
 	}
