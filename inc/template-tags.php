@@ -81,7 +81,7 @@ function kasutan_page_titre() {
 }
 
 /**
-* Image banniere pour les pages (sauf template simple)
+* Image banniere pour les pages (sauf template simple), y compris les archives
 *
 */
 function kasutan_page_banniere($page_id=false,$use_defaut=false) {
@@ -108,7 +108,7 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 	}
 
 	if(!$texte || !$image_desktop) {
-		kasutan_page_titre();
+		kasutan_page_titre(); //fonctionne aussi pour les archives !
 		return;
 	}
 
@@ -250,7 +250,7 @@ function kasutan_affiche_metas_single($post_id) {
 	$image=false;
 	if(function_exists('get_field')) {
 		$id=get_the_author_meta('id');
-		$image=esc_attr(get_field('photo','user_'.$id)); //TODO image en meta de l'autrice
+		$image=esc_attr(get_field('photo','user_'.$id)); 
 	}
 	//Métas single
 	echo '<div class="meta-single">';
