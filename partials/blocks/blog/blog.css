@@ -4,7 +4,7 @@
   --trait:9.7rem;
   position: relative;
   background-color: rgba(207, 203, 212, 0.17);
-  padding: 7rem 0 5rem;
+  padding: 7rem 0 0;
 }
 @media (min-width: 1920px) {
   .acf-blog {
@@ -26,6 +26,10 @@
     --trait:20.5rem;
   }
 }
+.acf-blog .loop {
+  background-color: transparent;
+  padding: 0;
+}
 .acf-blog .titre-section {
   line-height: 1;
   letter-spacing: -0.56px;
@@ -37,6 +41,14 @@
   line-height: 2.5rem;
   letter-spacing: -0.37px;
   text-align: center;
+}
+@media (min-width: 768px) {
+  .acf-blog {
+    padding-bottom: 3rem;
+  }
+  .acf-blog .loop {
+    padding: 0 var(--padding-x-header);
+  }
 }
 @media (min-width: 1024px) {
   .acf-blog {

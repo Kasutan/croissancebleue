@@ -18,9 +18,11 @@
 	}
 	
 	.owl-item {
+		align-items: center;
+		aspect-ratio: 1;
 		background-color: #F7F6F8;
-		height:23rem;
-		width:23rem;
+		display: flex;
+		justify-content: center;
 	}
 	.logo {
 		align-items: center;

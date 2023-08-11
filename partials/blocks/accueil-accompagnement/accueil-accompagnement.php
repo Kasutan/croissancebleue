@@ -37,7 +37,7 @@ printf('<section class="acf accueil-accompagnement decor-top %s">', $className);
 
 				echo '<div class="desktop">';
 					printf('<div class="picto">%s</div>',wp_get_attachment_image($image));
-					printf('<p class="texte"><strong>%s</strong><br>%s</p>',$chiffre,$texte);
+					printf('<p class="texte"><strong class="chiffre">%s</strong><br>%s</p>',$chiffre,$texte);
 				echo '</div>';
 			
 			echo '</li>';

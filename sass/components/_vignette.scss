@@ -61,91 +61,93 @@
 			display: none;
 		}
 
-		
+	}
+}
 
-		/*****************Première vignette*************/
-		&:first-of-type {
-			@include bleed;
-			margin-left: calc(-1 * var(--padding-x-header));
-			margin-bottom: 3rem;
-			position: relative;
+/*****************Première vignette sur page archive (pas dans le bloc blog !)*************/
+.archive .loop .vignette:first-of-type {
+	@include bleed;
+	margin-left: calc(-1 * var(--padding-x-header));
+	margin-bottom: 3rem;
+	position: relative;
 
 
-			align-items: center;
-			column-gap:1rem;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			padding-bottom: 3rem;
+	align-items: center;
+	column-gap:1rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-bottom: 3rem;
 
-			.image {
-				aspect-ratio: 1;
-				display: flex;
-			}
+	.image {
+		aspect-ratio: 1;
+		display: flex;
+	}
 
-			.texte {
-				display: none;
-			}
+	.texte {
+		display: none;
+	}
 
-			.top-post, a.top-post {
-				display: block;
-			}
+	.top-post, a.top-post {
+		display: block;
+	}
 
-			.titre-item {
-				font-size: 1.8rem;
-				font-weight: 700;
-				grid-column: 2;
-				grid-row: 1;
-				line-height: 2rem;
-				padding-right: var(--padding-x);
-				text-align: left;
-				text-transform: uppercase;
+	.titre-item {
+		font-size: 1.8rem;
+		font-weight: 700;
+		grid-column: 2;
+		grid-row: 1;
+		line-height: 2rem;
+		padding-right: var(--padding-x);
+		text-align: left;
+		text-transform: uppercase;
 
-				a {
-					color: #05222E;
-					text-decoration: none;
-				}
-			}
-
-			.extrait,
-			.suite {
-				grid-column: 1 / span 2;
-				padding: 0 var(--padding-x);
-			}
-
-			.extrait {
-				color: #666666;
-				font-size: 1.4rem;
-				line-height: 2rem;
-				margin-bottom: 1em;
-				margin-top: 3rem;
-				text-decoration: none;
-			}
-
-			.suite {
-				color: var(--noir-2e);
-				font-size: 1.4rem;
-				font-weight: 800;
-				line-height: 3rem;
-				text-align: right;
-			}
-
+		a {
+			color: #05222E;
+			text-decoration: none;
 		}
+	}
 
-		/*******Commun à toutes les vignettes*****/
-		&:hover,
-		&:focus-within {
+	.extrait,
+	.suite {
+		grid-column: 1 / span 2;
+		padding: 0 var(--padding-x);
+	}
 
-			.titre-item a,
-			.suite a {
-				color: var(--bleu-titre);
-			}
+	.extrait {
+		color: #666666;
+		font-size: 1.4rem;
+		line-height: 2rem;
+		margin-bottom: 1em;
+		margin-top: 3rem;
+		text-decoration: none;
+	}
+
+	.suite {
+		color: var(--noir-2e);
+		font-size: 1.4rem;
+		font-weight: 800;
+		line-height: 3rem;
+		text-align: right;
+	}
+
+}
+
+/*******Commun à toutes les vignettes*****/
+.loop .vignette {
+	&:hover,
+	&:focus-within {
+
+		.titre-item a,
+		.suite a {
+			color: var(--bleu-titre);
 		}
 	}
 }
 
+
 /********** Première vignette en tablette (2 colonnes)********/
 @include bp(md){
-	.loop .vignette:first-of-type {
+	.archive .loop .vignette:first-of-type {
 		grid-column: 1 / span 2;
 	
 		align-items: stretch;
@@ -197,7 +199,7 @@
 
 /********** Première vignette en desktop (3 colonnes)********/
 @include bp(lg) {
-	.loop .vignette:first-of-type {
+	.archive .loop .vignette:first-of-type {
 		grid-column: 1 / span 3;
 		margin-bottom: 11rem;
 		padding-bottom: 6.8rem;
@@ -245,19 +247,19 @@
 			line-height: 3rem;
 			position: relative;
 		}
+	}
 
-		&:first-of-type {
-			.titre-item {
-				font-size:4.5rem;
-			}
-			.extrait {
-				font-size: 3rem;
-				line-height: 4.5rem;
-			}
-			.suite {
-				font-size: 2rem;
-				line-height: 3rem;
-			}
+	.archive .loop .vignette:first-of-type {
+		.titre-item {
+			font-size:4.5rem;
+		}
+		.extrait {
+			font-size: 3rem;
+			line-height: 4.5rem;
+		}
+		.suite {
+			font-size: 2rem;
+			line-height: 3rem;
 		}
 	}
 }

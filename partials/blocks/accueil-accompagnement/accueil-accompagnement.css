@@ -44,7 +44,7 @@
   margin-bottom: 5rem;
 }
 .accueil-accompagnement .titre {
-  border-top: solid 1px var(--noir);
+  border-top: solid 2px var(--noir);
   font-weight: 700;
   line-height: 3.5rem;
   margin-bottom: 0;
@@ -87,8 +87,10 @@
     flex-direction: column;
   }
   .accueil-accompagnement .titre {
-    border-bottom: solid 1px var(--noir);
+    border-bottom: solid 3px var(--noir);
+    border-top: solid 3px var(--noir);
     font-size: 3rem;
+    font-weight: 800;
     line-height: 4rem;
     min-height: 17.5rem;
     margin-bottom: 5.9rem;
@@ -110,8 +112,10 @@
     text-align: center;
   }
   .accueil-accompagnement .chiffre {
+    display: inline-block;
     font-size: 3rem;
     line-height: 1;
+    margin-bottom: 1rem;
     text-align: center;
   }
 }
@@ -121,14 +125,22 @@
   }
   .accueil-accompagnement .titre {
     font-size: 4rem;
-    min-height: 21.2rem;
     line-height: 5rem;
+    min-height: 26.2rem;
+    padding: 5rem 0;
+  }
+  .accueil-accompagnement .intro {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 9rem;
+    max-width: 80rem;
   }
   .accueil-accompagnement .texte {
     font-size: 2.5rem;
   }
   .accueil-accompagnement .chiffre {
     font-size: 3.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 @media screen and (min-width: 1600px) {
