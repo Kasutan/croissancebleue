@@ -51,6 +51,12 @@
 		img {
 			aspect-ratio: 1;
 			object-fit: contain;
+			@supports not (aspect-ratio: auto) { 
+				height: 150px;
+				@include bp(lg) {
+					height: 200px;
+				}
+			}
 		}
 	}
 

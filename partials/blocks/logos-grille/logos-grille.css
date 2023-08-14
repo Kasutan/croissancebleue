@@ -67,6 +67,16 @@
   aspect-ratio: 1;
   object-fit: contain;
 }
+@supports not (aspect-ratio: auto) {
+  .logos-grille .logo img {
+    height: 150px;
+  }
+  @media (min-width: 1024px) {
+    .logos-grille .logo img {
+      height: 200px;
+    }
+  }
+}
 .logos-grille .pagination a.page {
   background-color: #707070;
   border: solid 1px #707070;

@@ -23,7 +23,21 @@
 		background-color: #F7F6F8;
 		display: flex;
 		justify-content: center;
+		
+		@supports not (aspect-ratio: auto) { 
+			height: 246px;
+			img {
+				height:100%;
+			}
+			@include bp(lg) {
+				height:206px
+			}
+			@include bp(xl) {
+				height:236px
+			}
+		}
 	}
+
 	.logo {
 		align-items: center;
 		display: flex;

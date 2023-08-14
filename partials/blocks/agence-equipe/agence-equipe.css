@@ -69,6 +69,7 @@
 }
 .agence-equipe button {
   background-color: transparent;
+  border: none;
   height: unset;
   min-width: unset;
   padding: 0;

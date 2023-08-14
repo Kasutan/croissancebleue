@@ -40,6 +40,24 @@
   display: flex;
   justify-content: center;
 }
+@supports not (aspect-ratio: auto) {
+  .carrousel .owl-item {
+    height: 246px;
+  }
+  .carrousel .owl-item img {
+    height: 100%;
+  }
+  @media (min-width: 1024px) {
+    .carrousel .owl-item {
+      height: 206px;
+    }
+  }
+  @media (min-width: 1440px) {
+    .carrousel .owl-item {
+      height: 236px;
+    }
+  }
+}
 .carrousel .logo {
   align-items: center;
   display: flex;

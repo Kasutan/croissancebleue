@@ -1387,7 +1387,7 @@ button.ouvrir-sous-menu:focus {
   .page-banniere {
     --hauteur-banniere:63rem;
     --fsz:16rem;
-    align-items: end;
+    align-items: stretch;
     justify-content: flex-end;
     display: flex;
   }
@@ -1402,9 +1402,11 @@ button.ouvrir-sous-menu:focus {
   }
   .page-banniere .textes {
     align-items: flex-end;
+    -webkit-align-items: flex-end;
     background-color: transparent;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     max-width: unset;
     padding-right: var(--padding-x);
     padding-bottom: 10rem;
