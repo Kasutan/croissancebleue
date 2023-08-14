@@ -210,9 +210,14 @@ function kasutan_single_banniere() {
 
 	//Pour le fil d'ariane : couper le titre au premier espace après X caractères
 	$limite=30;
-	$espace=strpos($titre,' ',$limite);
-	$titre_coupe=substr($titre,0,$espace);
-	$titre_coupe.='&mldr;'; //on ajoute le caractère pour l'ellipse
+	if(strlen($titre) > $limite) {
+		$espace=strpos($titre,' ',$limite);
+		$titre_coupe=substr($titre,0,$espace);
+		$titre_coupe.='&mldr;'; //on ajoute le caractère pour l'ellipse
+	} else {
+		$titre_coupe=$titre;
+	}
+
 
 
 	printf('<div class="single-banniere">');
