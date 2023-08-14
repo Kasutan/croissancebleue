@@ -1787,14 +1787,17 @@ button.ouvrir-sous-menu:focus {
   color: var(--noir);
   padding-bottom: 3rem;
 }
-.page-template-template-simple .entry-content h2 {
-  color: var(--noir);
+.page-template-template-simple .entry-content h2, .page-template-template-simple .entry-content h3 {
+  color: var(--bleu-titre);
   font-size: unset;
   font-weight: 700;
   line-height: unset;
   margin-bottom: 0;
   margin-top: 3rem;
   text-align: left;
+}
+.page-template-template-simple .entry-content h3 {
+  color: var(--noir);
 }
 @media (min-width: 1024px) {
   .page-template-template-simple .entry-content {
