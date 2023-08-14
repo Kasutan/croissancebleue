@@ -25,7 +25,7 @@ function kasutan_main_footer() {
 	echo '<div class="col-1 col">';
 		if($logo) {
 			$url=get_option( 'home' );
-			printf('<a href="%s" class="logo-footer">%s</a>',$url,wp_get_attachment_image($logo,'medium'));
+			printf('<a href="%s" class="logo-footer"><span class="screen-reader-text">Aller à la page d\'accueil</span>%s</a>',$url,wp_get_attachment_image($logo,'medium'));
 		}
 
 		if($adresse) {

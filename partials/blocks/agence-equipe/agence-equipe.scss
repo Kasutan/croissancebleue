@@ -58,6 +58,7 @@
 
 	button {
 		background-color: transparent;
+		height:unset;
 		min-width: unset;
 		padding:0;
 		width:1.5rem;
@@ -72,6 +73,11 @@
 			.picto {
 				transform:rotate(90deg);
 			}
+		}
+
+		&:focus-visible {
+			outline:medium dotted;
+			outline-color:var(--bleu-fonce);
 		}
 	}
 

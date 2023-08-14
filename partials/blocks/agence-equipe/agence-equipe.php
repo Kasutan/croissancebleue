@@ -52,7 +52,7 @@ printf('<section class="acf agence-equipe %s">', $className);
 						echo '</a>';
 					}
 						
-					printf('<button class="toggle" aria-controls="%s" aria-expanded="false"><span class="picto">',$id);
+					printf('<button class="toggle" aria-controls="%s" aria-expanded="false" aria-label="Ouvrir le volet pour lire la bio de %s"><span class="picto">',$id,$nom);
 						?>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.969 18.81"><path d="M87.666,41.75l7.407-7.407a.593.593,0,0,0,0-.867l-.942-.942a.592.592,0,0,0-.867,0l-8.783,8.783a.593.593,0,0,0,0,.867l8.783,8.783a.592.592,0,0,0,.867,0l.942-.942a.593.593,0,0,0,0-.867Z" transform="translate(95.262 51.155) rotate(180)" fill="#000"/></svg>
 						<?php
