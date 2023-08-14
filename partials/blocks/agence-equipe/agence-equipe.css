@@ -105,6 +105,7 @@
     --gap:1.6rem;
   }
   .agence-equipe .equipiers {
+    align-items: start;
     -moz-column-gap: var(--gap);
          column-gap: var(--gap);
     display: grid;

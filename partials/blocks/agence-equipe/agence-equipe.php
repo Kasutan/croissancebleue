@@ -59,7 +59,7 @@ printf('<section class="acf agence-equipe %s">', $className);
 					echo '</span></button>';
 				echo '</div>';
 
-				printf('<div class="volet" id="%s" aria-expanded="false">',$id);
+				printf('<div class="volet" id="%s">',$id);
 					if($role1) printf('<p class="role role1">%s</p>',$role1);
 					if($role2) printf('<p class="role role2">%s</p>',$role2);
 					if($bio) printf('<p class="bio">%s</p>',$bio);
