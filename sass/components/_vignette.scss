@@ -70,6 +70,7 @@
 	margin-left: calc(-1 * var(--padding-x-header));
 	margin-bottom: 3rem;
 	position: relative;
+	width: calc(100% + 2 * var(--padding-x-header)); // width:100vw cause un décalage sur Chrome
 
 
 	align-items: center;
