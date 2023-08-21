@@ -56,7 +56,6 @@
   font-weight: 700;
   line-height: 3.2rem;
   margin-bottom: 0;
-  margin-right: auto;
 }
 .agence-equipe a {
   display: block;
@@ -72,7 +71,12 @@
   height: unset;
   min-width: unset;
   padding: 0;
+}
+.agence-equipe button.avec-picto {
   width: 1.5rem;
+}
+.agence-equipe button.avec-nom {
+  margin-right: auto;
 }
 .agence-equipe button .picto {
   display: block;

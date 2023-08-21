@@ -43,7 +43,6 @@
 		font-weight: 700;
 		line-height: 3.2rem;
 		margin-bottom: 0;
-		margin-right: auto;
 	}
 
 	a {
@@ -61,7 +60,12 @@
 		height:unset;
 		min-width: unset;
 		padding:0;
-		width:1.5rem;
+		&.avec-picto {
+			width:1.5rem;
+		}
+		&.avec-nom {
+			margin-right: auto;
+		}
 		.picto {
 			display: block;
 			transform-origin: center center;
