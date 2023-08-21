@@ -43,9 +43,7 @@
 
 	@include bp(lg ) {
 		--gap:3rem;
-		&::before {
-			display: none;
-		}
+		
 		padding-top: 15rem;
 
 		.titre-section {
@@ -87,9 +85,7 @@
 	}
 
 	@include bp(xl) {
-		&::before {
-			display: block;
-		}
+		
 		--gap:5rem;
 
 		.titre {

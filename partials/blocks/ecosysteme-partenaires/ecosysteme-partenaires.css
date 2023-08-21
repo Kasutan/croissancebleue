@@ -50,9 +50,6 @@
     --gap:3rem;
     padding-top: 15rem;
   }
-  .ecosysteme-partenaires::before {
-    display: none;
-  }
   .ecosysteme-partenaires .titre-section {
     letter-spacing: 0;
     margin-bottom: 3rem;
@@ -87,9 +84,6 @@
 @media (min-width: 1440px) {
   .ecosysteme-partenaires {
     --gap:5rem;
-  }
-  .ecosysteme-partenaires::before {
-    display: block;
   }
   .ecosysteme-partenaires .titre {
     font-size: 4rem;
