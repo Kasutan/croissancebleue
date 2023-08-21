@@ -22,13 +22,15 @@
 	}
 
 	.picto {
+		height:100px;
 		margin-bottom: 2rem;
 		width:6.9rem;
 	}
 
 
 	.titre {
-		font-size: 3rem;
+		color:var(--bleu-titre);
+		font-size: 2rem;
 		font-weight: 800;
 		line-height: 3.5rem;
 		margin-bottom: 2.5rem;
@@ -37,6 +39,14 @@
 
 	.texte {
 		line-height: 2.5rem;
+		ul {
+			list-style: disc;
+			list-style-position: inside;
+
+			li {
+				margin-bottom: 0.5em;
+			}
+		}
 	}
 
 
@@ -59,10 +69,13 @@
 				padding-top:0;
 			}
 		}
+
+		
 	}
 	
 	
 	@include bp(lg ) {
+		--gap:6rem;
 
 		padding-top: 17.4rem;
 		padding-bottom: 17rem;
@@ -71,10 +84,19 @@
 			letter-spacing: 0;
 		}
 
+		
+
 		.picto {
+			display: flex;
 			height:11.4rem;
+			justify-content: center;
 			margin-bottom: 2rem;
+			margin-left: auto;
+			margin-right: auto;
 			width:11.3rem;
+			img {
+				object-fit: contain;
+			}
 		}
 		.titre {
 			font-size: 3.5rem;
@@ -82,6 +104,7 @@
 			line-height: 1;
 			min-height: 7rem;
 			margin-bottom: 3rem;
+			text-align: center;
 		}
 		.texte {
 			line-height: 4rem;

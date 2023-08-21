@@ -36,11 +36,13 @@
   padding: 2.5rem 0 4rem;
 }
 .prestations-expertise .picto {
+  height: 100px;
   margin-bottom: 2rem;
   width: 6.9rem;
 }
 .prestations-expertise .titre {
-  font-size: 3rem;
+  color: var(--bleu-titre);
+  font-size: 2rem;
   font-weight: 800;
   line-height: 3.5rem;
   margin-bottom: 2.5rem;
@@ -48,6 +50,13 @@
 }
 .prestations-expertise .texte {
   line-height: 2.5rem;
+}
+.prestations-expertise .texte ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+.prestations-expertise .texte ul li {
+  margin-bottom: 0.5em;
 }
 @media (min-width: 768px) {
   .prestations-expertise {
@@ -71,6 +80,7 @@
 }
 @media (min-width: 1024px) {
   .prestations-expertise {
+    --gap:6rem;
     padding-top: 17.4rem;
     padding-bottom: 17rem;
   }
@@ -78,9 +88,16 @@
     letter-spacing: 0;
   }
   .prestations-expertise .picto {
+    display: flex;
     height: 11.4rem;
+    justify-content: center;
     margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
     width: 11.3rem;
+  }
+  .prestations-expertise .picto img {
+    object-fit: contain;
   }
   .prestations-expertise .titre {
     font-size: 3.5rem;
@@ -88,6 +105,7 @@
     line-height: 1;
     min-height: 7rem;
     margin-bottom: 3rem;
+    text-align: center;
   }
   .prestations-expertise .texte {
     line-height: 4rem;
