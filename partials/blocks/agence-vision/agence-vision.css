@@ -74,7 +74,9 @@
   .agence-vision .image-wrap {
     align-items: flex-end;
     display: flex;
-    flex-grow: 1;
+    flex-basis: 55%;
+    flex-grow: 0;
+    flex-shrink: 0;
     height: auto;
     margin-bottom: 0;
     padding: 24rem 0;
@@ -98,8 +100,8 @@
     width: 100%;
   }
   .agence-vision .texte-wrap {
-    flex: 0 0 43rem;
-    padding: 5rem 0 5rem 2rem;
+    flex-grow: 1;
+    padding: 5rem 0 0 2rem;
   }
   .agence-vision .titre-section {
     line-height: 7rem;
@@ -111,10 +113,14 @@
   .agence-vision .texte-wrap {
     flex-basis: 58.6rem;
     padding-left: 5rem;
+    padding-bottom: 5rem;
   }
   .agence-vision .encart {
     font-size: 2.6rem;
     line-height: 3.4rem;
     max-width: 47rem;
+  }
+  .agence-vision .image-wrap {
+    flex-basis: 60rem;
   }
 }

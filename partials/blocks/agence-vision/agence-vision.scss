@@ -62,7 +62,9 @@
 		.image-wrap {
 			align-items: flex-end;
 			display: flex;
-			flex-grow:1;
+			flex-basis:55%;
+			flex-grow:0;
+			flex-shrink: 0;
 			height: auto;
 			margin-bottom: 0;
 			padding:24rem 0;
@@ -72,7 +74,7 @@
 
 		.encart {
 			background-color: var(--blanc);
-			max-width: 90%;;
+			max-width: 90%;
 			padding:2rem 3rem;
 			position: relative;
 		}
@@ -88,8 +90,8 @@
 	
 
 		.texte-wrap {
-			flex:0 0 43rem;
-			padding:5rem 0 5rem 2rem ;
+			flex-grow:1;
+			padding:5rem 0 0 2rem ;
 		}
 
 		.titre-section {
@@ -105,11 +107,15 @@
 		.texte-wrap {
 			flex-basis:58.6rem;
 			padding-left: 5rem;
+			padding-bottom: 5rem;
 		}
 		.encart {
 			font-size: 2.6rem;
 			line-height: 3.4rem;
 			max-width:47rem;
+		}
+		.image-wrap {
+			flex-basis:60rem;
 		}
 		
 	}

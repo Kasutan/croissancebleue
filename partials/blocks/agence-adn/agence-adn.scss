@@ -44,7 +44,7 @@
 
 
 	@include bp(md) {
-		--gap:3rem;
+		--gap:4rem;
 		.texte-wrap {
 			align-items: center;
 			display: flex;
@@ -68,11 +68,18 @@
 			margin-top: 5rem;
 			row-gap:var(--gap);
 		}
+
+		.picto {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.titre {
+			text-align: center;
+		}
 	}
 	
 	
-	@include bp(lg ) {
-		--gap:2rem;
+	@media screen and (min-width:1200px) {
 
 		padding-top: 17.2rem;
 		padding-bottom: 19.5rem;
@@ -106,12 +113,12 @@
 		.titre {
 			align-items:center;
 			display: flex;
-			font-size: 4rem;
 			font-weight: 800;
 			-webkit-hyphens: auto;
 			-moz-hyphens: auto;
 			-ms-hyphens: auto;
 			hyphens: auto;
+			justify-content: center;
 			letter-spacing: -0.2px;
 			line-height: 1;
 			min-height: 8rem;
@@ -125,10 +132,14 @@
 	}
 
 	@include bp(xl) {
+		--gap:4.5rem;
 		.texte-wrap {
 			margin-left: auto;
 			margin-right: auto;
 			max-width:110rem;
+		}
+		.titre {
+			font-size: 4rem;
 		}
 	}
 
