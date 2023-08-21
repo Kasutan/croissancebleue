@@ -4,13 +4,14 @@
 		background-color: var(--blanc);
 
 		.image {
-			aspect-ratio: 1.67;
 			display: flex;
 			margin-bottom: 11px;
+			padding-top:67%;
+			position: relative;
 			width: 100%;
 
 			img {
-				width: 100%;
+				@include decor;
 			}
 		}
 
@@ -80,8 +81,8 @@
 	padding-bottom: 3rem;
 
 	.image {
-		aspect-ratio: 1;
 		display: flex;
+		padding-top: 100%;
 	}
 
 	.texte {
@@ -155,8 +156,12 @@
 		column-gap: 2rem;
 		padding:0 var(--padding-x) 3rem;
 		.image {
-			aspect-ratio: unset;
 			grid-row:1 / span 3;
+			margin-bottom: 0;
+			padding-top:0;
+			img {
+				position:relative;
+			}
 		}
 		.titre-item, .extrait, .suite {
 			grid-column: 2;

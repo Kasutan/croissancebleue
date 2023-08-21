@@ -2133,12 +2133,17 @@ form.search-form input.search-submit {
   background-color: var(--blanc);
 }
 .loop .vignette .image {
-  aspect-ratio: 1.67;
   display: flex;
   margin-bottom: 11px;
+  padding-top: 67%;
+  position: relative;
   width: 100%;
 }
 .loop .vignette .image img {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
   width: 100%;
 }
 .loop .vignette .texte {
@@ -2202,8 +2207,8 @@ form.search-form input.search-submit {
   }
 }
 .archive .loop .vignette:first-of-type .image {
-  aspect-ratio: 1;
   display: flex;
+  padding-top: 100%;
 }
 .archive .loop .vignette:first-of-type .texte {
   display: none;
@@ -2263,8 +2268,12 @@ form.search-form input.search-submit {
     padding: 0 var(--padding-x) 3rem;
   }
   .archive .loop .vignette:first-of-type .image {
-    aspect-ratio: unset;
     grid-row: 1/span 3;
+    margin-bottom: 0;
+    padding-top: 0;
+  }
+  .archive .loop .vignette:first-of-type .image img {
+    position: relative;
   }
   .archive .loop .vignette:first-of-type .titre-item, .archive .loop .vignette:first-of-type .extrait, .archive .loop .vignette:first-of-type .suite {
     grid-column: 2;
