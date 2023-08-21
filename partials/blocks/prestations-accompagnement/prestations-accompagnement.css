@@ -70,7 +70,7 @@
 }
 @media (min-width: 1024px) {
   .prestations-accompagnement {
-    --gap:3rem;
+    --gap:4rem;
     padding-top: 17.6rem;
     padding-bottom: 12.3rem;
   }
@@ -96,8 +96,8 @@
   .prestations-accompagnement .titre {
     font-size: 3rem;
     line-height: 4rem;
-    min-height: 13rem;
     margin-bottom: 3rem;
+    text-align: center;
   }
 }
 @media (min-width: 1440px) {
@@ -106,7 +106,6 @@
   }
   .prestations-accompagnement .titre {
     font-size: 4rem;
-    min-height: 16rem;
     line-height: 5rem;
   }
   .prestations-accompagnement .intro-col, .prestations-accompagnement .texte {

@@ -70,7 +70,7 @@
 	
 
 	@include bp(lg ) {
-		--gap:3rem;
+		--gap:4rem;
 	
 		padding-top: 17.6rem;
 		padding-bottom: 12.3rem;
@@ -98,8 +98,8 @@
 		.titre {
 			font-size: 3rem;
 			line-height: 4rem;
-			min-height: 13rem;
 			margin-bottom: 3rem;
+			text-align: center;
 		}
 	
 	}
@@ -110,7 +110,6 @@
 
 		.titre {
 			font-size: 4rem;
-			min-height: 16rem;
 			line-height: 5rem;
 		}
 

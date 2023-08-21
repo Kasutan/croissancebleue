@@ -268,7 +268,7 @@ class BE_ACF_Customizations {
 			'Bloc accompagnement pour page Prestations',
 			'Section avec titre et services détaillés sur 3 colonnes.',
 			'star-filled', 
-			false, 
+			true, //Uniformiser les hauteurs 
 			array('prestation', 'service', 'accompagnement')
 		);
 

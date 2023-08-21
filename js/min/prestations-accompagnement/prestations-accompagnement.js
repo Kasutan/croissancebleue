@@ -1,0 +1,1 @@
+!function(c){c(document).ready(function(){var t=c(".prestations-accompagnement .titre"),t=(0<t.length&&n(t),c(".prestations-accompagnement .intro-col"));function n(t){var e=0;c.each(t,function(t,n){c(n).height()>e&&(e=c(n).height())}),c(t).css("height",e+"px")}0<t.length&&n(t)})}(jQuery);
