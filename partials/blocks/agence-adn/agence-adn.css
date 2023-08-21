@@ -19,7 +19,6 @@
   }
 }
 .agence-adn .titre-section {
-  font-weight: 700;
   font-size: 2.8rem;
   margin-bottom: 2rem;
   text-align: center;
@@ -82,7 +81,7 @@
   }
   .agence-adn .titre-section {
     font-size: 6.5rem;
-    font-weight: 9.8rem;
+    line-height: 9.8rem;
     margin-right: 4rem;
   }
   .agence-adn .intro {
