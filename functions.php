@@ -63,7 +63,6 @@ if ( ! function_exists( 'kasutan_setup' ) ) :
 		register_nav_menus( array(
 			'primary' => 'Menu principal',
 			'footer-2' => 'Menu colonne 2 du pied de page',
-			'footer-3' => 'Menu colonne 3 du pied de page',
 			'footer-copyright' => 'Liens légaux dans le pied de page',
 		) );
 

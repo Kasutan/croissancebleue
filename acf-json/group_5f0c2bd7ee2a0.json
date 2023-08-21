@@ -129,26 +129,6 @@
             "preview_size": "thumbnail"
         },
         {
-            "key": "field_64ca8cbf7fcef",
-            "label": "Pied de page : titre de la colonne 3",
-            "name": "cb_footer_col_titre",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_64ca863514913",
             "label": "Pied de page : texte copyright",
             "name": "cb_footer_copyright",

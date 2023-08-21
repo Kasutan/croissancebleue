@@ -1546,118 +1546,90 @@ button.ouvrir-sous-menu:focus {
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
+.site-footer {
+  --picto:2.4rem;
+}
 .site-footer .main-footer {
+  align-items: center;
   background-color: var(--bleu-b8);
   color: var(--blanc);
+  display: flex;
+  flex-direction: column;
   padding: 1.2rem var(--padding-x) 2.5rem;
 }
 .site-footer .logo-footer {
   display: block;
-  margin: 0 auto;
+  margin: 0 0 3rem;
   max-width: 25rem;
 }
 .site-footer .logo-footer img {
   max-width: 100%;
 }
-.site-footer .adresse {
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 2rem;
-  text-align: center;
-}
-.site-footer .col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.site-footer .col a {
+.site-footer a {
   color: var(--blanc);
   text-decoration: none;
 }
-.site-footer .col a:hover, .site-footer .col a:focus {
+.site-footer a:hover, .site-footer a:focus {
   color: var(--bleu-fonce);
 }
-.site-footer .col-1 .tel {
+.site-footer .contact {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 2.4rem;
 }
-.site-footer .col-1 .email {
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-}
-.site-footer .col-1 .linkedin {
-  margin-top: 2rem;
-}
-.site-footer .col-2 {
-  display: none;
-}
-.site-footer .col-3 .tel, .site-footer .col-3 .email, .site-footer .col-3 .titre-col {
-  display: none;
-}
-.site-footer .col-3 .menu {
+.site-footer .contact li {
+  align-items: flex-start;
   display: flex;
-  font-size: 1.4rem;
-  line-height: 2.4rem;
-  margin-top: 2.2rem;
+  margin-bottom: 1em;
 }
-.site-footer .col-3 .menu li::after {
-  content: "|";
-  display: inline-block;
-  margin: 0 1ch;
+.site-footer .contact .picto {
+  align-items: center;
+  background-color: var(--blanc);
+  border-radius: 100px;
+  display: flex;
+  height: var(--picto);
+  justify-content: center;
+  margin-right: 1rem;
+  padding: 3px;
+  width: var(--picto);
 }
-.site-footer .col-3 .menu li:last-of-type::after {
+.site-footer .contact .picto path {
+  fill: var(--bleu-b8);
+}
+.site-footer .nav-footer {
   display: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .site-footer .main-footer {
     padding-top: 3rem;
     padding-bottom: 2rem;
-    --gap:2rem;
+    --picto:3rem;
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
   }
-  .site-footer .main-footer p, .site-footer .main-footer a, .site-footer .main-footer .adresse {
-    display: block;
+  .site-footer .main-footer li {
     font-size: 2rem;
-    line-height: 2.4rem;
-    margin-bottom: 2.8rem;
+    line-height: 3rem;
+    margin-bottom: 1.8rem;
     text-align: left;
   }
-  .site-footer .colonnes-footer {
-    -moz-column-gap: var(--gap);
-         column-gap: var(--gap);
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+  .site-footer .contact {
+    grid-column: 1;
+    grid-row: 2;
   }
-  .site-footer .logo-footer {
-    margin-left: 0;
-    margin-bottom: 4.3rem;
+  .site-footer .contact .picto {
+    padding: 8px;
   }
-  .site-footer .col-1 {
-    align-items: flex-start;
-  }
-  .site-footer .col-1 .tel, .site-footer .col-1 .email {
-    display: none;
-  }
-  .site-footer .col-1 .linkedin {
-    margin-top: auto;
-  }
-  .site-footer .col-2, .site-footer .col-3 {
+  .site-footer .nav-footer {
     display: block;
-    padding-top: 1rem;
+    grid-column: 3;
+    grid-row: 2;
   }
-  .site-footer .col-3 .titre-col, .site-footer .col-3 .tel, .site-footer .col-3 .email {
-    display: block;
-  }
-  .site-footer .sub-menu {
-    display: none;
-  }
-  .site-footer .col-2 li:first-of-type, .site-footer .titre-col {
+  .site-footer .nav-footer li {
     font-weight: 500;
   }
-  .site-footer .col-3 .menu {
-    display: block;
-  }
-  .site-footer .col-3 .menu li::after {
+  .site-footer .sub-menu {
     display: none;
   }
 }
