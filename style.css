@@ -1611,8 +1611,8 @@ button.ouvrir-sous-menu:focus {
 }
 @media (min-width: 1024px) {
   .site-footer .main-footer {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
     --gap:2rem;
   }
   .site-footer .main-footer p, .site-footer .main-footer a, .site-footer .main-footer .adresse {

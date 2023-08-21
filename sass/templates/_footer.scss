@@ -87,8 +87,8 @@
 
 	@include bp(lg) {
 		.main-footer {
-			padding-top:9rem;
-			padding-bottom: 9rem;
+			padding-top:3rem;
+			padding-bottom: 2rem;
 			--gap:2rem;
 			p, a, .adresse {
 				display: block;
