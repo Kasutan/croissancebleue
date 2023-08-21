@@ -192,6 +192,7 @@
 
 		.image {
 			width:calc(100% - 51rem - var(--padding-x));
+			width:55vw;
 		}
 		.textes {
 			align-items: flex-end;
@@ -201,18 +202,16 @@
 			flex-direction: column;
 			justify-content: flex-end;
 			max-width: unset;
-			padding-right: var(--padding-x);
 			padding-bottom: 10rem;
 			position: relative;
 		}
 
 		.titre-wrap {
 			background-color: #fff;
-			font-size: var(--fsz);
 			font-weight: 800;
 			height:auto;
 			padding:3rem;
-			padding-right:0;
+			padding-right: var(--padding-x);
 			width:auto;
 		}
 		.titre {
@@ -221,7 +220,8 @@
 			background-clip: text;
 			color:transparent;
 			font-family: var(--font-titre);
-			font-size: var(--fsz);
+			//Taille fixée initialement pour le titre "Agence" qui fait 6 caractères. Pour les autres titres, on ajuste en fonction du nombre de caractères qui les compose
+			font-size: calc(var(--fsz) * 6 / var(--strlen)); 
 			font-weight: 900;
 			line-height: 1;
 			font-weight: 800;
@@ -231,12 +231,13 @@
 		.texte {
 			background-color: #fff;
 			padding-left: 3rem;
+			padding-right: var(--padding-x);
 
 			color:var(--noir-texte);
-			font-size: 3rem;
-			line-height: 4.5rem;
+			font-size: 2.5rem;
+			line-height: 1.5;
 			font-weight: 300;
-			width:50rem;
+			width:calc(45vw - 2rem);
 		}
 
 	
@@ -246,15 +247,23 @@
 	@include bp(xl) {
 		--hauteur-banniere:93rem;
 		--fsz:18rem;
+		.texte {
+			font-size: 3rem;
+			width:calc(45vw - 2rem);
+
+		}
 
 	}
 
 	@include bp(xxl) {
 		.image {
-			width:calc(100% - 51rem - 29rem);
+			width:55%;
 		}
-		.textes {
+		.texte, .titre-wrap {
 			padding-right: 29rem;
+		}
+		.texte {
+			width:calc(45% - 3rem);
 		}
 	}
 

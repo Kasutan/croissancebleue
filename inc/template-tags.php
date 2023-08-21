@@ -116,7 +116,7 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 	$clip_url=wp_get_attachment_image_url($image_clip, 'medium');
 
 
-	printf('<div class="page-banniere">');
+	printf('<div class="page-banniere" style="--strlen:%s">',strlen($titre));
 		echo '<div class="image mobile">';
 			echo wp_get_attachment_image( $image_mobile, 'large',false,array('decoding'=>'async','loading'=>'eager'));
 		echo '</div>';

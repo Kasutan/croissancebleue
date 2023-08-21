@@ -1399,6 +1399,7 @@ button.ouvrir-sous-menu:focus {
   }
   .page-banniere .image {
     width: calc(100% - 51rem - var(--padding-x));
+    width: 55vw;
   }
   .page-banniere .textes {
     align-items: flex-end;
@@ -1408,17 +1409,15 @@ button.ouvrir-sous-menu:focus {
     flex-direction: column;
     justify-content: flex-end;
     max-width: unset;
-    padding-right: var(--padding-x);
     padding-bottom: 10rem;
     position: relative;
   }
   .page-banniere .titre-wrap {
     background-color: #fff;
-    font-size: var(--fsz);
     font-weight: 800;
     height: auto;
     padding: 3rem;
-    padding-right: 0;
+    padding-right: var(--padding-x);
     width: auto;
   }
   .page-banniere .titre {
@@ -1428,7 +1427,7 @@ button.ouvrir-sous-menu:focus {
             background-clip: text;
     color: transparent;
     font-family: var(--font-titre);
-    font-size: var(--fsz);
+    font-size: calc(var(--fsz) * 6 / var(--strlen));
     font-weight: 900;
     line-height: 1;
     font-weight: 800;
@@ -1436,11 +1435,12 @@ button.ouvrir-sous-menu:focus {
   .page-banniere .texte {
     background-color: #fff;
     padding-left: 3rem;
+    padding-right: var(--padding-x);
     color: var(--noir-texte);
-    font-size: 3rem;
-    line-height: 4.5rem;
+    font-size: 2.5rem;
+    line-height: 1.5;
     font-weight: 300;
-    width: 50rem;
+    width: calc(45vw - 2rem);
   }
 }
 @media (min-width: 1440px) {
@@ -1448,13 +1448,20 @@ button.ouvrir-sous-menu:focus {
     --hauteur-banniere:93rem;
     --fsz:18rem;
   }
+  .page-banniere .texte {
+    font-size: 3rem;
+    width: calc(45vw - 2rem);
+  }
 }
 @media (min-width: 1920px) {
   .page-banniere .image {
-    width: calc(100% - 51rem - 29rem);
+    width: 55%;
   }
-  .page-banniere .textes {
+  .page-banniere .texte, .page-banniere .titre-wrap {
     padding-right: 29rem;
+  }
+  .page-banniere .texte {
+    width: calc(45% - 3rem);
   }
 }
 .page-banniere.pour-accueil {
