@@ -75,14 +75,18 @@
 			flex-direction: column;
 		}
 		.titre {
+			align-items: center;
 			border-bottom:solid 3px var(--noir);
 			border-top:solid 3px var(--noir);
+			display: flex;
+			justify-content: center;
 			font-size: 3rem;
 			font-weight: 800;
 			line-height: 4rem;
 			min-height: 17.5rem;
 			margin-bottom: 5.9rem;
 			padding:2.5rem 0;
+			text-align: center;
 		}
 		.desktop {
 			display: block;
