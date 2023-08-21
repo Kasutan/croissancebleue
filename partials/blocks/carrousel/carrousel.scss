@@ -1,90 +1,107 @@
 @import "./././sass/abstracts/variables-et-mixins";
 
 .carrousel {
+	--logo: 190px;
+	--dot: 10px;
 
 	@include bleed;
 	@include trait;
 
-	padding:7rem 0 12rem;
+	padding: 7rem 0 12rem;
 
 	.titre-section {
-	
+
 		margin-bottom: 2.2rem;
-		padding:0 var(--padding-x);
+		padding: 0 var(--padding-x);
 		text-align: center;
+
 		span {
-			color:var(--violet-d2);
+			color: var(--violet-d2);
 		}
 	}
-	
+
+	.owl-carousel .owl-stage {
+		display: flex;
+	}
+
 	.owl-item {
 		align-items: center;
-		aspect-ratio: 1;
-		background-color: #F7F6F8;
 		display: flex;
 		justify-content: center;
-		
-		@supports not (aspect-ratio: auto) { 
-			height: 246px;
-			img {
-				height:100%;
-			}
-			@include bp(lg) {
-				height:206px
-			}
-			@include bp(xl) {
-				height:236px
-			}
+
+		img {
+			height: var(--logo);
+			object-fit: contain;
+			object-position: center;
+			width: var(--logo);
 		}
+
 	}
 
-	.logo {
+	.owl-dots {
 		align-items: center;
 		display: flex;
-		height:100%;
+		flex-wrap: wrap;
 		justify-content: center;
-		padding:1rem 2rem;
-		img {
-			object-fit: contain;
-			filter:grayscale(1);
-			opacity:0.8;
-			transition-property:all;
-			transition-duration:2s;
-			width:unset;
+		margin-top: 2rem;
+
+		button {
+			background-color: #707070;
+			border: solid 1px #707070;
+			border-radius: 50%;
+			color: transparent;
+			display: block;
+			height: var(--dot);
+			line-height: unset;
+			margin: 0 1.2rem;
+			min-width: unset;
+			min-height: unset;
+			opacity: 0.33;
+			width: var(--dot);
+
+			//Regrouper les dots par paquets de 5
+			display: none;
+			&:nth-of-type(5n+1) {
+				display: block;
+			}
+
+
+			&:hover,
+			&:focus {
+
+				background-color: #009db8;
+				border-color: #009db8;
+			}
+
+			&.active, &.voisin-actif {
+				opacity: 1;
+			}
+
 		}
 	}
 
-	.owl-item.center .logo img {
-		filter:unset;
-		opacity: 1;
+
+	@include bp(md) {
+		--logo: 240px;
 	}
 
 	@include bp(lg) {
-		padding:18.3rem var(--padding-x) 20.9rem;
+		--logo: 200px;
+		--dot : 1.6rem;
+
+		padding: 18.3rem var(--padding-x) 20.9rem;
+
 		.titre-section {
 			margin-bottom: 9rem;
 		}
-		
-		.owl-nav {
-			display: flex;
-			justify-content: center;
 
-			button {
-				
-				margin:3rem 2rem 0;
-				min-width:unset;
-				&:hover, &:focus {
-					span {
-						color:var(--bleu-fonce);
-					}
-				}
-			}
-			span {
-				color:#2AC1C8;
-				font-size: 4rem;
-				line-height: 4.5rem;
-				text-decoration: underline;
-			}
+		.owl-dots {
+			margin-top: 4rem;
 		}
+
+	}
+
+	@include bp(xl) {
+		--logo: 240px;
 	}
 }

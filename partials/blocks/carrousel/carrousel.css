@@ -1,4 +1,6 @@
 .carrousel {
+  --logo: 190px;
+  --dot: 10px;
   width: 100vw;
   margin-left: calc(-1 * var(--padding-x));
   --trait:9.7rem;
@@ -33,72 +35,72 @@
 .carrousel .titre-section span {
   color: var(--violet-d2);
 }
+.carrousel .owl-carousel .owl-stage {
+  display: flex;
+}
 .carrousel .owl-item {
   align-items: center;
-  aspect-ratio: 1;
-  background-color: #F7F6F8;
   display: flex;
   justify-content: center;
 }
-@supports not (aspect-ratio: auto) {
-  .carrousel .owl-item {
-    height: 246px;
-  }
-  .carrousel .owl-item img {
-    height: 100%;
-  }
-  @media (min-width: 1024px) {
-    .carrousel .owl-item {
-      height: 206px;
-    }
-  }
-  @media (min-width: 1440px) {
-    .carrousel .owl-item {
-      height: 236px;
-    }
-  }
+.carrousel .owl-item img {
+  height: var(--logo);
+  object-fit: contain;
+  object-position: center;
+  width: var(--logo);
 }
-.carrousel .logo {
+.carrousel .owl-dots {
   align-items: center;
   display: flex;
-  height: 100%;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 1rem 2rem;
+  margin-top: 2rem;
 }
-.carrousel .logo img {
-  object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.8;
-  transition-property: all;
-  transition-duration: 2s;
-  width: unset;
+.carrousel .owl-dots button {
+  background-color: #707070;
+  border: solid 1px #707070;
+  border-radius: 50%;
+  color: transparent;
+  display: block;
+  height: var(--dot);
+  line-height: unset;
+  margin: 0 1.2rem;
+  min-width: unset;
+  min-height: unset;
+  opacity: 0.33;
+  width: var(--dot);
+  display: none;
 }
-.carrousel .owl-item.center .logo img {
-  filter: unset;
+.carrousel .owl-dots button:nth-of-type(5n+1) {
+  display: block;
+}
+.carrousel .owl-dots button:hover, .carrousel .owl-dots button:focus {
+  background-color: #009db8;
+  border-color: #009db8;
+}
+.carrousel .owl-dots button.active, .carrousel .owl-dots button.voisin-actif {
   opacity: 1;
+}
+@media (min-width: 768px) {
+  .carrousel {
+    --logo: 240px;
+  }
 }
 @media (min-width: 1024px) {
   .carrousel {
+    --logo: 200px;
+    --dot: 1.6rem;
     padding: 18.3rem var(--padding-x) 20.9rem;
   }
   .carrousel .titre-section {
     margin-bottom: 9rem;
   }
-  .carrousel .owl-nav {
-    display: flex;
-    justify-content: center;
+  .carrousel .owl-dots {
+    margin-top: 4rem;
   }
-  .carrousel .owl-nav button {
-    margin: 3rem 2rem 0;
-    min-width: unset;
-  }
-  .carrousel .owl-nav button:hover span, .carrousel .owl-nav button:focus span {
-    color: var(--bleu-fonce);
-  }
-  .carrousel .owl-nav span {
-    color: #2AC1C8;
-    font-size: 4rem;
-    line-height: 4.5rem;
-    text-decoration: underline;
+}
+@media (min-width: 1440px) {
+  .carrousel {
+    --logo: 240px;
   }
 }
