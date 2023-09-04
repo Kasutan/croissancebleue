@@ -99,7 +99,7 @@
 		}
 
 		.texte-wrap {
-			flex:0 0 43rem;
+			flex:0 0 45rem;
 			padding:5rem 2rem 0 0;
 		}
 
@@ -114,12 +114,16 @@
 			font-weight: 300;
 			line-height: 3.4rem;
 			margin-bottom: 5rem;
+			padding-right: 2rem;
 		}
 	}
 
 	@include bp(xl) {
 		.texte-wrap {
 			padding-top: 10rem;
+		}
+		.intro {
+			padding-right: 4rem;
 		}
 		blockquote {
 			font-size: 3.5rem;
