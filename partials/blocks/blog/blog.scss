@@ -4,52 +4,45 @@
 .acf-blog {
 	@include bleed;
 	@include trait;
-	background-color: rgba(207,203,212,0.17);
-	padding:7rem 0 0;
+	background-color: rgba(207, 203, 212, 0.17);
+	padding: 7rem 0 0;
 
 
 	.loop {
 		background-color: transparent;
-		padding:0;
+		padding: 0;
 	}
 
 
 	.titre-section {
 		line-height: 1;
 		letter-spacing: -0.56px;
-		margin-bottom: 0;
 		text-align: center;
-		
+
 	}
-	.sous-titre {
-		font-style: 2rem;
-		line-height: 2.5rem;
-		letter-spacing: -0.37px;
-		text-align: center;
-	}
-	
+
+
+
 
 	@include bp(md) {
 		padding-bottom: 3rem;
+
 		.loop {
-			padding:0 var(--padding-x-header);
+			padding: 0 var(--padding-x-header);
 		}
 	}
-	
+
 
 	@include bp(lg) {
-		padding:19.3rem 0 7rem;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		padding: 19.3rem 0 7rem;
+
 		.titre-section {
 			letter-spacing: -1.19px;
-		}
-
-		.sous-titre { 
-			font-size: 3.2rem;
-			line-height: 4.5rem;
-			letter-spacing: -0.59px;
 			margin-bottom: 9.8rem;
 		}
 
-	
 	}
 }

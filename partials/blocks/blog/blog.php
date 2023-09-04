@@ -32,7 +32,6 @@ if($articles->have_posts(  )) {
 	printf('<section class="acf-blog %s">', $className);
 
 		printf('<h2 class="titre-section">%s</h2>',$titre_section);
-		printf('<p class="sous-titre">%s</p>',$sous_titre);
 
 			echo '<ul class="loop">';
 			$n=1;
@@ -44,6 +43,9 @@ if($articles->have_posts(  )) {
 			}
 			echo '</ul>';
 		wp_reset_postdata();
+
+		$url=get_permalink( get_option( 'page_for_posts' ));
+		printf('<a href="%s" class="bouton">Voir plus</a>',$url);
 
 
 	echo '</section>';

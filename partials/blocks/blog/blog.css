@@ -33,13 +33,6 @@
 .acf-blog .titre-section {
   line-height: 1;
   letter-spacing: -0.56px;
-  margin-bottom: 0;
-  text-align: center;
-}
-.acf-blog .sous-titre {
-  font-style: 2rem;
-  line-height: 2.5rem;
-  letter-spacing: -0.37px;
   text-align: center;
 }
 @media (min-width: 768px) {
@@ -52,15 +45,13 @@
 }
 @media (min-width: 1024px) {
   .acf-blog {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     padding: 19.3rem 0 7rem;
   }
   .acf-blog .titre-section {
     letter-spacing: -1.19px;
-  }
-  .acf-blog .sous-titre {
-    font-size: 3.2rem;
-    line-height: 4.5rem;
-    letter-spacing: -0.59px;
     margin-bottom: 9.8rem;
   }
 }
