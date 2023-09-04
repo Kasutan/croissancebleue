@@ -237,8 +237,7 @@ body {
 			background-clip: text;
 			color:transparent;
 			font-family: var(--font-titre);
-			//Taille fixée initialement pour le titre "Agence" qui fait 6 caractères. Pour les autres titres, on ajuste en fonction du nombre de caractères qui les compose
-			font-size: calc(var(--fsz) * 6 / var(--strlen)); 
+			font-size: 11rem; 
 			font-weight: 900;
 			line-height: 1;
 			font-weight: 800;
@@ -259,6 +258,11 @@ body {
 
 	
 		
+	}
+	@media screen and (min-width:1200px) {
+		.titre {
+			font-size: 13rem;
+		}
 	}
 
 	@include bp(xl) {

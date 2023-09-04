@@ -1461,7 +1461,7 @@ body {
             background-clip: text;
     color: transparent;
     font-family: var(--font-titre);
-    font-size: calc(var(--fsz) * 6 / var(--strlen));
+    font-size: 11rem;
     font-weight: 900;
     line-height: 1;
     font-weight: 800;
@@ -1475,6 +1475,11 @@ body {
     line-height: 1.5;
     font-weight: 300;
     width: calc(45vw - 2rem);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .page-banniere .titre {
+    font-size: 13rem;
   }
 }
 @media (min-width: 1440px) {
