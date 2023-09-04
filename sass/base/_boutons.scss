@@ -17,7 +17,7 @@ a.wp-block-button__link {
 		color:var(--blanc);
 	}
 	text-decoration: none;
-	transition: all 0.5s;
+	transition: all 0.3s ease-in-out;
 
 
 	&:hover, &:focus, &:active {

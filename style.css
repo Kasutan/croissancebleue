@@ -619,7 +619,7 @@ a.wp-block-button__link {
   text-decoration: none;
   position: relative;
   text-decoration: none;
-  transition: all 0.5s;
+  transition: all 0.3s ease-in-out;
 }
 @media (min-width: 1024px) {
   button,
