@@ -69,10 +69,6 @@
   min-height: unset;
   opacity: 0.33;
   width: var(--dot);
-  display: none;
-}
-.carrousel .owl-dots button:nth-of-type(5n+1) {
-  display: block;
 }
 .carrousel .owl-dots button:hover, .carrousel .owl-dots button:focus {
   background-color: #009db8;

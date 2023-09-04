@@ -10,54 +10,48 @@
 				sm : 2,
 				md : 2,
 				lg : 3,
-				xl : 3,
+				xl : 4,
 			}
 
-			var padding= {
-				xsm : 60,
-				sm : 70,
-				md : 80,
-				lg : 60,
-				xl:200
-			}
+			
 			 
 			owl.owlCarousel({
 				loop:true,
 				nav : false,
 				navText:['<span><<span class="screen-reader-text"> Référence précédente</span></span>','<span>><span class="screen-reader-text">Référence suivante <span></span>'],
 				dots : true,
-				dotsEach :5,
+				dotsEach:false,
 				autoplay:true,
 				autoplayTimeout:5000,
 				autoplaySpeed:2000,
 				autoplayHoverPause:true,
-				center: true,
+				center: false,
 				margin:10,
-				slideBy:'page',
+				stagePadding: 0,
 				//checkVisible: false,
 				onInitialized: accessibleNav,
-				onChanged: activeDots,
-				stagePadding: 120, //pour voir en partie les logos voisins
+				//onChanged: activeDots,
+				slideBy:1,
 				responsive : {
 					0 : {
 						items:items.xsm,
-						stagePadding:padding.xsm,
+						
 					},
 					500 : {
 						items:items.sm,
-						stagePadding:padding.sm,
+
 					},
 					768 : {
 						items:items.md,
-						stagePadding:padding.md,
+
 					},
 					1024 : {
 						items:items.lg,
-						stagePadding:padding.lg,
+
 					},
 					1400 : {
 						items:items.xl,
-						stagePadding:padding.xl,
+
 					}
 				}
 			});
@@ -73,15 +67,14 @@
 		}
 
 		function activeDots(e) {
-			console.log('active voisins');
-			var indexCourant=$('.owl-dot.active').attr('data-index');
+			/*var indexCourant=$('.owl-dot.active').attr('data-index');
 			$('.owl-dot').removeClass('voisin-actif');
 			for (var i=1; i<=4; i++) {
 				var indexVoisin=indexCourant - i;
 				if(i>=0) {
 					$('.owl-dot[data-index='+indexVoisin+']').addClass('voisin-actif');
 				}
-			}
+			}*/
 		}
 	}); //fin document ready
 })( jQuery );

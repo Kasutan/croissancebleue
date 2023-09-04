@@ -58,14 +58,6 @@
 			min-height: unset;
 			opacity: 0.33;
 			width: var(--dot);
-
-			//Regrouper les dots par paquets de 5
-			display: none;
-			&:nth-of-type(5n+1) {
-				display: block;
-			}
-
-
 			&:hover,
 			&:focus {
 
@@ -76,7 +68,6 @@
 			&.active, &.voisin-actif {
 				opacity: 1;
 			}
-
 		}
 	}
 
