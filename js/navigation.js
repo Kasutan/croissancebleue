@@ -15,6 +15,7 @@
 
 	volet = document.getElementById( 'volet-navigation' );
 
+
 	// Hide menu toggle button if volet is empty and return early.
 	if ( 'undefined' === typeof volet ) {
 		button.style.display = 'none';
@@ -35,11 +36,13 @@
 		if ( -1 !== volet.className.indexOf( 'toggled' ) ) {
 			volet.className = volet.className.replace( ' toggled', '' );
 			button.className = button.className.replace( ' is-active', '' );
+			jQuery('body').removeClass('disable-scroll');
 			button.setAttribute( 'aria-expanded', 'false' );
 			volet.setAttribute( 'aria-expanded', 'false' );
 		} else {
 			volet.className += ' toggled';
 			button.className += ' is-active';
+			jQuery('body').addClass('disable-scroll');
 			button.setAttribute( 'aria-expanded', 'true' );
 			volet.setAttribute( 'aria-expanded', 'true' );
 		}

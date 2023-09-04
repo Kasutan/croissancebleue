@@ -13,3 +13,8 @@ br.desktop {
 }
 
 
+/*Empêcher le scroll en mobile quand le volet de navigation est ouvert*/
+.disable-scroll {
+	overflow: hidden !important;
+	touch-action: none !important;
+}

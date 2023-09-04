@@ -84,6 +84,7 @@ p.fil-ariane {
 	}
 }
 
+
 button.menu-toggle {
 	display: block;
 	padding:0;
@@ -108,8 +109,7 @@ button.menu-toggle {
 	display: flex;
 	flex-direction: column;
 	right:0;
-	max-height:100vh;
-	max-width:400px;
+	height:100vh;
 	overflow-x:hidden;
 	overflow-y:auto;
 	padding: 2.4rem 2rem;
@@ -298,12 +298,11 @@ button.ouvrir-sous-menu {
 				padding-right: 0;
 			}
 			
-			&:hover > a, & > a:focus, &:focus-within > a {
+			&:hover > a, & > a:focus, &:focus-within > a, & > a:active {
 				color:var(--bleu-d3);
 			}
 			
-
-			& > a:active, &.current-menu-item > a, &.current-menu-ancestor > a {
+			&.current-menu-item > a, &.current-menu-ancestor > a {
 				font-weight: 500;
 				color:var(--bleu-d3);
 				text-decoration: underline;

@@ -20,7 +20,6 @@
 	@include bp(sm) {
 		padding-right: var(--padding-x-header);
 	}
-
 }
 
 .title-area {
@@ -42,11 +41,25 @@
 .custom-logo {
 	display: block;
 	margin:0;
+	object-fit: contain;
 }
 
 
 //Header sticky toutes tailles d'écran
-.site-header.js-sticky {
+//Magic numbers
+body {
+	--hauteur-header:55px;
+	@include bp(md) {
+		--hauteur-header:60px;
+	}
+	@include bp(lg) {
+		--hauteur-header:123px;
+	}
+	@include bp(xl) {
+		--hauteur-header:161px;
+	}
+}
+.site-header {
 	border-bottom:solid 1px var(--beige);
 	position:fixed;
 	left: 0;
@@ -54,22 +67,26 @@
 	width:100%;
 
 	@include bp(xxl) {
-		left:calc((100vw - var(--largeur-max))/2);
-		width:var(--largeur-max);
+		left:0;
+		width:100vw;
 	}
+}
+
+.site-main {
+	margin-top: var(--hauteur-header);
 }
 
 #wpadminbar {
 	position: fixed;
 }
-.admin-bar .site-header.js-sticky {
+.admin-bar .site-header {
 	top:46px;
 }	
 
 
 @include bp(md) {
 	
-	.admin-bar .site-header.js-sticky {
+	.admin-bar .site-header {
 		top:32px;
 	}
 

@@ -225,3 +225,14 @@ function kasutan_make_list($text) {
 function kasutan_formate_tel($tel) {
 	return str_replace(array(' ','(0)'),'',$tel);
 }
+
+/*****
+ * Mettre © en exposant
+ */
+add_filter('the_content','kasutan_force_exposants');
+function kasutan_force_exposants($string) {
+	$string=str_replace(' ©','<sup>©</sup>',$string);
+	$string=str_replace('©','<sup>©</sup>',$string);
+	$string=str_replace('&copy;','<sup>©</sup>',$string);
+	return $string;
+}
