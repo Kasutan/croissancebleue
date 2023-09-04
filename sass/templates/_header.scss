@@ -316,6 +316,9 @@ body {
 		@include bp(lg) {
 			--fsz:35rem;
 			align-items: center;
+			grid-template-rows: 1fr auto 1fr;
+			min-height:calc(100vh - var(--hauteur-header));
+
 			.textes {
 				padding:0;
 				padding-right: var(--padding-x);

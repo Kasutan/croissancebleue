@@ -1532,6 +1532,8 @@ body {
   .page-banniere.pour-accueil {
     --fsz:35rem;
     align-items: center;
+    grid-template-rows: 1fr auto 1fr;
+    min-height: calc(100vh - var(--hauteur-header));
   }
   .page-banniere.pour-accueil .textes {
     padding: 0;
