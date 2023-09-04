@@ -4,7 +4,7 @@
   --trait:9.7rem;
   position: relative;
   background-color: rgba(207, 203, 212, 0.17);
-  padding: 7rem 0 0;
+  padding: 7rem 0 3rem;
 }
 @media (min-width: 1920px) {
   .acf-blog {
@@ -36,9 +36,6 @@
   text-align: center;
 }
 @media (min-width: 768px) {
-  .acf-blog {
-    padding-bottom: 3rem;
-  }
   .acf-blog .loop {
     padding: 0 var(--padding-x-header);
   }
