@@ -42,7 +42,7 @@
 
 	@include bp(lg ) {
 		--gap:3rem;
-		
+		padding-bottom: 12rem;
 		padding-top: 15rem;
 
 		.titre-section {
@@ -86,6 +86,7 @@
 	@include bp(xl) {
 		
 		--gap:5rem;
+		padding-bottom: 15rem;
 
 		.titre {
 			font-size: 4rem;

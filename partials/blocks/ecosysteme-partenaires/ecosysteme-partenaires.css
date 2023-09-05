@@ -47,6 +47,7 @@
 @media (min-width: 1024px) {
   .ecosysteme-partenaires {
     --gap:3rem;
+    padding-bottom: 12rem;
     padding-top: 15rem;
   }
   .ecosysteme-partenaires .titre-section {
@@ -83,6 +84,7 @@
 @media (min-width: 1440px) {
   .ecosysteme-partenaires {
     --gap:5rem;
+    padding-bottom: 15rem;
   }
   .ecosysteme-partenaires .titre {
     font-size: 4rem;
