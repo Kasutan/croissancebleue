@@ -25,7 +25,7 @@ if(function_exists('get_field')) :
 
 			echo '<div class="owl-carousel">';
 				foreach($galerie as $image_id) :
-				echo wp_get_attachment_image( $image_id, 'medium');
+				echo wp_get_attachment_image( $image_id, 'medium',false,array('loading'=>'eager'));
 				endforeach;
 			echo '</div>';
 
