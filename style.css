@@ -1674,6 +1674,11 @@ body {
     display: none;
   }
 }
+@media (min-width: 1024px) {
+  .site-footer .main-footer {
+    padding-top: 5rem;
+  }
+}
 .site-footer .bottom-footer {
   background-color: var(--noir);
   padding: 1.8rem var(--padding-x) 1rem;
