@@ -64,8 +64,11 @@
   text-transform: uppercase;
 }
 .accueil-vision blockquote::before, .accueil-vision blockquote::after {
+  background-image: url("quote-left.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
   content: "“";
-  color: var(--bleu-b8);
+  color: transparent;
   font-family: var(--font-titre);
   font-size: 150%;
   left: 1.4rem;
@@ -74,6 +77,7 @@
   top: 1.4rem;
 }
 .accueil-vision blockquote::after {
+  background-image: url("quote-right.svg");
   bottom: 1rem;
   content: "”";
   left: unset;

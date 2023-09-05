@@ -50,8 +50,11 @@ textarea {
   text-align: center;
 }
 .wp-block-pullquote::before, .wp-block-pullquote::after, .wp-block-quote::before, .wp-block-quote::after {
+  background-image: url("icons/quote-left.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
   content: "“";
-  color: var(--bleu-b8);
+  color: transparent;
   font-family: var(--font-titre);
   font-size: 150%;
   left: 1.4rem;
@@ -60,6 +63,7 @@ textarea {
   top: 1.4rem;
 }
 .wp-block-pullquote::after, .wp-block-quote::after {
+  background-image: url("icons/quote-right.svg");
   bottom: 1rem;
   content: "”";
   left: unset;
