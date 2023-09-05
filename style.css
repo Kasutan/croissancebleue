@@ -267,12 +267,12 @@ body.home .entry-content {
   padding-top: 0;
 }
 
-.alignfull, .bleed-container {
+.bleed-container {
   width: 100vw;
   margin-left: calc(-1 * var(--padding-x));
 }
 @media (min-width: 1920px) {
-  .alignfull, .bleed-container {
+  .bleed-container {
     width: var(--largeur-max);
   }
 }
@@ -1988,7 +1988,7 @@ form.search-form input.search-submit {
 .single .entry-content {
   background-color: var(--gris-bg);
   max-width: unset;
-  padding: 2.3rem var(--padding-x);
+  padding: 2.3rem var(--padding-x) 5rem;
   color: var(--noir);
   font-size: 1.4rem;
   letter-spacing: 0.49px;
@@ -2027,6 +2027,11 @@ form.search-form input.search-submit {
   }
   .single .entry-content p + h2 {
     margin-top: 6.7rem;
+  }
+  .single .entry-content .wp-block-embed.alignfull {
+    left: -10%;
+    position: relative;
+    width: 120%;
   }
 }
 @media (min-width: 1440px) {
@@ -2153,7 +2158,7 @@ form.search-form input.search-submit {
 .loop .vignette .image {
   display: flex;
   margin-bottom: 11px;
-  padding-top: 67%;
+  padding-top: 60%;
   position: relative;
   width: 100%;
 }
@@ -2283,7 +2288,7 @@ form.search-form input.search-submit {
     align-items: stretch;
     -moz-column-gap: 2rem;
          column-gap: 2rem;
-    padding: 0 var(--padding-x) 3rem;
+    padding: 0 var(--padding-x-header) 3rem;
   }
   .archive .loop .vignette:first-of-type .image {
     grid-row: 1/span 3;

@@ -130,7 +130,7 @@
 	.entry-content {
 		background-color: var(--gris-bg);
 		max-width: unset;
-		padding: 2.3rem var(--padding-x);
+		padding: 2.3rem var(--padding-x) 5rem;
 
 		//Textes
 		color:var(--noir);
@@ -157,6 +157,8 @@
 			letter-spacing: 0.5px;
 		}
 
+	
+
 		@include bp(lg) {
 			font-size: 1.7rem;
 			letter-spacing: 0.6px;
@@ -177,6 +179,13 @@
 
 			p + h2 {
 				margin-top: 6.7rem;
+			}
+
+			//Video qui dépasse légèrement du conteneur
+			.wp-block-embed.alignfull {
+				left:-10%;
+				position: relative;
+				width:120%;
 			}
 		}
 

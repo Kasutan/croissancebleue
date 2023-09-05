@@ -6,7 +6,7 @@
 		.image {
 			display: flex;
 			margin-bottom: 11px;
-			padding-top:67%;
+			padding-top: 60%;
 			position: relative;
 			width: 100%;
 
@@ -154,7 +154,7 @@
 	
 		align-items: stretch;
 		column-gap: 2rem;
-		padding:0 var(--padding-x) 3rem;
+		padding:0 var(--padding-x-header) 3rem;
 		.image {
 			grid-row:1 / span 3;
 			margin-bottom: 0;
