@@ -35,6 +35,9 @@
   letter-spacing: -0.56px;
   text-align: center;
 }
+.acf-blog .bouton {
+  margin: 3rem var(--padding-x) 0;
+}
 @media (min-width: 768px) {
   .acf-blog .loop {
     padding: 0 var(--padding-x-header);
