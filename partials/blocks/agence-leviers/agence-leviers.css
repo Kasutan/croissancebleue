@@ -114,7 +114,7 @@
     display: none;
   }
   .agence-leviers .encart {
-    background-color: var(--blanc);
+    background-color: #F7F6F8;
     max-width: 90%;
     padding: 2rem 3rem;
     position: relative;

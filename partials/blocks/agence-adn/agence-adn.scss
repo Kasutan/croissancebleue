@@ -78,6 +78,9 @@
 		}
 	}
 	
+	@include bp(lg) {
+		padding-top: 12rem;
+	}
 	
 	@media screen and (min-width:1200px) {
 

@@ -137,7 +137,9 @@
     text-align: left;
   }
   .agence-equipe .intro {
+    align-items: center;
     background: #F7F6F8;
+    display: flex;
     font-size: 2.6rem;
     grid-column: 1/span 2;
     grid-row: 2;
