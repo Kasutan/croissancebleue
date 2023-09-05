@@ -3,13 +3,15 @@
 (function($) {
 
 	$( document ).ready(function() {
+		var width=$(window).width();
 		var titres=$('.prestations-accompagnement .titre');
-		if(titres.length > 0) {
+		console.log(width);
+		if(titres.length > 0 && width >=1024) {
 			uniformiseH(titres);
 		}
 
 		var intros=$('.prestations-accompagnement .intro-col');
-		if(intros.length > 0) {
+		if(intros.length > 0 && width >=1024) {
 			uniformiseH(intros);
 		}
 
