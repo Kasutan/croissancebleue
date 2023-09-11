@@ -404,7 +404,6 @@ optgroup,
 textarea {
   color: var(--noir-texte);
   font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-family: var(--font-texte);
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 1.56;
@@ -1419,11 +1418,13 @@ body {
 }
 @media (min-width: 1024px) {
   .page-banniere {
-    --hauteur-banniere:63rem;
+    --hauteur-banniere:75vh;
     --fsz:16rem;
-    align-items: stretch;
-    justify-content: flex-end;
-    display: flex;
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 55vw 1fr var(--padding-x);
+    grid-template-rows: 25vh auto 1fr;
+    justify-items: flex-end;
   }
   .page-banniere .mobile {
     display: none;
@@ -1432,26 +1433,20 @@ body {
     display: block;
   }
   .page-banniere .image {
-    width: calc(100% - 51rem - var(--padding-x));
-    width: 55vw;
+    grid-column: 1/span 1;
+    grid-row: 1/span 3;
   }
-  .page-banniere .textes {
-    align-items: flex-end;
-    -webkit-align-items: flex-end;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    max-width: unset;
-    padding-bottom: 10rem;
+  .page-banniere .titre-wrap, .page-banniere .texte {
     position: relative;
   }
   .page-banniere .titre-wrap {
     background-color: #fff;
     font-weight: 800;
+    grid-column: 1/span 2;
+    grid-row: 2;
     height: auto;
     padding: 3rem;
-    padding-right: var(--padding-x);
+    padding-right: 0;
     width: auto;
   }
   .page-banniere .titre {
@@ -1468,13 +1463,14 @@ body {
   }
   .page-banniere .texte {
     background-color: #fff;
-    padding-left: 3rem;
-    padding-right: var(--padding-x);
+    grid-column: 2;
+    grid-row: 3;
     color: var(--noir-texte);
     font-size: 2.5rem;
     line-height: 1.5;
     font-weight: 300;
-    width: calc(45vw - 2rem);
+    padding-left: 3rem;
+    padding-bottom: 3rem;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -1484,23 +1480,15 @@ body {
 }
 @media (min-width: 1440px) {
   .page-banniere {
-    --hauteur-banniere:93rem;
     --fsz:18rem;
   }
   .page-banniere .texte {
     font-size: 3rem;
-    width: calc(45vw - 2rem);
   }
 }
 @media (min-width: 1920px) {
-  .page-banniere .image {
-    width: 55%;
-  }
-  .page-banniere .texte, .page-banniere .titre-wrap {
-    padding-right: 29rem;
-  }
-  .page-banniere .texte {
-    width: calc(45% - 3rem);
+  .page-banniere {
+    grid-template-columns: 105.6rem 1fr 29rem;
   }
 }
 .page-banniere.pour-accueil {
@@ -1532,20 +1520,26 @@ body {
   .page-banniere.pour-accueil {
     --fsz:35rem;
     align-items: center;
-    grid-template-rows: 1fr auto 1fr;
+    grid-template-rows: 1fr auto auto auto 1fr;
+    grid-template-columns: 1fr 40rem var(--padding-x);
     min-height: calc(100vh - var(--hauteur-header));
   }
-  .page-banniere.pour-accueil .textes {
-    padding: 0;
-    padding-right: var(--padding-x);
-  }
   .page-banniere.pour-accueil .image {
-    width: calc(100% - 40rem - var(--padding-x));
+    grid-column: 1/span 1;
+    grid-row: 1/span 5;
   }
   .page-banniere.pour-accueil .texte_1, .page-banniere.pour-accueil .titre, .page-banniere.pour-accueil .texte_3 {
     padding-right: 0;
+    padding-left: 0;
+  }
+  .page-banniere.pour-accueil .texte {
+    background-color: transparent;
+    padding-left: 0;
+    width: unset;
   }
   .page-banniere.pour-accueil .texte_1 {
+    grid-column: 2;
+    grid-row: 2;
     font-size: 6.4rem;
     line-height: 1.1;
     position: relative;
@@ -1553,6 +1547,8 @@ body {
     z-index: 2;
   }
   .page-banniere.pour-accueil .titre-wrap {
+    grid-column: 1/span 2;
+    grid-row: 3;
     padding: 0;
     padding-left: 3rem;
   }
@@ -1563,24 +1559,18 @@ body {
     left: 1rem;
   }
   .page-banniere.pour-accueil .texte_3 {
+    grid-column: 2;
+    grid-row: 4;
     font-size: 3rem;
     line-height: 5rem;
     position: relative;
     top: -1.5rem;
     z-index: 2;
   }
-  .page-banniere.pour-accueil .texte {
-    background-color: transparent;
-    padding-left: 2rem;
-    width: unset;
-  }
 }
 @media (min-width: 1920px) {
-  .page-banniere.pour-accueil .image {
-    width: calc(100% - 45rem - 25rem);
-  }
-  .page-banniere.pour-accueil .textes {
-    padding: 25rem;
+  .page-banniere.pour-accueil {
+    grid-template-columns: 122rem 1fr 25rem;
   }
 }
 

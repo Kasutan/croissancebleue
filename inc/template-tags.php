@@ -132,14 +132,20 @@ function kasutan_page_banniere($page_id=false,$use_defaut=false) {
 		echo '</div>';
 	
 
-		echo '<div class="textes">';
-			printf('<div class="titre-wrap"><h1 class="titre desktop" style="background-image:url(%s)">%s</h1></div>',$clip_url,$titre);
-			printf('<h1 class="titre mobile">%s</h1>',$titre);
+		echo '<div class="textes mobile">';
+			
+			printf('<h1 class="titre">%s</h1>',$titre);
 			if($texte) {
 				printf('<div class="texte">%s</div>',$texte);
 			}
 			
 		echo '</div>';
+
+		printf('<div class="titre-wrap desktop"><h1 class="titre desktop" style="background-image:url(%s)">%s</h1></div>',$clip_url,$titre);
+
+		if($texte) {
+			printf('<div class="texte desktop">%s</div>',$texte);
+		}
 	echo '</div>';
 	
 }
@@ -188,17 +194,26 @@ function kasutan_front_page_banniere() {
 	
 
 		printf('<h1 class="screen-reader-text">%s</h1>',$titre_seo);
-		echo '<div class="textes" aria-hidden="true">';
+		echo '<div class="textes mobile" aria-hidden="true">';
 			if($texte_1) {
 				printf('<div class="texte texte_1">%s</div>',$texte_1);
 			}
-			printf('<div class="titre-wrap"><div class="h1 titre desktop" style="background-image:url(%s)">%s</div></div>',$clip_url,$texte_2);
-			printf('<div class="h1 titre mobile">%s</div>',$texte_2);
+			
+			printf('<div class="h1 titre">%s</div>',$texte_2);
 			if($texte_3) {
 				printf('<div class="texte texte_3">%s</div>',$texte_3);
 			}
 			
 		echo '</div>';
+
+		if($texte_1) {
+			printf('<div class="texte texte_1 desktop">%s</div>',$texte_1);
+		}
+		printf('<div class="titre-wrap desktop"><div class="h1 titre" style="background-image:url(%s)">%s</div></div>',$clip_url,$texte_2);
+		
+		if($texte_3) {
+			printf('<div class="texte texte_3 desktop">%s</div>',$texte_3);
+		}
 	echo '</div>';
 } 
 
