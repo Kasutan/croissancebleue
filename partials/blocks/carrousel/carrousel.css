@@ -35,6 +35,9 @@
 .carrousel .titre-section span {
   color: var(--violet-d2);
 }
+.carrousel .owl-carousel {
+  position: relative;
+}
 .carrousel .owl-carousel .owl-stage {
   display: flex;
 }
@@ -49,33 +52,22 @@
   object-position: center;
   width: var(--logo);
 }
-.carrousel .owl-dots {
-  align-items: center;
+.carrousel .owl-nav {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 2rem;
 }
-.carrousel .owl-dots button {
-  background-color: #707070;
-  border: solid 1px #707070;
-  border-radius: 50%;
-  color: transparent;
-  display: block;
-  height: var(--dot);
-  line-height: unset;
-  margin: 0 1.2rem;
+.carrousel .owl-nav button {
+  margin: 0 2rem;
   min-width: unset;
-  min-height: unset;
-  opacity: 0.33;
-  width: var(--dot);
 }
-.carrousel .owl-dots button:hover, .carrousel .owl-dots button:focus {
-  background-color: #009db8;
-  border-color: #009db8;
+.carrousel .owl-nav button:hover span, .carrousel .owl-nav button:focus span {
+  color: var(--bleu-fonce);
 }
-.carrousel .owl-dots button.active, .carrousel .owl-dots button.voisin-actif {
-  opacity: 1;
+.carrousel .owl-nav span {
+  color: #2AC1C8;
+  font-size: 4rem;
+  line-height: 4.5rem;
+  text-decoration: underline;
 }
 @media (min-width: 768px) {
   .carrousel {

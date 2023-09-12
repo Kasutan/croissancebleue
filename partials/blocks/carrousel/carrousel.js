@@ -17,11 +17,10 @@
 			 
 			owl.owlCarousel({
 				loop:true,
-				nav : false,
+				nav : true,
 				navText:['<span><<span class="screen-reader-text"> Référence précédente</span></span>','<span>><span class="screen-reader-text">Référence suivante <span></span>'],
-				dots : true,
-				dotsEach:false,
-				autoplay:true,
+				dots : false,
+				autoplay:true, 
 				autoplayTimeout:5000,
 				autoplaySpeed:2000,
 				autoplayHoverPause:true,
@@ -58,23 +57,10 @@
 		}
 
 		function accessibleNav(e) {
-			$('.owl-dot').html('<span class="screen-reader-text">Afficher le groupe de logos suivant</span>');
 			//Role incorrect d'après Axe
 			$('.owl-nav button').removeAttr('role');
-			$.each($('.owl-dot'),function(index,item) {
-				$(item).attr('data-index',index);
-			});
 		}
 
-		function activeDots(e) {
-			/*var indexCourant=$('.owl-dot.active').attr('data-index');
-			$('.owl-dot').removeClass('voisin-actif');
-			for (var i=1; i<=4; i++) {
-				var indexVoisin=indexCourant - i;
-				if(i>=0) {
-					$('.owl-dot[data-index='+indexVoisin+']').addClass('voisin-actif');
-				}
-			}*/
-		}
+		
 	}); //fin document ready
 })( jQuery );
