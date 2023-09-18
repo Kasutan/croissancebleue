@@ -2148,6 +2148,12 @@ form.search-form input.search-submit {
 }
 .loop .vignette {
   background-color: var(--blanc);
+  margin-bottom: 3rem;
+}
+@media (min-width: 768px) {
+  .loop .vignette {
+    margin-bottom: 0;
+  }
 }
 .loop .vignette .image {
   display: flex;

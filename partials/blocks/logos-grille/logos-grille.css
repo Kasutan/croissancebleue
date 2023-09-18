@@ -40,6 +40,10 @@
   line-height: 2.5rem;
   margin-bottom: 3rem;
 }
+.logos-grille .bouton-wrap {
+  display: flex;
+  justify-content: center;
+}
 .logos-grille .logos {
   align-items: start;
   -moz-column-gap: var(--gap);

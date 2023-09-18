@@ -169,13 +169,14 @@ function kasutan_scripts() {
 	//Pour bloc carousel
 	wp_enqueue_script( 'croissancebleue-owl-carousel',get_template_directory_uri() . '/lib/owlcarousel/owl.carousel.min.js', array('jquery'), '2.3.4', true );
 
-	//Pour bloc logo grille
-	wp_enqueue_script( 'croissancebleue-listjs', get_template_directory_uri() . '/lib/list/list.min.js', array(), '1.0', true );
 	
-	wp_enqueue_script( 'croissancebleue-scripts', get_template_directory_uri() . '/js/min/main.js', array('jquery','croissancebleue-owl-carousel','croissancebleue-listjs'), '', true );
+	wp_enqueue_script( 'croissancebleue-scripts', get_template_directory_uri() . '/js/min/main.js', array('jquery','croissancebleue-owl-carousel'), '', true );
 
 	//script pour la pagination des actus
 	if(is_home() || is_category()) {
+
+		wp_enqueue_script( 'croissancebleue-listjs', get_template_directory_uri() . '/lib/list/list.min.js', array(), '1.0', true );
+
 		wp_enqueue_script( 'croissancebleue-pagination', get_template_directory_uri() . '/js/min/pagination.js', array('jquery','croissancebleue-listjs'), filemtime( get_template_directory() . '/js/min/pagination.js'), true );
 	}
 }

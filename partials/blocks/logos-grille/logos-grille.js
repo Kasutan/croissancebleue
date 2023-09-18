@@ -1,60 +1,39 @@
 (function($) {
 
 	$( document ).ready(function() {
-		/*--------------------------------------------------------------
-		# Pagination pour la grille de logo 
-		https://listjs.com/docs/
-		--------------------------------------------------------------*/
-		var width=$(window).width();
-		var page=8;
-		var logos=$('.logos');
-		var delai=$(logos).attr('data-delai');
-		if(width < 768) {
-			page=8;
-		} else if(width < 1440 ) {
-			page=12;
-		} else {
-			page=15;
-		}
-		var optionsListe = {
-			valueNames: ['logo'],
-			page: page,
-			pagination: [{
-				name: "paginationLogos",
-				innerWindow : 5, //nbre de dots visibles
-				outerWindow: 5, //nbre de dots visibles
-			}]
-		};
 	
-		var listePosts = new List('logos-avec-pagination', optionsListe);
+		var width=$(window).width();
+		var logos=$('.logo');
+		var lignes=parseInt($('.logos').attr('data-lignes'));
+		var montrer=6;
+		if(width < 768) {
+			montrer=2*lignes;
+		} else if(width < 1024 ) {
+			montrer=3*lignes;
+		} else if(width < 1440 ) {
+			montrer=4*lignes;
+		} else {
+			montrer=5*lignes;
+		}
 
-		//Figer la hauteur du bloc avec le nombre maxi d'éléments
-		var height=$(logos).outerHeight();
-		$(logos).css('height',height+'px');
-
-		//Défilement auto
-		setInterval(defileAuto,delai);
-
-		function defileAuto() {
-			let active=$('.pagination li.active');
-			let suivant=$(active).next();
-			
-			if(suivant.length == 0) {
-				//On est à la dernière page, la suivante = la première
-				suivant=$('.pagination li:first-of-type');
+		//Au chargement de la page, cacher les logos au delà des X premières lignes
+		$(logos).each(function(index,item) {
+			if(index > montrer) {
+				$(this).hide();
 			}
+		})
 
-			//Effet de transition
+		//Au clic sur le bouton afficher tous, afficher tous les logos (avec un effet de transition)
+		var bouton=	$('#affiche-tous');
+		$(bouton).click(function(event) {
 			$(logos).addClass('js-opaque');
 			setTimeout(function(){
-				$(suivant).click();
+				$(logos).show();
+				$(bouton).hide();
 				$(logos).removeClass('js-opaque');
 			},500);
-		
-
-		}
-
-
+		})
+	
 	}); //fin document ready
 })( jQuery );
 

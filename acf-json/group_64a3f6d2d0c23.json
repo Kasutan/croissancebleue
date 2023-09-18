@@ -21,6 +21,34 @@
             "esc_html": 0
         },
         {
+            "key": "field_64a3f70128d22",
+            "label": "Logos",
+            "name": "logos",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
+        },
+        {
             "key": "field_64d4a2110db7c",
             "label": "Titre",
             "name": "titre",
@@ -62,19 +90,19 @@
         },
         {
             "key": "field_64d4b2c66094b",
-            "label": "Délai (en secondes) du défilement automatique",
-            "name": "delai",
+            "label": "Nombre de lignes affichées au chargement de la page",
+            "name": "lignes",
             "aria-label": "",
             "type": "number",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": 6,
+            "default_value": 3,
             "min": "",
             "max": "",
             "placeholder": "",
@@ -83,11 +111,11 @@
             "append": ""
         },
         {
-            "key": "field_64a3f70128d22",
-            "label": "Logos",
-            "name": "logos",
+            "key": "field_65006d09a5f45",
+            "label": "Label du bouton pour afficher tous les logos",
+            "name": "label",
             "aria-label": "",
-            "type": "gallery",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -96,19 +124,11 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "library": "all",
-            "min": "",
-            "max": "",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "insert": "append",
-            "preview_size": "medium"
+            "default_value": "Afficher tous",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -129,5 +149,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691661037
+    "modified": 1694526813,
+    "local_file": "C:UsersofficLocal Sitescroissancebleueapppublic\/wp-content\/themes\/croissancebleue\/acf-json\/group_64a3f6d2d0c23.json"
 }

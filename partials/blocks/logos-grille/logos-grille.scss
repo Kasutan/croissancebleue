@@ -24,6 +24,11 @@
 		margin-bottom: 3rem;
 	}
 
+	.bouton-wrap {
+		display: flex;
+		justify-content: center;
+	}
+
 	.logos {
 		align-items: start;
 		column-gap:var(--gap);

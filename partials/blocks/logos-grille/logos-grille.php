@@ -16,12 +16,9 @@ if(array_key_exists('className',$block)) {
 
 $titre=wp_kses_post( get_field('titre') );
 $intro=wp_kses_post( get_field('intro') );
-$delai=esc_attr(get_field('delai'));
-if(!$delai) {
-	$delai=6000;
-} else {
-	$delai=$delai*1000;
-}
+$label=wp_kses_post( get_field('label') );
+$lignes=intval(esc_attr(get_field('lignes')));
+
 
 $logos=get_field('logos'); //champ ACF galerie
 
@@ -33,15 +30,15 @@ if(!empty($logos)) :
 			printf('<p class="intro ">%s</p>',$intro);
 		}
 	
-		echo '<div  id="logos-avec-pagination">';
-			printf('<ul class="logos list" data-delai="%s">',$delai);
-				foreach($logos as $logo) {
-					printf('<li class="logo">%s</li>',wp_get_attachment_image($logo,'medium'));
-				}
-			echo '</ul>';
+		printf('<ul class="logos list" data-lignes="%s">',$lignes);
+			foreach($logos as $logo) {
+				printf('<li class="logo">%s</li>',wp_get_attachment_image($logo,'medium'));
+			}
+		echo '</ul>';
 
-			echo '<ul class="pagination"></ul>';
-		echo '</div>';
+		if(count($logos)> $lignes * 5 && $label) {
+			printf('<div class="bouton-wrap"><button id="affiche-tous" class="bouton affiche-tous">%s</button></div>',$label);
+		} 
 
 	echo '</section>';
 endif;
