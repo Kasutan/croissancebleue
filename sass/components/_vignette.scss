@@ -2,7 +2,10 @@
 	/***********Vignette ordinaire*****************/
 	.vignette {
 		background-color: var(--blanc);
-
+		margin-bottom: 3rem;
+		@include bp(md) {
+			margin-bottom: 0;
+		}
 		.image {
 			display: flex;
 			margin-bottom: 11px;
