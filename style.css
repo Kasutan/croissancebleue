@@ -1369,7 +1369,7 @@ body {
   --hauteur-banniere:59rem;
   align-items: center;
   display: grid;
-  grid-template-rows: 12.2rem auto 1fr;
+  grid-template-rows: 1fr auto 10rem;
   justify-items: end;
   min-height: var(--hauteur-banniere);
   margin: 0 auto;
@@ -1490,9 +1490,6 @@ body {
   .page-banniere {
     grid-template-columns: 105.6rem 1fr 29rem;
   }
-}
-.page-banniere.pour-accueil {
-  grid-template-rows: 16.7rem auto 1fr;
 }
 .page-banniere.pour-accueil .texte_1 {
   color: var(--noir-15);
