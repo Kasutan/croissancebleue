@@ -86,5 +86,10 @@ function kasutan_copyright() {
 		if( has_nav_menu( 'footer-copyright') ) {
 			wp_nav_menu( array( 'theme_location' => 'footer-copyright', 'menu_id' => 'footer-copyright', 'container_class' => 'inline-footer' ) );
 		}
+		?>
+		<div id="wcb" class="carbonbadge wcb-d"></div>
+		<script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer></script>
+		<?php
 	echo '</div>';
+
 }

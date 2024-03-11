@@ -53,10 +53,7 @@ body {
 		--hauteur-header:60px;
 	}
 	@include bp(lg) {
-		--hauteur-header:123px;
-	}
-	@include bp(xl) {
-		--hauteur-header:161px;
+		--hauteur-header:103px;
 	}
 }
 .site-header {
@@ -100,7 +97,8 @@ body {
 @include bp(lg) {
 	.site-header {
 		--taille-logo:28rem;	
-		padding:30px var(--padding-x-header) 21px;
+		padding:15px var(--padding-x-header) 15px;
+
 	}
 	.header-navigation {
 		width:100%;
@@ -109,8 +107,6 @@ body {
 @include bp(xl) {
 	.site-header {
 		--taille-logo:34rem;	
-		padding:52px var(--padding-x-header) 37px;
-
 	}
 }
 

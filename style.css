@@ -1293,12 +1293,7 @@ body {
 }
 @media (min-width: 1024px) {
   body {
-    --hauteur-header:123px;
-  }
-}
-@media (min-width: 1440px) {
-  body {
-    --hauteur-header:161px;
+    --hauteur-header:103px;
   }
 }
 
@@ -1341,7 +1336,7 @@ body {
 @media (min-width: 1024px) {
   .site-header {
     --taille-logo:28rem;
-    padding: 30px var(--padding-x-header) 21px;
+    padding: 15px var(--padding-x-header) 15px;
   }
   .header-navigation {
     width: 100%;
@@ -1350,7 +1345,6 @@ body {
 @media (min-width: 1440px) {
   .site-header {
     --taille-logo:34rem;
-    padding: 52px var(--padding-x-header) 37px;
   }
 }
 /*--------------------------------------------------------------
