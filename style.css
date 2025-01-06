@@ -1129,6 +1129,10 @@ button.ouvrir-sous-menu:focus {
 .nav-main .menu > li:hover button.ouvrir-sous-menu svg path, .nav-main .menu > li:focus-within button.ouvrir-sous-menu svg path, .nav-main .menu > li.current-menu-item button.ouvrir-sous-menu svg path, .nav-main .menu > li.current-menu-ancestor button.ouvrir-sous-menu svg path {
   fill: var(--bleu-d3);
 }
+.nav-main .menu > li.lang-item > a {
+  color: var(--bleu-d3);
+  font-weight: 500;
+}
 .nav-main .menu .menu-item-has-children {
   align-items: center;
   display: flex;

@@ -316,6 +316,12 @@ button.ouvrir-sous-menu {
 				}
 			}
 
+			//Lien du sélecteur de langue
+			&.lang-item > a {
+				color:var(--bleu-d3);
+				font-weight: 500;
+			}
+
 		}
 
 		.menu-item-has-children {
