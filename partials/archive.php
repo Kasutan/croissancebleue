@@ -33,7 +33,7 @@ printf('<%s class="vignette %s">',$tag,$class);
 			
 		printf('<a class="extrait" href="%s">%s</a>',$link,get_the_excerpt($post_id));
 
-		printf('<div class="suite"><a href="%s">Lire l\'article<span class="screen-reader-text"> %s</span></a></div>',$link,$titre);
+		printf('<div class="suite"><a href="%s">%s<span class="screen-reader-text"> %s</span></a></div>',$link,kpll__("Lire l'article"),$titre);
 	echo '</div>';
 
 	/**Pour vignette en position top post */
@@ -41,7 +41,7 @@ printf('<%s class="vignette %s">',$tag,$class);
 			
 	printf('<a class="extrait top-post" href="%s">%s</a>',$link,get_the_excerpt($post_id));
 
-	printf('<div class="suite top-post"><a href="%s">Lire l\'article<span class="screen-reader-text"> %s</span></a></div>',$link,$titre);
+	printf('<div class="suite top-post"><a href="%s">%s<span class="screen-reader-text"> %s</span></a></div>',$link,kpll__("Lire l'article"),$titre);
 	
 printf('</%s>',$tag);
 

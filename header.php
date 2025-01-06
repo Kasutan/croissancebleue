@@ -29,7 +29,7 @@ echo '<div class="site-container">';
 
 	tha_header_before();
 	echo '<header class="site-header">';
-	echo '<a class="skip-link screen-reader-text" href="#main-content">' . esc_html__( 'Aller directement au contenu', 'croissancebleue' ) . '</a>';
+	echo '<a class="skip-link screen-reader-text" href="#main-content">' . kpll__( 'Aller directement au contenu') . '</a>';
 		tha_header_top();
 
 		echo '<div class="title-area">';

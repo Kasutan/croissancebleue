@@ -82,6 +82,9 @@ function kasutan_mobile_nav() {
 		//Favicon blanc
 		if($fav) {
 			$url=get_option( 'home' );
+			if(KPLL && pll_current_language()=='en') {
+				$url="/en";
+			}
 			printf('<a href="%s" class="logo">%s</a>',$url,wp_get_attachment_image($fav));
 		}
 
@@ -98,6 +101,7 @@ function kasutan_mobile_nav() {
 		if(function_exists('kasutan_telephone')) {
 			kasutan_telephone() ;
 		}
+
 
 
 	echo '</div>'; //Fin volet navigation

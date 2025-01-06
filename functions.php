@@ -10,6 +10,12 @@
 define( 'KASUTAN_STARTER_VERSION', filemtime( get_template_directory() . '/style.css' ) );
 
 
+if(function_exists('pll_the_languages')) {
+	define('KPLL',true);
+} else {
+	define('KPLL',false);
+}
+
 // General cleanup
 include_once( get_template_directory() . '/inc/wordpress-cleanup.php' );
 
@@ -31,6 +37,8 @@ include_once( get_template_directory() . '/inc/login-logo.php' );
 
 // Plugin Support
 include_once( get_template_directory() . '/inc/acf.php' );
+include_once( get_template_directory() . '/inc/polylang.php' );
+
 
 if ( ! function_exists( 'kasutan_setup' ) ) :
 	/**

@@ -22,8 +22,9 @@ function kasutan_linkedin($contexte='') {
 	if(!$link) {
 		return;
 	}
+	
 	if($contexte=='footer') {
-		printf('<a href="%s" class="linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn">Profil LinkedIn</a>',$link);
+		printf('<a href="%s" class="linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn">%s</a>',$link,kpll__('Profil LinkedIn'));
 	} else {
 		printf('<a href="%s" class="linkedin" target="_blank" rel="noopener noreferrer" title="LinkedIn">',$link);
 	?>
@@ -67,9 +68,9 @@ function kasutan_page_titre() {
 		$post_type=get_post_type();
 		$titre=get_the_title();
 	} if (is_search()) {
-		$titre=__('Recherche :','croissancebleue').' '.get_search_query();
+		$titre=kpll__('Recherche :').' '.get_search_query();
 	} elseif (is_404()) {
-		$titre= __('Page introuvable :','croissancebleue');
+		$titre= kpll__('Page introuvable :');
 	} else if (is_page()) {
 		$titre=get_the_title();
 	} else if(is_category()) {
@@ -282,7 +283,7 @@ function kasutan_affiche_metas_single($post_id) {
 		if($image) printf('<div class="image">%s</div>',wp_get_attachment_image($image));
 		echo '<div class="textes">';
 			printf('<p class="autrice">%s </p>',$autrice);
-			printf('<p class="date">%s %s</p>',__('Publié le ','croissancebleue'),get_the_date());
+			printf('<p class="date">%s %s</p>',kpll__('Publié le '),get_the_date());
 		echo '</div>';
 	echo '</div>';
 

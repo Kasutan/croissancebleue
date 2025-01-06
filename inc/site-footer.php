@@ -24,6 +24,9 @@ function kasutan_main_footer() {
 	
 		if($logo) {
 			$url=get_option( 'home' );
+			if(KPLL && pll_current_language()=='en') {
+				$url="/en";
+			}
 			printf('<a href="%s" class="logo-footer"><span class="screen-reader-text">Aller à la page d\'accueil</span>%s</a>',$url,wp_get_attachment_image($logo,'medium'));
 		}
 

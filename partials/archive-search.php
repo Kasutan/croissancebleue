@@ -11,9 +11,9 @@ $titre=get_the_title($post_id);
 $link=get_the_permalink($post_id);
 
 if($post_type==='page') {
-	$label_suite="Lire la page";
+	$label_suite=kpll__("Lire la page");
 } else {
-	$label_suite="Lire l'article";
+	$label_suite=kpll__("Lire l'article");
 }
 
 printf('<%s class="vignette">',$tag);
