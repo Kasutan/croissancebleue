@@ -247,6 +247,7 @@ add_filter( 'auto_theme_update_send_email', '__return_false' );
 
 
 //Disable Gutenberg tips and default full screen mode
+/*
 function kasutan_remove_gutenberg_tips() {
 	$script = "
 jQuery(document).ready(function(){
@@ -258,7 +259,7 @@ jQuery(document).ready(function(){
 	";
 	wp_add_inline_script( 'wp-blocks', $script );
 }
-add_action( 'enqueue_block_editor_assets', 'kasutan_remove_gutenberg_tips' );
+add_action( 'enqueue_block_editor_assets', 'kasutan_remove_gutenberg_tips' );*/
 
 function kasutan_disable_editor_fullscreen_by_default() {
 	$script = "jQuery( window ).load(function() { const isFullscreenMode = wp.data.select( 'core/edit-post' ).isFeatureActive( 'fullscreenMode' ); if ( isFullscreenMode ) { wp.data.dispatch( 'core/edit-post' ).toggleFeature( 'fullscreenMode' ); } });";
