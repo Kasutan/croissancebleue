@@ -29,7 +29,8 @@ if(function_exists("pll_register_string")) {
 		"Profil LinkedIn",
 		'Publié le ',
 		"Lire la page",
-		"Lire l'article"
+		"Lire l'article",
+		"Voir plus"
 	);
 
 	foreach ($chaines as $string) {

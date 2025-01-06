@@ -16,12 +16,12 @@ echo '<section class="no-results not-found">';
 
 	if ( is_search() ) {
 
-		echo '<p>' . kpll__( 'Désolé, aucun résultat n\'a été trouvé. Voulez-vous essayer avec des mots-clés différents&nbsp;?') . '</p>';
+		echo '<p>' . kpll__("Désolé, aucun résultat n'a été trouvé. Voulez-vous essayer avec des mots-clés différents ?") . '</p>';
 		get_search_form();
 
 	} else {
 
-		echo '<p>' . kpll__( 'Ce contenu n\'existe pas. Voulez-vous essayer une recherche&nbsp;?') . '</p>';
+		echo '<p>' . kpll__("Ce contenu n'existe pas. Voulez-vous essayer une recherche ?") . '</p>';
 		get_search_form();
 	}
 

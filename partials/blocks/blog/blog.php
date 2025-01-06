@@ -45,7 +45,7 @@ if($articles->have_posts(  )) {
 		wp_reset_postdata();
 
 		$url=get_permalink( get_option( 'page_for_posts' ));
-		printf('<a href="%s" class="bouton">Voir plus</a>',$url);
+		printf('<a href="%s" class="bouton">%s</a>',$url,kpll__("Voir plus"));
 
 
 	echo '</section>';
